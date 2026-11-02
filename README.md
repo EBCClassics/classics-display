@@ -2,7 +2,19 @@
 
 A self-contained, silent display for a 16:9 television. The design uses Philip's personal neon pink and ink palette, yellow accents and Nimbus typography, without the P or C symbols. No account, database, API key, npm installation or visitor interaction is needed.
 
-## Start here
+## Current live setup
+
+- **Live display:** https://ebcclassics.github.io/classics-display/
+- **Master repository:** https://github.com/EBCClassics/classics-display
+- **Permanent local checkout:** `/Users/philipcanning/Documents/Codex/Projects/ClassicsDisplay`
+- **Automatic publishing:** saves to `main` run preparation, all 12 checks and GitHub Pages deployment. The first deployment succeeded on 2 November 2026.
+- **Planet eStream:** Philip reported on 2 November 2026 that he had tested it and everything seemed to work fine. Basic eStream operation is therefore recorded as a user-reported pass; unreported individual, full-day and offline-restart tests are not assumed.
+
+Ask Codex for changes rather than editing or re-uploading the site yourself. Codex should update the source and the affected records, run the relevant checks, save the change to GitHub and confirm successful publication. The display address remains the same.
+
+For continuity, read [CONTEXT.md](CONTEXT.md), [CODEX_HANDOVER.md](CODEX_HANDOVER.md) and [CHANGELOG.md](CHANGELOG.md). [AGENTS.md](AGENTS.md) requires future material changes to keep these and the affected operation/test documents current. [CODEX_SETUP.md](CODEX_SETUP.md) explains how to attach the prepared folder to a local Codex project.
+
+## Local preview
 
 For the quickest local look, open `dist/index.html`. The bundled fallback content works without a server. For proper offline caching and content-editing tests, use a local web server:
 
@@ -65,7 +77,11 @@ The screen checks `content.json` on startup and every 15 minutes. The controls i
 
 When adding new sources/images, update the credits too. The helper `python3 scripts/credits.py` regenerates the credits page from `content.json` and `assets/credits.json`; then run preparation again. For a code or asset release, bump the cache version consistently in `scripts/prepare.cjs` and the cache check in `dist/app.js`, then prepare and redeploy. Existing cached content may remain until the player next connects and reloads successfully.
 
-## GitHub Pages
+## GitHub Pages: current production host
+
+This project is already configured at the master repository above. Pages uses **GitHub Actions** as its publishing source and the included `Publish Classics display` workflow. For ordinary updates, save the validated change to `main`, wait for the workflow to succeed and verify the live page when relevant. No new repository or manual upload is required. See [PUBLISHING.md](PUBLISHING.md).
+
+The following steps are retained only for recreating the setup elsewhere:
 
 1. Create a repository and upload this project, including `dist`, `scripts`, `tests` and the hidden `.github/workflows/pages.yml` file. Use `main` as the branch. The `.openai` folder is only for the optional private Sites preview and is not needed by GitHub Pages.
 2. In **Settings → Pages → Build and deployment**, choose **GitHub Actions** as the source.
@@ -85,9 +101,9 @@ For updates from a repository, import this whole project. The included `netlify.
 
 [Netlify deployment guidance](https://docs.netlify.com/deploy/create-deploys/)
 
-## Planet eStream: first test
+## Planet eStream: setup and regression checks
 
-These steps use the labels visible in the supplied Screen Designer screenshot. Names inside the website dialogue may differ in your installed version. This draft has not yet been tested on the College's actual player.
+These steps use the labels visible in the supplied Screen Designer screenshot. Names inside the website dialogue may differ in your installed version. Philip has now tested the display in Planet eStream and reports that it seems to work fine (2 November 2026). Retain these steps for reconfiguration and regression checks; see TESTING.md for the distinction between this report and the optional detailed test record.
 
 1. **Copy** the existing Classics screen for testing. Keep the copy in 16:9. In the screenshot, **Set as 4:3** is offered; leave that alone for the widescreen draft.
 2. Under **Add Content**, choose the **WWW / website** icon (fourth row, first column in the screenshot). Add a website panel using the public HTTPS base URL of the GitHub Pages or Netlify deployment. Avoid a sign-in-protected preview URL.
@@ -133,4 +149,4 @@ A first-ever visit without connectivity cannot download the site. Some embedded 
 
 `dist/` is the deployable website; `scripts/` contains preparation helpers; `tests/` contains the scheduling/content checks. There are no analytics, cookies, remote fonts, live embeds or pupil records. Ordinary browser storage holds only the last valid public display content. External source links are optional and do not need to be opened by viewers.
 
-This is a working candidate for TV testing. Actual Planet eStream embedding, persistent offline restart, school-network access, final viewing distance and unattended operation on the target hardware remain acceptance checks.
+The display is live and Philip has reported successful basic operation in Planet eStream. Persistent offline restart, a measured viewing-distance check and extended unattended operation have not been separately recorded. Do not turn the general success report into a claim that those specific checks passed.

@@ -1,6 +1,6 @@
 # Display testing record
 
-Draft checked on 2 November 2026. This records desktop verification separately from the still-required Planet eStream acceptance test.
+Updated on 2 November 2026. This records development checks, successful publication and Philip's reported Planet eStream test separately.
 
 ## Completed checks
 
@@ -18,13 +18,19 @@ Draft checked on 2 November 2026. This records desktop verification separately f
 | Broken JSON | PASS | Fresh local fixture origin served invalid JSON; screen retained the bundled welcome and reported the failure in controls |
 | Missing photograph | PASS | Local fixture served an unavailable image path; illustrated fallback displayed and was identified in the image alternative text |
 | Console on normal route | PASS | No error logs during the sampled normal-route check |
-| Actual Planet eStream TV | NOT YET TESTED | Needs the College's player and school network |
+| Public GitHub Pages deployment | PASS | First workflow run 41533040254 succeeded; all 12 checks and deployment steps passed |
+| Public live page | PASS | Loaded without sign-in in Chrome; fonts, photograph and Gulliver loaded; automatic rotation advanced |
+| Planet eStream basic operation | USER-REPORTED PASS | Philip reported on 2 November 2026: “I have tested on Planet eStream and everything seems to work fine.” Individual steps, player engine and test duration were not specified |
 
 The host-unavailable check verifies a warm desktop browser cache. It does not establish offline restart support in an embedded eStream player or after storage is cleared.
 
-## Target TV acceptance procedure
+## User-reported eStream result
 
-Record the date, tester, player identity/browser version and public website URL. Stop if the screen is blank, a login page appears, the display freezes, text clips or the published source is wrong. Retain the existing eStream screen until these checks pass.
+Philip's report supersedes the earlier blanket “eStream not yet tested” status. It establishes that he tested the display through Planet eStream and found no apparent problem. Do not infer the particular player/browser version, a complete checklist, overnight operation, measured viewing distance or offline restart from that general report.
+
+## Optional detailed TV acceptance and regression procedure
+
+Use this procedure for a fuller acceptance record or after a relevant change. The blank results below do not negate the successful general test Philip has already reported. Record the date, tester, player identity/browser version and public website URL. Stop if the screen is blank, a login page appears, the display freezes, text clips or the published source is wrong.
 
 1. **Start unaided.** Use the base URL, without testing parameters. Restart the player. Expected: Welcome appears without a click or login. Result: ___
 2. **Watch two complete loops.** Allow at least 160 seconds of continuous display. Expected: Welcome → Gulliver → classicist → career → news → Welcome; no stalls or repeated early reloads. Result: ___
