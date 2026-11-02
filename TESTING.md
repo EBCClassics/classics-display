@@ -7,7 +7,9 @@ Updated on 2 November 2026. This records development checks, successful publicat
 - PASS locally: 16 Node checks, including all landmarks/careers within one day, all ten graduates in five pairs, date restrictions, fresh-news priority, source validation, assets and seed parity.
 - PASS locally: five Python checks for dated/bounded source extracts, future/stale/wrong-host exclusion, unrelated/unsafe feed input, deduplication/retention and failure without mutation.
 - PASS in Chrome at 1920 × 1080: 15 landmark, five graduate-pair, 14 career and five recent-news layouts; referenced images load, checked text stays inside the content area, and graduate body/source bounds do not overlap. Representative screenshots were inspected.
-- The source feed was retrieved on 2 November 2026. Running the scheduled workflow manually and verifying its live deployment are separate release checks; record their actual outcome after completion.
+- PASS: [release deployment](https://github.com/EBCClassics/classics-display/actions/runs/41540376372) from `7d88359`; both test suites passed in GitHub.
+- PASS: [manual daily-source workflow](https://github.com/EBCClassics/classics-display/actions/runs/41540632869) retrieved the feed, retained three dated discovery notices, ran both test suites, saved `19e040f` as github-actions[bot] with content/credits/changelog/handover, and deployed successfully. This exercises the configured daily path; the next unattended cron run has not yet occurred.
+- PASS on the public live page: welcome sticker above frame, no draft badge, complete Parthenon photograph, Tom Hiddleston/Chris Martin pair, Public policy career fixture, freshly imported Roman-coins notice dated 30 October with the source-check date and labelled illustration, and automatic advancement. The live page reported its offline cache ready; this is not a new player offline-restart test.
 - The earlier user-reported eStream pass below applies to the earlier release. The new release needs a player regression check, including readability of the paired profiles.
 
 ## Earlier completed checks

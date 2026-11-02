@@ -42,7 +42,7 @@ Testing controls are hidden by default. `?controls=1` exposes screen/date/speed/
 - The public GitHub Pages site loaded without sign-in; its fonts, site photograph and Gulliver loaded and its rotation advanced.
 - Philip reported on 2 November 2026: “I have tested on Planet eStream and everything seems to work fine.” Record basic eStream operation as a user-reported pass. The particular player engine, individual acceptance steps, viewing-distance assessment, long unattended run and offline restart were not separately reported.
 
-The expanded release passes 16 application checks and five feed-safety checks locally. Its deployment and live verification are recorded with the completed release; do not infer those from local checks.
+The expanded release passes 16 application checks and five feed-safety checks locally and in GitHub. Release run [41540376372](https://github.com/EBCClassics/classics-display/actions/runs/41540376372) and manual source-check run [41540632869](https://github.com/EBCClassics/classics-display/actions/runs/41540632869) succeeded. The latter fetched three notices, committed `19e040f` and deployed them. The live welcome, full Parthenon, graduate pair, an additional career, recent source notice and automatic advancement were verified. These desktop checks do not replace player regression testing of this version.
 
 ## Continuity
 

@@ -1,6 +1,6 @@
 # Classics Display: Codex handover
 
-Updated: 2 November 2026.
+Last implementation review: 2 November 2026. The dated news status below is maintained by the daily workflow.
 
 ## Read first
 
@@ -16,7 +16,7 @@ Philip requested recent discoveries and selected an automatic daily source check
 
 Philip’s 2 November 2026 report that Planet eStream seemed to work fine applies to the previous release. This expanded release needs its own player regression check after publication. Do not erase the earlier successful general test or claim unreported offline/full-day checks.
 
-Local checks: all 16 application checks and five news-feed checks pass. TV browser verification and publication evidence are recorded in TESTING.md and CHANGELOG.md. Until a successful workflow and live check are recorded, do not describe the expanded release as published.
+Local checks: all 16 application checks and five news-feed checks pass. The expanded release is published: release run 41540376372 succeeded from `7d88359`; manual daily-source run 41540632869 fetched three notices, saved `19e040f` and deployed successfully. Live appearance, sources and automatic advancement were checked. TESTING.md and CHANGELOG.md hold the evidence.
 
 ## Implementation map
 
@@ -61,12 +61,12 @@ The browser uploader accepted individual files, not a whole folder. Upload files
 
 ## Known limits and next work
 
-- Finish/verify this release’s GitHub publication, then check the live welcome, complete Parthenon view, paired profiles, career rotation and news. A manual workflow run exercises the daily source-fetch path immediately; a configured cron alone is not proof that it ran.
-- The news feed is a selected source, not an exhaustive archaeology service. No new relevant report is guaranteed every day. The first refresh uses the public feed retrieved on 2 November 2026 and two checked official Pompeii excavation reports from October.
+- Next user action: reload the eStream website panel once to load v2, then check readability and two complete 90-second loops on the actual player. No publishing or news-configuration task remains from this request.
+- The news feed is a selected source, not an exhaustive archaeology service. No new relevant report is guaranteed every day. The verified first refresh contains three AIA feed notices reported on 30 October 2026, alongside two manually checked official Pompeii excavation reports.
 - `?cycle=0&date=2026-11-02&pause=1&screen=people` gives Tom Hiddleston and Chris Martin; cycles 1–4 show the remaining four pairs. `cycle=0…14` covers all landmarks on the anchor date.
 - Application/asset cache is `classics-display-v2` consistently in preparation and application code. Reload the eStream panel once for this code release; subsequent valid content updates refresh within 15 minutes.
 - Actual eStream viewing-distance, long unattended running and offline restart remain separate player checks. Desktop results do not establish them.
 
 <!-- NEWS_STATUS_START -->
-Daily source check: 2026-11-02T22:50:57Z. 3 feed notices retained; latest report 2026-10-30. Both test suites passed before this save. Deployment is recorded in https://github.com/EBCClassics/classics-display/actions/runs/41540632869.
+Daily source check: 2026-11-02T22:50:57Z. 3 feed notices retained; latest report 2026-10-30. Both test suites passed before this save. Deployment succeeded in https://github.com/EBCClassics/classics-display/actions/runs/41540632869.
 <!-- NEWS_STATUS_END -->

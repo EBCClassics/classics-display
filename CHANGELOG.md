@@ -3,7 +3,7 @@
 ## 2 November 2026: daily discovery source check
 
 - Refreshed the source-attributed discovery bank (3 retained feed notices; latest report 2026-10-30). No generated reporting or remote photographs.
-- Content/scheduling checks and feed-safety checks passed before this save. Deployment outcome: [publishing workflow](https://github.com/EBCClassics/classics-display/actions/runs/41540632869); a saved commit alone does not establish successful deployment.
+- Content/scheduling checks and feed-safety checks passed before this save. The manual daily-source run completed successfully, including source retrieval, both test suites, automated save `19e040f` and deployment: [verified workflow](https://github.com/EBCClassics/classics-display/actions/runs/41540632869).
 
 ## 2 November 2026: wider rotation, clearer landmarks and recent discoveries
 
@@ -11,7 +11,7 @@
 - Expanded to 15 landmarks, 10 verified university Classics graduates (two per screen), and 14 career routes. Content advances each 90-second loop within the day; time-seeded starts vary short player visits. Retained five silent screens, neon branding and 1080p-first scaling.
 - Added two October 2026 official Pompeii reports and short AIA discovery-feed notices. Philip selected an automatic daily source check: the existing GitHub workflow now checks at 05:17 UTC, validates dates/hosts, retains notices for 30 days, records changed content and deploys. No generated reporting; images and extracts are labelled. Failed source checks preserve valid content.
 - Updated image credits, generated seed/offline assets, publishing/testing instructions and continuity records. Cache version is consistently v2.
-- Verification: 16 application checks and five feed-safety checks pass locally. Browser checks cover all 15 landmark, five graduate-pair, 14 career and five recent-news layouts at 1920 × 1080; images load and sampled text bounds fit. Publication/live results will be recorded after the workflow completes; this local result alone is not a deployment claim.
+- Verification: 16 application checks and five feed-safety checks pass locally. Browser checks cover all 15 landmark, five graduate-pair, 14 career and five recent-news layouts at 1920 × 1080; images load and sampled text bounds fit. Release deployment succeeded from `7d88359`: [workflow](https://github.com/EBCClassics/classics-display/actions/runs/41540376372). Live welcome/frame, complete Parthenon, paired graduates, an additional career route and the newly fetched discovery notice were verified without sign-in. Automatic live advancement was also checked. The updated eStream panel still needs its own regression check.
 
 ## 2 November 2026: eStream test and project continuity
 

@@ -7,7 +7,7 @@ A self-contained, silent display for a 16:9 television. The design uses Philip's
 - **Live display:** https://ebcclassics.github.io/classics-display/
 - **Master repository:** https://github.com/EBCClassics/classics-display
 - **Permanent local checkout:** `/Users/philipcanning/Documents/Codex/Projects/ClassicsDisplay`
-- **Automatic publishing:** saves to `main` run preparation, 16 application checks and five feed checks and GitHub Pages deployment. The first deployment succeeded on 2 November 2026.
+- **Automatic publishing:** saves to `main` run preparation, 16 application checks and five feed checks and GitHub Pages deployment. The expanded release and its manual daily-source run both deployed successfully on 2 November 2026; see TESTING.md for the workflow evidence.
 - **Planet eStream:** Philip reported on 2 November 2026 that he had tested it and everything seemed to work fine. Basic eStream operation is therefore recorded as a user-reported pass; unreported individual, full-day and offline-restart tests are not assumed.
 
 Ask Codex for changes rather than editing or re-uploading the site yourself. Codex should update the source and the affected records, run the relevant checks, save the change to GitHub and confirm successful publication. The display address remains the same.
@@ -153,4 +153,4 @@ A first-ever visit without connectivity cannot download the site. Some embedded 
 
 `dist/` is the deployable website; `scripts/` contains preparation helpers; `tests/` contains the scheduling/content checks. There are no analytics, cookies, remote fonts, live embeds or pupil records. Ordinary browser storage holds only the last valid public display content. External source links are optional and do not need to be opened by viewers.
 
-The display is live and Philip has reported successful basic operation in Planet eStream. Persistent offline restart, a measured viewing-distance check and extended unattended operation have not been separately recorded. Do not turn the general success report into a claim that those specific checks passed.
+The expanded display is live and has been checked in a desktop browser. Philip reported successful basic operation of the earlier release in Planet eStream; reload the panel once for v2 and repeat the player regression checks. Persistent offline restart, a measured viewing-distance check and extended unattended operation have not been separately recorded. Do not turn the general success report into a claim that those specific checks passed.
