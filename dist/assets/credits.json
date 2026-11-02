@@ -1,0 +1,65 @@
+[
+  {
+    "title": "File:Parthenon from south.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Parthenon_from_south.jpg/1920px-Parthenon_from_south.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Parthenon_from_south.jpg",
+    "artist": "Thermos",
+    "licence": "CC BY-SA 2.5",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+    "file": "assets/athens.jpg"
+  },
+  {
+    "title": "File:Pompeii Forum & Mt. Vesuvius (9809458366).jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Pompeii_Forum_%26_Mt._Vesuvius_%289809458366%29.jpg/1920px-Pompeii_Forum_%26_Mt._Vesuvius_%289809458366%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Pompeii_Forum_%26_Mt._Vesuvius_(9809458366).jpg",
+    "artist": "Gary Todd from Xinzheng, China",
+    "licence": "CC0",
+    "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "file": "assets/pompeii.jpg"
+  },
+  {
+    "title": "File:Tholos of Delphi 02.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Tholos_of_Delphi_02.jpg/1920px-Tholos_of_Delphi_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Tholos_of_Delphi_02.jpg",
+    "artist": "Bernard Gagnon",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "assets/delphi.jpg"
+  },
+  {
+    "title": "File:Exterior of the Colosseum 20150812.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Exterior_of_the_Colosseum_20150812.jpg/1920px-Exterior_of_the_Colosseum_20150812.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Exterior_of_the_Colosseum_20150812.jpg",
+    "artist": "Suicasmo",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "assets/rome.jpg"
+  },
+  {
+    "title": "File:TR.IZ.Selcuk Ephesus Celsus-Library 32 3x2-R 5K.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/TR.IZ.Selcuk_Ephesus_Celsus-Library_32_3x2-R_5K.jpg/1920px-TR.IZ.Selcuk_Ephesus_Celsus-Library_32_3x2-R_5K.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:TR.IZ.Selcuk_Ephesus_Celsus-Library_32_3x2-R_5K.jpg",
+    "artist": "Roy Egloff",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "assets/ephesus.jpg"
+  },
+  {
+    "title": "File:Natalie Haynes 20221208.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Natalie_Haynes_20221208.jpg/1920px-Natalie_Haynes_20221208.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Natalie_Haynes_20221208.jpg",
+    "artist": "Edwardx",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "assets/natalie.jpg"
+  },
+  {
+    "file": "assets/mary.jpg",
+    "title": "File:Mary Beard filming in Rome.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Mary_Beard_filming_in_Rome.jpg/1280px-Mary_Beard_filming_in_Rome.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Mary_Beard_filming_in_Rome.jpg",
+    "artist": "Tristan Ferne",
+    "licence": "CC BY 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/2.0"
+  }
+]
