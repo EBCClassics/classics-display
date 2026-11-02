@@ -667,6 +667,51 @@ window.SEEDED_CONTENT = {
       "caption": "Location photograph: Pompeii’s forum; not the discovery",
       "sourceLabel": "Archaeological Park of Pompeii · excavation journal",
       "sourceUrl": "https://pompeiisites.org/e-journal-degli-scavi-di-pompei/preliminary-results-of-an-integrated-geophysical-survey-at-the-villa-of-cicero/"
+    },
+    {
+      "id": "feed-ed2df785d80af6e9",
+      "mode": "news",
+      "title": "Roman Coins Recovered in Hungary",
+      "published": "2026-10-30",
+      "publishedLabel": "30 October 2026",
+      "body": "SOMOGY COUNTY, HUNGARY—More than 700 coins were discovered at three sites near the Drava River […]…",
+      "why": "What evidence supports the discovery, and what remains uncertain?",
+      "image": "assets/discoveries.svg",
+      "imageAlt": "Illustration of an ancient pot and magnifying glass",
+      "caption": "Discovery illustration · not a photograph of the find",
+      "sourceLabel": "Archaeology magazine · AIA",
+      "sourceUrl": "https://archaeology.org/news/2026/10/30/roman-coins-recovered-in-hungary/",
+      "feedExtract": true
+    },
+    {
+      "id": "feed-27aab9be068dbc33",
+      "mode": "news",
+      "title": "Household Cupboard Excavated in Pompeii",
+      "published": "2026-10-30",
+      "publishedLabel": "30 October 2026",
+      "body": "NAPLES, ITALY—Reuters reports that archaeologists have uncovered a wooden cupboard discovered in a house on […]…",
+      "why": "What evidence supports the discovery, and what remains uncertain?",
+      "image": "assets/discoveries.svg",
+      "imageAlt": "Illustration of an ancient pot and magnifying glass",
+      "caption": "Discovery illustration · not a photograph of the find",
+      "sourceLabel": "Archaeology magazine · AIA",
+      "sourceUrl": "https://archaeology.org/news/2026/10/30/household-cupboard-excavated-in-pompeii/",
+      "feedExtract": true
+    },
+    {
+      "id": "feed-f0a6f95bb158233c",
+      "mode": "news",
+      "title": "Child’s Sarcophagus Discovered in Romania",
+      "published": "2026-10-29",
+      "publishedLabel": "29 October 2026",
+      "body": "CONSTANTA, ROMANIA—Romania Insider reports that an intact Roman sarcophagus has been uncovered in the necropolis […]…",
+      "why": "What evidence supports the discovery, and what remains uncertain?",
+      "image": "assets/discoveries.svg",
+      "imageAlt": "Illustration of an ancient pot and magnifying glass",
+      "caption": "Discovery illustration · not a photograph of the find",
+      "sourceLabel": "Archaeology magazine · AIA",
+      "sourceUrl": "https://archaeology.org/news/2026/10/29/childs-sarcophagus-discovered-in-romania/",
+      "feedExtract": true
     }
   ],
   "schedule": [
@@ -695,5 +740,13 @@ window.SEEDED_CONTENT = {
       "site": "ephesus",
       "career": "technology"
     }
-  ]
+  ],
+  "newsStatus": {
+    "lastSuccess": "2026-11-02T22:50:57Z",
+    "sources": [
+      "Archaeology magazine · AIA"
+    ],
+    "failedSources": [],
+    "latestPublication": "2026-10-30"
+  }
 };

@@ -1,5 +1,10 @@
 # Changelog
 
+## 2 November 2026: daily discovery source check
+
+- Refreshed the source-attributed discovery bank (3 retained feed notices; latest report 2026-10-30). No generated reporting or remote photographs.
+- Content/scheduling checks and feed-safety checks passed before this save. Deployment outcome: [publishing workflow](https://github.com/EBCClassics/classics-display/actions/runs/41540632869); a saved commit alone does not establish successful deployment.
+
 ## 2 November 2026: wider rotation, clearer landmarks and recent discoveries
 
 - Fixed the welcome sticker/frame overlap, removed the public “working draft” badge and replaced the close Parthenon photograph with a wide view. Landmark photos are shown in full, with Gulliver’s speech beneath.
