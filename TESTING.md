@@ -2,7 +2,15 @@
 
 Updated on 2 November 2026. This records development checks, successful publication and Philip's reported Planet eStream test separately.
 
-## Completed checks
+## Expanded release checks: 2 November 2026
+
+- PASS locally: 16 Node checks, including all landmarks/careers within one day, all ten graduates in five pairs, date restrictions, fresh-news priority, source validation, assets and seed parity.
+- PASS locally: five Python checks for dated/bounded source extracts, future/stale/wrong-host exclusion, unrelated/unsafe feed input, deduplication/retention and failure without mutation.
+- PASS in Chrome at 1920 × 1080: 15 landmark, five graduate-pair, 14 career and five recent-news layouts; referenced images load, checked text stays inside the content area, and graduate body/source bounds do not overlap. Representative screenshots were inspected.
+- The source feed was retrieved on 2 November 2026. Running the scheduled workflow manually and verifying its live deployment are separate release checks; record their actual outcome after completion.
+- The earlier user-reported eStream pass below applies to the earlier release. The new release needs a player regression check, including readability of the paired profiles.
+
+## Earlier completed checks
 
 | Check | Result | Evidence / limit |
 | --- | --- | --- |
@@ -33,10 +41,10 @@ Philip's report supersedes the earlier blanket “eStream not yet tested” stat
 Use this procedure for a fuller acceptance record or after a relevant change. The blank results below do not negate the successful general test Philip has already reported. Record the date, tester, player identity/browser version and public website URL. Stop if the screen is blank, a login page appears, the display freezes, text clips or the published source is wrong.
 
 1. **Start unaided.** Use the base URL, without testing parameters. Restart the player. Expected: Welcome appears without a click or login. Result: ___
-2. **Watch two complete loops.** Allow at least 160 seconds of continuous display. Expected: Welcome → Gulliver → classicist → career → news → Welcome; no stalls or repeated early reloads. Result: ___
+2. **Watch two complete loops.** Allow at least 180 seconds of continuous display. Expected: Welcome → Gulliver → two graduates → career → news → Welcome; the next loop changes the selections, with no stalls or repeated early reloads. Result: ___
 3. **Read from the waiting area.** Expected: a pupil can read headings and the main explanation at the normal viewing distance. Source notes may be smaller. Check the TV's overscan and crop settings if anything is lost. Result: ___
-4. **Check fixtures on a desktop.** Use `?date=2026-11-03&pause=1&screen=tour` (Pompeii), then 6 November (Ephesus), 7 November (Ephesus held over the weekend), then 9 November (Athens). Expected: correct destination and date; clock remains the current UK time. Result: ___
-5. **Check the news label.** Use `?date=2026-11-02&pause=1&screen=news`. Expected: blue-room archive example, source date 3 June 2024, location-picture caption. The following day selects the flatbread example. Result: ___
+4. **Check fixtures on a desktop.** Keep `cycle=0` in all date fixtures.  Use `?date=2026-11-03&cycle=0&pause=1&screen=tour` (Pompeii), then 6 November (Ephesus), 7 November (Ephesus opening offset held over the weekend), then 9 November (Bath). Expected: correct destination and date; clock remains the current UK time. Result: ___
+5. **Check the news label.** Use `?date=2026-11-02&cycle=0&pause=1&screen=news`. Expected: a dated October 2026 Pompeii report, with a location-picture caption. Use 1 January 2027 to confirm older source material is labelled archive; actual daily updates may supply eligible news by that date. Result: ___
 6. **Pause and resume.** On a desktop, use `?controls=1`, Pause, Next and Play. Expected: pause holds a screen, Next changes it, Play restores the timed loop. Remove these parameters for the TV. Result: ___
 7. **Disconnect after caching.** First confirm Offline cache ready if the player exposes controls. Disconnect the test player's connection for two loops, then reload if the test setup permits. Expected: rotation continues; warm reload also works if that player allows persistent service-worker caching. Record the two results separately. Continuous rotation: ___ Offline reload: ___
 8. **Reconnect and update.** Publish a small, identifiable test wording change. Expected: Reload content or the next 15-minute refresh picks up valid data; restore the final wording afterwards. Result: ___
