@@ -1,0 +1,47 @@
+# Display testing record
+
+Draft checked on 2 November 2026. This records desktop verification separately from the still-required Planet eStream acceptance test.
+
+## Completed checks
+
+| Check | Result | Evidence / limit |
+| --- | --- | --- |
+| Scheduling and content suite | PASS | 12 Node checks, including all asset paths, 400 dates, weekends, UK clock changes, date ranges, stale/future news, invalid content, fallback parity and text contrast |
+| First week at 1920 × 1080 | PASS | All five screens checked across 2–6 November: 25 layouts, with no main text/source/caption bounds crossing the content area |
+| Welcome, tour, profiles, careers and news | PASS | Rendered in the desktop browser; photos and Gulliver loaded |
+| 720p and portrait scaling | PASS | 1280 × 720 filled its viewport; 768 × 1024 fitted a centred 768 × 432 canvas with no document overflow |
+| Date selection | PASS | 3 November produced Pompeii and its correct description |
+| Automatic advancement | PASS | Accelerated loop moved from Welcome to Careers without a screen-navigation action |
+| Test controls | PASS | Date entry, screen choice and next-screen controls changed the displayed content; pause fixture remained paused |
+| Offline cache installation | PASS | Browser reported the complete local cache ready |
+| Host unavailable reload | PASS | Stopped the local web server; navigated afresh to the tour URL; cached page, photograph and Gulliver loaded, and Next reached Mary Beard |
+| Broken JSON | PASS | Fresh local fixture origin served invalid JSON; screen retained the bundled welcome and reported the failure in controls |
+| Missing photograph | PASS | Local fixture served an unavailable image path; illustrated fallback displayed and was identified in the image alternative text |
+| Console on normal route | PASS | No error logs during the sampled normal-route check |
+| Actual Planet eStream TV | NOT YET TESTED | Needs the College's player and school network |
+
+The host-unavailable check verifies a warm desktop browser cache. It does not establish offline restart support in an embedded eStream player or after storage is cleared.
+
+## Target TV acceptance procedure
+
+Record the date, tester, player identity/browser version and public website URL. Stop if the screen is blank, a login page appears, the display freezes, text clips or the published source is wrong. Retain the existing eStream screen until these checks pass.
+
+1. **Start unaided.** Use the base URL, without testing parameters. Restart the player. Expected: Welcome appears without a click or login. Result: ___
+2. **Watch two complete loops.** Allow at least 160 seconds of continuous display. Expected: Welcome → Gulliver → classicist → career → news → Welcome; no stalls or repeated early reloads. Result: ___
+3. **Read from the waiting area.** Expected: a pupil can read headings and the main explanation at the normal viewing distance. Source notes may be smaller. Check the TV's overscan and crop settings if anything is lost. Result: ___
+4. **Check fixtures on a desktop.** Use `?date=2026-11-03&pause=1&screen=tour` (Pompeii), then 6 November (Ephesus), 7 November (Ephesus held over the weekend), then 9 November (Athens). Expected: correct destination and date; clock remains the current UK time. Result: ___
+5. **Check the news label.** Use `?date=2026-11-02&pause=1&screen=news`. Expected: blue-room archive example, source date 3 June 2024, location-picture caption. The following day selects the flatbread example. Result: ___
+6. **Pause and resume.** On a desktop, use `?controls=1`, Pause, Next and Play. Expected: pause holds a screen, Next changes it, Play restores the timed loop. Remove these parameters for the TV. Result: ___
+7. **Disconnect after caching.** First confirm Offline cache ready if the player exposes controls. Disconnect the test player's connection for two loops, then reload if the test setup permits. Expected: rotation continues; warm reload also works if that player allows persistent service-worker caching. Record the two results separately. Continuous rotation: ___ Offline reload: ___
+8. **Reconnect and update.** Publish a small, identifiable test wording change. Expected: Reload content or the next 15-minute refresh picks up valid data; restore the final wording afterwards. Result: ___
+9. **Leave unattended.** Run for a school day and check again, including the next morning. Expected: date changes, no memory-related freezing, stable layout and no prompt. Result: ___
+10. **Confirm acceptance.** Record any remaining problems before replacing the original screen. Overall result: ___
+
+## Repeatable local failure fixtures
+
+Run `python3 tests/serve-fixtures.py` from this project. It binds only to `127.0.0.1:8766` and does not change the published data.
+
+- `http://127.0.0.1:8766/invalid/?nosw=1&pause=1&controls=1`: invalid content; expect the seeded or last valid display and a content-error note.
+- `http://127.0.0.1:8766/missing/?nosw=1&pause=1&controls=1`: unavailable image; expect an illustrated fallback.
+
+Stop the fixture server when finished. These are test-only routes; they are not included in the deployable website.
