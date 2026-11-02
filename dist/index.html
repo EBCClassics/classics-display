@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101522">
+<title>Classics Department | Eastbourne College</title>
+<meta name="description" content="A daily journey through the people, places and possibilities of the ancient world.">
+<link rel="icon" href="assets/gulliver.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css">
+<script defer src="core.js"></script><script defer src="seed.js"></script><script defer src="app.js"></script>
+</head>
+<body>
+<div id="viewport"><div id="stage">
+<header class="masthead"><div class="identity"><span class="college">Eastbourne College</span><span class="divider"></span><span>Classics Department</span></div><div class="date-clock"><span id="date"></span><strong id="clock"></strong></div></header>
+<main id="screen" aria-label="Classics display"><section class="welcome screen"><div class="welcome-copy"><p class="eyebrow">Welcome to Classics</p><h1>Ancient worlds.<br><em>New perspectives.</em></h1><p class="body">Welcome to the Classics Department</p><p class="greeting">Salvete! Χαίρετε!</p></div><div class="welcome-art"><img src="assets/athens.jpg" alt="The Parthenon in Athens"></div></section></main>
+<footer><div id="rotation" class="rotation" aria-label="Screen rotation"></div><div class="footer-status"><span id="play-state">Auto-advancing</span><span class="dot"></span><span id="counter">01 / 05</span><span class="draft">Working draft</span></div></footer>
+<div class="progress-track"><div id="progress"></div></div>
+</div></div>
+<aside id="controls" aria-label="Testing controls" hidden>
+<div class="control-title"><strong>Display test controls</strong><button id="close-controls" aria-label="Hide testing controls">×</button></div>
+<div class="control-row"><button id="prev" aria-label="Previous screen">←</button><button id="pause">Pause</button><button id="next" aria-label="Next screen">→</button><button id="fullscreen">Full screen</button></div>
+<label>Screen <select id="screen-select"></select></label><label>Preview date <input id="test-date" type="date"></label>
+<div class="control-row"><button id="today">Use today</button><button id="reload-content">Reload content</button></div>
+<label>Test speed <select id="speed"><option value="1">Normal</option><option value="4">4× faster</option><option value="10">10× faster</option></select></label>
+<p id="diagnostics" role="status"></p><p class="key-help">Space: pause · ← →: change screen · 1–5: select · C: controls · F: full screen · Esc: hide</p>
+<a href="credits.html" target="_blank" rel="noopener">Sources & image credits</a>
+</aside>
+<noscript><div class="noscript">This display needs JavaScript for its screen rotation. Please enable it in the signage player.</div></noscript>
+</body></html>
