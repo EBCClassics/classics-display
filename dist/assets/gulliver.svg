@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 245" role="img" aria-labelledby="title"><title id="title">Gulliver the Eastbourne Gull, ready to explore</title>
+<ellipse cx="145" cy="219" rx="75" ry="10" fill="#101522" opacity=".18"/>
+<g stroke="#101522" stroke-linejoin="round" stroke-linecap="round"><path d="M137 169v38m25-38v38m-25-2-17 9m17-9 15 9m10-9-13 9m13-9 18 9" stroke="#F4FF47" stroke-width="7"/>
+<path d="m103 155-31-15 20 28" fill="white" stroke-width="4"/><ellipse cx="147" cy="155" rx="50" ry="30" fill="white" stroke-width="4"/><path d="M125 147q20-17 47 10l-30 12Z" fill="#CBD0D8" stroke-width="3"/>
+<path d="M171 154q-5-17-3-34c2-31 36-38 47-14 8 17-5 34-24 34l-3 18" fill="white" stroke-width="4"/><path d="m216 115 30 9-32 6" fill="#F4FF47" stroke-width="3"/><circle cx="202" cy="111" r="4" fill="#101522"/><path d="M193 101l13-2" stroke-width="3"/>
+<path d="m169 142 24 1-2 12-23-4Z" fill="#FF2DAA" stroke-width="3"/><path d="m172 150-15 29 17-2 8-25" fill="#FF2DAA" stroke-width="3"/>
+<path d="m171 92 44-1-8-13-28 1Z" fill="#F4FF47" stroke-width="3"/><path d="m183 78 1-15 18 1 2 14" fill="#F4FF47" stroke-width="3"/>
+<rect x="60" y="175" width="36" height="41" rx="5" fill="#FF2DAA" stroke-width="3"/><path d="M69 175v-9h18v9M70 185v19m15-19v19" fill="none" stroke-width="3"/></g></svg>
