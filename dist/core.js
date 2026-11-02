@@ -29,8 +29,14 @@ function validate(d){
    if(key==='sites'&&![e.mapX,e.mapY].every(n=>Number.isFinite(n)&&n>=0&&n<=100))fail('Invalid map position');
    if(key==='careers'&&(!Array.isArray(e.skills)||e.skills.length!==3||e.skills.some(v=>typeof v!=='string'||v.length>24)))fail('Three short skills required');
    if(key==='news'&&(!['archive','news'].includes(e.mode)||!validDate(e.published)))fail('Invalid news date or mode');
+   if(key==='news'&&e.feedExtract!==undefined&&typeof e.feedExtract!=='boolean')fail('Invalid feed extract flag');
   }
   if(!rows.some(e=>!e.from&&!e.until&&(key!=='news'||e.mode==='archive')))fail('Keep an undated fallback in '+key);
+ }
+ if(d.newsStatus){const n=d.newsStatus;
+  if(typeof n.lastSuccess!=='string'||!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/.test(n.lastSuccess)||isNaN(Date.parse(n.lastSuccess)))fail('Invalid source check time');
+  for(const k of ['sources','failedSources'])if(!Array.isArray(n[k])||n[k].length>10||n[k].some(v=>typeof v!=='string'||v.length>100))fail('Invalid source status');
+  if(n.latestPublication!==null&&!validDate(n.latestPublication))fail('Invalid latest publication');
  }
  if(!Array.isArray(d.schedule)||d.schedule.length>1000)fail('Invalid schedule');const seen=new Set();
  for(const row of d.schedule){if(!validDate(row.date)||seen.has(row.date))fail('Invalid or duplicate schedule date');seen.add(row.date);
@@ -38,14 +44,15 @@ function validate(d){
  }
  return d;
 }
-function selectDay(d,key){
- const n=dailyIndex(key,d.settings), schedule=d.schedule.find(e=>e.date===key)||{};
- function pick(category,scheduled){const available=d[category].filter(e=>active(e,key));return available.find(e=>e.id===scheduled)||available[modulo(n,available.length)];}
+function selectDay(d,key,cycle=0){
+ const n=dailyIndex(key,d.settings), turn=Number.isSafeInteger(cycle)?cycle:0, schedule=d.schedule.find(e=>e.date===key)||{};
+ function pick(category,scheduled,step=1){const available=d[category].filter(e=>active(e,key));const fixed=available.findIndex(e=>e.id===scheduled);return available[modulo((fixed>=0?fixed:n*step)+turn*step,available.length)];}
  const live=d.news.filter(e=>e.mode==='news'&&active(e,key)&&e.published<=key&&ordinal(key)-ordinal(e.published)<=d.settings.newsMaxAgeDays);
  const archived=d.news.filter(e=>e.mode==='archive'&&e.published<=key&&active(e,key));
- const newsPool=live.length?live:archived;
- const news=newsPool.find(e=>e.id===schedule.news)||newsPool[modulo(n,newsPool.length)]||null;
- return {welcome:pick('welcomes',schedule.welcome),tour:pick('sites',schedule.site),people:pick('people',schedule.person),careers:pick('careers',schedule.career),news};
+ const newsPool=live.length?live:archived, fixed=newsPool.findIndex(e=>e.id===schedule.news);
+ const news=newsPool[modulo((fixed>=0?fixed:n)+turn,newsPool.length)]||null;
+ const people=pick('people',schedule.person,2), peoplePool=d.people.filter(e=>active(e,key)), next=peoplePool[(peoplePool.indexOf(people)+1)%peoplePool.length];
+ return {welcome:pick('welcomes',schedule.welcome),tour:pick('sites',schedule.site),people,peoplePair:[people,...(next&&next!==people?[next]:[])],careers:pick('careers',schedule.career),news};
 }
 const api={DAY,order,validDate,dateKey,ordinal,dailyIndex,validate,selectDay};
 if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.Classics=api;
