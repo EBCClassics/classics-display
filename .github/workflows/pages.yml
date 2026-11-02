@@ -3,8 +3,10 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    - cron: '17 5 * * *'
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 concurrency:
@@ -21,8 +23,31 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+      - name: Check discovery sources
+        id: news
+        if: github.event_name != 'push'
+        continue-on-error: true
+        run: python3 scripts/update-news.py
+      - run: python3 scripts/credits.py
       - run: node scripts/prepare.cjs
       - run: node --test tests/*.test.cjs
+      - run: python3 -m unittest discover -s tests -p '*_test.py'
+      - name: Save changed discovery notices and records
+        if: github.event_name != 'push' && steps.news.outcome == 'success'
+        env:
+          WORKFLOW_RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          node scripts/record-news.cjs
+          if [ -f /tmp/classics-news-changed ]; then
+            git config user.name github-actions[bot]
+            git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+            git add dist/content.json dist/seed.js dist/credits.html dist/sw.js CHANGELOG.md CODEX_HANDOVER.md
+            git commit -m "Refresh dated Classical discovery notices"
+            git push origin HEAD:main
+          fi
+      - name: Report source failure
+        if: github.event_name != 'push' && steps.news.outcome == 'failure'
+        run: echo '::warning::Discovery source check failed. Publishing the last validated stories; original report dates and archive labels remain visible.'
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
