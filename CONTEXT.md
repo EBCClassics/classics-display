@@ -23,11 +23,13 @@ A silent, TV-readable Classics Department display for Eastbourne College, embedd
 
 ## Current behaviour
 
-Five screens loop in 80 seconds: welcome 10, tour 18, people 16, careers 16, news 20. Content is chosen by UK date. Weekends hold Friday's selection by default; school holidays are not modelled. Explicit schedules cover 2–6 November 2026; a deterministic content-bank rotation continues afterwards.
+Five screens loop in 90 seconds: welcome 8, tour 20, people 24, careers 18, news 20. Landmarks, two-person graduate profiles, careers and discoveries change on successive loops within the same day. UK school dates vary the starting offset; weekends hold Friday’s offset, while loop rotation continues. Explicit opening-landmark fixtures cover 2–6 November 2026. The loop counter starts from the current time on page load; a `cycle` query parameter fixes it for tests.
 
-The five seeded destinations are Athens, Pompeii, Delphi, Rome and Ephesus. Profiles cover Mary Beard and Natalie Haynes. Careers cover law, journalism, museums and heritage, publishing and technology, described as possible routes with transferable skills and additional entry/training requirements.
+The bank contains 15 landmarks, 10 verified university Classics graduates and 14 career routes. Two graduates appear per people screen. Course connections are explicit and sourced; the category means successful people who studied Classics at university, not only professional classicists. The complete Parthenon is visible in a replacement wide photograph; landmark pictures use `contain`, with Gulliver’s speech below. The welcome frame no longer crosses its sticker, and the “working draft” badge is removed.
 
-News currently uses two sourced archive examples: the Pompeii blue-room report of 3 June 2024 and the flatbread-fresco discussion in the September/October 2023 issue of Archaeology. The screen labels them as archive examples, not live news. Location photographs are identified as such. There is no connected news feed, daily research job or automatic content-writing service. Date-based selection and automatic publication are separate from creating new content.
+Philip authorised an automatic daily discovery-source check on 2 November 2026. The existing GitHub workflow checks Archaeology magazine’s AIA RSS feed at 05:17 UTC daily, using bounded, attributed source extracts rather than generated reporting. Greek/Roman relevance, source host, report date and size are checked. Current reports are at most 30 days old; retained notices are merged with manually checked official Pompeii reports. When no current report remains, labelled archive material is used. Feed notices use an original labelled illustration; location photographs are identified. Scheduled source failures preserve valid stories and produce a workflow warning. The Mac can be off; the player needs connectivity for updates. GitHub scheduling can be delayed.
+
+Changed notices are saved to `main` with generated files and a brief changelog/handover record after both test suites pass. The same workflow deploys them; token-originated commits do not need a second workflow trigger. No extra host, paid service, account integration or AI-writing service is required.
 
 `content.json` is checked at startup and every 15 minutes. Invalid or unavailable data keeps the last valid content; the bundled seed is another fallback. Local image failure produces an identified illustration. Offline reload is supported after a successful cache installation where the player permits persistent service workers; first-ever offline loading is not possible.
 
@@ -36,9 +38,11 @@ Testing controls are hidden by default. `?controls=1` exposes screen/date/speed/
 ## Verification and acceptance
 
 - Initial GitHub deployment succeeded on 2 November 2026, from commit `8e2f3d0d3c4d47a7bf5a9d21539785f4b9b49394`: https://github.com/EBCClassics/classics-display/actions/runs/41533040254.
-- All 12 source/content checks passed in GitHub and locally. Desktop browser checks included the first week's 25 layouts at 1080p, 720p/portrait scaling, automatic advancement, controls, broken JSON, a missing picture and a warm-cache reload with the local host stopped.
+- The initial 12 source/content checks passed in GitHub and locally. Desktop browser checks included the first week's 25 layouts at 1080p, 720p/portrait scaling, automatic advancement, controls, broken JSON, a missing picture and a warm-cache reload with the local host stopped.
 - The public GitHub Pages site loaded without sign-in; its fonts, site photograph and Gulliver loaded and its rotation advanced.
 - Philip reported on 2 November 2026: “I have tested on Planet eStream and everything seems to work fine.” Record basic eStream operation as a user-reported pass. The particular player engine, individual acceptance steps, viewing-distance assessment, long unattended run and offline restart were not separately reported.
+
+The expanded release passes 16 application checks and five feed-safety checks locally. Its deployment and live verification are recorded with the completed release; do not infer those from local checks.
 
 ## Continuity
 

@@ -1,5 +1,13 @@
 # Changelog
 
+## 2 November 2026: wider rotation, clearer landmarks and recent discoveries
+
+- Fixed the welcome sticker/frame overlap, removed the public “working draft” badge and replaced the close Parthenon photograph with a wide view. Landmark photos are shown in full, with Gulliver’s speech beneath.
+- Expanded to 15 landmarks, 10 verified university Classics graduates (two per screen), and 14 career routes. Content advances each 90-second loop within the day; time-seeded starts vary short player visits. Retained five silent screens, neon branding and 1080p-first scaling.
+- Added two October 2026 official Pompeii reports and short AIA discovery-feed notices. Philip selected an automatic daily source check: the existing GitHub workflow now checks at 05:17 UTC, validates dates/hosts, retains notices for 30 days, records changed content and deploys. No generated reporting; images and extracts are labelled. Failed source checks preserve valid content.
+- Updated image credits, generated seed/offline assets, publishing/testing instructions and continuity records. Cache version is consistently v2.
+- Verification: 16 application checks and five feed-safety checks pass locally. Browser checks cover all 15 landmark, five graduate-pair, 14 career and five recent-news layouts at 1920 × 1080; images load and sampled text bounds fit. Publication/live results will be recorded after the workflow completes; this local result alone is not a deployment claim.
+
 ## 2 November 2026: eStream test and project continuity
 
 - Philip reported that he tested the display in Planet eStream and everything seemed to work fine. Updated acceptance wording to a user-reported basic-operation pass, without inventing a detailed player, unattended-run or offline-restart test record.

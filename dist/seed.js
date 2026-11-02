@@ -7,12 +7,12 @@ window.SEEDED_CONTENT = {
     "timezone": "Europe/London",
     "anchorDate": "2026-11-02",
     "schoolDaysOnly": true,
-    "newsMaxAgeDays": 14,
+    "newsMaxAgeDays": 30,
     "durations": {
-      "welcome": 10,
-      "tour": 18,
-      "people": 16,
-      "careers": 16,
+      "welcome": 8,
+      "tour": 20,
+      "people": 24,
+      "careers": 18,
       "news": 20
     }
   },
@@ -23,7 +23,7 @@ window.SEEDED_CONTENT = {
       "greeting": "Salvete! Χαίρετε!",
       "body": "Welcome to the Classics Department",
       "question": "Who gets to tell the story of the past?",
-      "image": "assets/athens.jpg",
+      "image": "assets/athens-wide.jpg",
       "imageAlt": "The Parthenon on the Acropolis in Athens",
       "caption": "The Parthenon · Athens, Greece"
     },
@@ -48,8 +48,8 @@ window.SEEDED_CONTENT = {
       "body": "High above Athens, the Parthenon was built for Athena. Its sculptures and columns still shape how we imagine ancient Greece.",
       "question": "What might a city's buildings say about its values?",
       "gullLine": "A temple for Athena. An excellent lookout for a gull.",
-      "image": "assets/athens.jpg",
-      "imageAlt": "The Parthenon seen from the south",
+      "image": "assets/athens-wide.jpg",
+      "imageAlt": "A wide view of the Parthenon on the Acropolis",
       "caption": "The Parthenon · Acropolis, Athens",
       "sourceLabel": "UNESCO · Acropolis, Athens",
       "sourceUrl": "https://whc.unesco.org/en/list/404/",
@@ -123,34 +123,308 @@ window.SEEDED_CONTENT = {
       "sourceUrl": "https://whc.unesco.org/en/list/1018/",
       "mapX": 89,
       "mapY": 70
+    },
+    {
+      "id": "bath",
+      "title": "Bath",
+      "location": "Britain",
+      "landmark": "The Roman Baths",
+      "period": "A Roman spa town",
+      "body": "Hot springs made Bath a place for bathing, healing and worship. The surviving baths reveal how Roman engineering shaped daily life.",
+      "question": "What would you include in a building designed for everyone?",
+      "gullLine": "A heated pool. I shall leave the swimming to the Romans.",
+      "image": "assets/bath.jpg",
+      "imageAlt": "The Great Bath · Bath, England",
+      "caption": "The Great Bath · Bath, England",
+      "sourceUrl": "https://whc.unesco.org/en/list/428/",
+      "sourceLabel": "UNESCO · City of Bath",
+      "mapX": 50,
+      "mapY": 50
+    },
+    {
+      "id": "hadrians-wall",
+      "title": "Hadrian’s Wall",
+      "location": "Britain",
+      "landmark": "At the edge of an empire",
+      "period": "Begun around AD 122",
+      "body": "Hadrian’s Wall crossed northern Britain, linking forts and settlements. Its remains help us explore how Rome organised and controlled a frontier.",
+      "question": "Does a border divide people, connect them, or both?",
+      "gullLine": "A very long wall. Fortunately, I can fly over it.",
+      "image": "assets/hadrians-wall.jpg",
+      "imageAlt": "Hadrian’s Wall · northern England",
+      "caption": "Hadrian’s Wall · northern England",
+      "sourceUrl": "https://whc.unesco.org/en/list/430/",
+      "sourceLabel": "UNESCO · Frontiers of the Roman Empire",
+      "mapX": 50,
+      "mapY": 50
+    },
+    {
+      "id": "pont-du-gard",
+      "title": "Pont du Gard",
+      "location": "France",
+      "landmark": "Water across a valley",
+      "period": "A Roman aqueduct bridge",
+      "body": "Three tiers of Roman arches carried an aqueduct across the river. Bringing water to a city demanded careful planning as well as impressive construction.",
+      "question": "Which everyday service would your town struggle without?",
+      "gullLine": "All that engineering, and not a single drinking fountain for gulls.",
+      "image": "assets/pont-du-gard.jpg",
+      "imageAlt": "Pont du Gard · southern France",
+      "caption": "Pont du Gard · southern France",
+      "sourceUrl": "https://whc.unesco.org/en/list/344/",
+      "sourceLabel": "UNESCO · Pont du Gard",
+      "mapX": 50,
+      "mapY": 50
+    },
+    {
+      "id": "paestum",
+      "title": "Paestum",
+      "location": "Italy",
+      "landmark": "Greek temples in southern Italy",
+      "period": "A meeting of ancient cultures",
+      "body": "The temples at Paestum are a reminder that the Greek world stretched beyond modern Greece. This landscape brought different Mediterranean cultures into contact.",
+      "question": "How do buildings preserve the identity of a community?",
+      "gullLine": "These columns have been standing much longer than I have been flying.",
+      "image": "assets/paestum.jpg",
+      "imageAlt": "Greek temples · Paestum, Italy",
+      "caption": "Greek temples · Paestum, Italy",
+      "sourceUrl": "https://whc.unesco.org/en/list/842/",
+      "sourceLabel": "UNESCO · Paestum and Velia",
+      "mapX": 50,
+      "mapY": 50
+    },
+    {
+      "id": "olympia",
+      "title": "Olympia",
+      "location": "Greece",
+      "landmark": "The sanctuary of Zeus",
+      "period": "Home of the ancient Olympic Games",
+      "body": "Temples and sporting spaces stood together at Olympia. The ancient Olympic Games belonged to a religious festival, bringing competitors to the sanctuary of Zeus.",
+      "question": "What do modern sporting events share with ancient festivals?",
+      "gullLine": "I have entered the flying event. Apparently, it is not on the programme.",
+      "image": "assets/olympia.jpg",
+      "imageAlt": "The sanctuary · Olympia, Greece",
+      "caption": "The sanctuary · Olympia, Greece",
+      "sourceUrl": "https://whc.unesco.org/en/list/517/",
+      "sourceLabel": "UNESCO · Archaeological Site of Olympia",
+      "mapX": 50,
+      "mapY": 50
+    },
+    {
+      "id": "knossos",
+      "title": "Knossos",
+      "location": "Crete, Greece",
+      "landmark": "A Minoan palace",
+      "period": "Bronze Age Crete",
+      "body": "Knossos was a major palace centre long before the Parthenon was built. Its rooms, courts and storerooms offer evidence of a complex Bronze Age society.",
+      "question": "What can the layout of a palace tell us about power?",
+      "gullLine": "So many rooms. I should have brought a ball of string.",
+      "image": "assets/knossos.jpg",
+      "imageAlt": "Columns and remains at the palace of Knossos",
+      "caption": "Palace remains · Knossos, Crete",
+      "sourceUrl": "https://www.heraklion.gr/en/visitor/knossos/knossos.html",
+      "sourceLabel": "Municipality of Heraklion · Knossos",
+      "mapX": 50,
+      "mapY": 50
+    },
+    {
+      "id": "jerash",
+      "title": "Jerash",
+      "location": "Jordan",
+      "landmark": "A Roman city in the east",
+      "period": "Ancient Gerasa",
+      "body": "Colonnaded streets, theatres and public spaces survive at Jerash. This city shows how Roman urban life developed far beyond Italy.",
+      "question": "What makes a collection of buildings feel like a city?",
+      "gullLine": "A whole plaza of columns. Plenty of room for a dramatic entrance.",
+      "image": "assets/jerash.jpg",
+      "imageAlt": "The Oval Plaza · Jerash, Jordan",
+      "caption": "The Oval Plaza · Jerash, Jordan",
+      "sourceUrl": "https://jerash.visitjordan.com/en",
+      "sourceLabel": "Jordan Tourism Board · Jerash",
+      "mapX": 50,
+      "mapY": 50
+    },
+    {
+      "id": "segovia",
+      "title": "Segovia",
+      "location": "Spain",
+      "landmark": "An aqueduct above the city",
+      "period": "Roman engineering",
+      "body": "Two tiers of stone arches carried water into Segovia. The aqueduct still shapes the city, showing how practical infrastructure can become a landmark.",
+      "question": "When does a useful structure become a work of art?",
+      "gullLine": "An excellent row of perches. The water supply was a useful extra.",
+      "image": "assets/segovia.jpg",
+      "imageAlt": "Roman aqueduct · Segovia, Spain",
+      "caption": "Roman aqueduct · Segovia, Spain",
+      "sourceUrl": "https://whc.unesco.org/en/list/311/",
+      "sourceLabel": "UNESCO · Segovia and its Aqueduct",
+      "mapX": 50,
+      "mapY": 50
+    },
+    {
+      "id": "orange",
+      "title": "Orange",
+      "location": "France",
+      "landmark": "The Roman theatre",
+      "period": "A stage built to last",
+      "body": "The theatre at Orange preserves a remarkable Roman stage wall. Its design makes us think about performance, audiences and the place of entertainment in city life.",
+      "question": "How does the space change the way we experience a performance?",
+      "gullLine": "I have tested the acoustics. Everyone heard me.",
+      "image": "assets/orange.jpg",
+      "imageAlt": "The Roman theatre · Orange, France",
+      "caption": "The Roman theatre · Orange, France",
+      "sourceUrl": "https://whc.unesco.org/en/list/163/",
+      "sourceLabel": "UNESCO · Roman Theatre of Orange",
+      "mapX": 50,
+      "mapY": 50
+    },
+    {
+      "id": "leptis-magna",
+      "title": "Leptis Magna",
+      "location": "Libya",
+      "landmark": "A great North African city",
+      "period": "A Mediterranean Roman city",
+      "body": "The streets, theatre and public buildings of Leptis Magna reveal a major Roman city in North Africa. Rome’s history reaches across the Mediterranean.",
+      "question": "How might trade change the fortunes of a city?",
+      "gullLine": "A theatre with a sea view. I approve of the location.",
+      "image": "assets/leptis-magna.jpg",
+      "imageAlt": "The theatre · Leptis Magna, Libya",
+      "caption": "The theatre · Leptis Magna, Libya",
+      "sourceUrl": "https://whc.unesco.org/en/list/183/",
+      "sourceLabel": "UNESCO · Archaeological Site of Leptis Magna",
+      "mapX": 50,
+      "mapY": 50
     }
   ],
   "people": [
     {
-      "id": "mary-beard",
-      "title": "Mary Beard",
-      "role": "Classicist · historian · broadcaster",
-      "body": "Mary Beard explores ancient Rome in books and broadcasts. Her work asks how power, public life and ordinary experience fitted together.",
-      "connection": "Bringing the ancient world into public conversation.",
-      "question": "Whose voices survive from the Roman world?",
-      "image": "assets/mary.jpg",
-      "imageAlt": "Mary Beard filming in Rome",
-      "caption": "Mary Beard · filming in Rome",
-      "sourceLabel": "University of Cambridge · Mary Beard",
-      "sourceUrl": "https://www.cam.ac.uk/women-at-cambridge/profiles/mary-beard"
+      "id": "tom-hiddleston",
+      "title": "Tom Hiddleston",
+      "role": "Actor",
+      "connection": "Classics · Pembroke College, Cambridge",
+      "body": "Known for playing Loki in the Marvel films and for leading roles on stage and television. He studied Classics before training at RADA.",
+      "question": "Where might your interest in the ancient world take you?",
+      "image": "assets/tom.jpg",
+      "imageAlt": "Portrait of Tom Hiddleston",
+      "caption": "Tom Hiddleston",
+      "sourceUrl": "https://officiallondontheatre.com/news/tom-hiddleston-102061/",
+      "sourceLabel": "Official London Theatre · interview"
+    },
+    {
+      "id": "chris-martin",
+      "title": "Chris Martin",
+      "role": "Musician · Coldplay",
+      "connection": "Greek and Latin · UCL",
+      "body": "Coldplay’s singer and co-founder studied Greek and Latin at university, where the band’s members met.",
+      "question": "Where might your interest in the ancient world take you?",
+      "image": "assets/chris.jpg",
+      "imageAlt": "Portrait of Chris Martin",
+      "caption": "Chris Martin",
+      "sourceUrl": "https://www.ucl.ac.uk/about/our-people/renowned-alumni",
+      "sourceLabel": "UCL · Renowned alumni"
+    },
+    {
+      "id": "anthony-leggett",
+      "title": "Anthony Leggett",
+      "role": "Nobel Prize-winning physicist",
+      "connection": "Classics · Balliol College, Oxford",
+      "body": "After his Classics degree he took a second degree in physics. He shared the 2003 Nobel Prize in Physics for work on superconductors and superfluids.",
+      "question": "Where might your interest in the ancient world take you?",
+      "image": "assets/leggett.jpg",
+      "imageAlt": "Portrait of Anthony Leggett",
+      "caption": "Anthony Leggett",
+      "sourceUrl": "https://www.merton.ox.ac.uk/news/sir-anthony-james-leggett",
+      "sourceLabel": "Merton College · Anthony Leggett"
+    },
+    {
+      "id": "madeline-miller",
+      "title": "Madeline Miller",
+      "role": "Bestselling novelist",
+      "connection": "BA and MA in Classics · Brown University",
+      "body": "Author of The Song of Achilles and Circe. Her first novel won the Orange Prize for Fiction, bringing ancient stories to a new readership.",
+      "question": "Where might your interest in the ancient world take you?",
+      "image": "assets/miller.jpg",
+      "imageAlt": "Portrait of Madeline Miller",
+      "caption": "Madeline Miller",
+      "sourceUrl": "https://complit.brown.edu/news-events/past-events",
+      "sourceLabel": "Brown University · Madeline Miller"
+    },
+    {
+      "id": "oscar-wilde",
+      "title": "Oscar Wilde",
+      "role": "Playwright · novelist",
+      "connection": "Classics · Trinity College Dublin and Oxford",
+      "body": "Author of The Importance of Being Earnest and The Picture of Dorian Gray. His classical studies preceded a celebrated literary career.",
+      "question": "Where might your interest in the ancient world take you?",
+      "image": "assets/oscar.jpg",
+      "imageAlt": "Portrait of Oscar Wilde",
+      "caption": "Oscar Wilde",
+      "sourceUrl": "https://www.alumni.ox.ac.uk/node/1225546",
+      "sourceLabel": "Oxford Alumni · Oscar Wilde"
+    },
+    {
+      "id": "cs-lewis",
+      "title": "C. S. Lewis",
+      "role": "Author · literary scholar",
+      "connection": "Classics · University College, Oxford",
+      "body": "The author of The Chronicles of Narnia gained a first in Classics, then another in English, before his career as a writer and scholar.",
+      "question": "Where might your interest in the ancient world take you?",
+      "image": "assets/lewis.jpg",
+      "imageAlt": "Portrait of C. S. Lewis",
+      "caption": "C. S. Lewis",
+      "sourceUrl": "https://www.univ.ox.ac.uk/news/c-s-lewis-univ/",
+      "sourceLabel": "University College, Oxford · C. S. Lewis"
+    },
+    {
+      "id": "charlotte-higgins",
+      "title": "Charlotte Higgins",
+      "role": "Journalist · author",
+      "connection": "Classics · Balliol College, Oxford",
+      "body": "The Guardian’s chief culture writer and an award-winning author. Her work ranges from Greek mythology to reporting on art and culture.",
+      "question": "Where might your interest in the ancient world take you?",
+      "image": "assets/charlotte.svg",
+      "imageAlt": "CH: original name graphic for Charlotte Higgins",
+      "caption": "Charlotte Higgins · name graphic",
+      "sourceUrl": "https://www.ox.ac.uk/alumni/articles/remember-now",
+      "sourceLabel": "Oxford University · Charlotte Higgins"
+    },
+    {
+      "id": "edith-hall",
+      "title": "Edith Hall",
+      "role": "Scholar · author · broadcaster",
+      "connection": "Classics and Modern Languages · Oxford",
+      "body": "An award-winning scholar of Greek literature who also advises theatre companies and campaigns to widen access to classical subjects.",
+      "question": "Where might your interest in the ancient world take you?",
+      "image": "assets/edith.jpg",
+      "imageAlt": "Portrait of Edith Hall",
+      "caption": "Edith Hall",
+      "sourceUrl": "https://edithhall.co.uk/wp-content/uploads/2026/02/CV-2026.pdf",
+      "sourceLabel": "Edith Hall · academic CV"
     },
     {
       "id": "natalie-haynes",
       "title": "Natalie Haynes",
       "role": "Classicist · novelist · broadcaster",
-      "body": "A Classics graduate of Christ's College, Cambridge, Natalie Haynes retells ancient myths and brings the subject to radio audiences.",
-      "connection": "Looking again at familiar stories, especially through women's lives.",
+      "body": "Novelist and broadcaster whose books and radio programmes bring Greek myths and their characters to new audiences.",
+      "connection": "Classics · Christ’s College, Cambridge",
       "question": "How does a story change when someone else tells it?",
       "image": "assets/natalie.jpg",
       "imageAlt": "Writer and broadcaster Natalie Haynes",
       "caption": "Natalie Haynes · writer and broadcaster",
       "sourceLabel": "Cambridge Classics newsletter · autumn 2023",
       "sourceUrl": "https://www.classics.cam.ac.uk/sites/default/files/media/newsletter-2023.pdf"
+    },
+    {
+      "id": "mary-beard",
+      "title": "Mary Beard",
+      "role": "Classicist · historian · broadcaster",
+      "body": "Historian, bestselling author and television presenter whose work has brought ancient Rome to a wide public.",
+      "connection": "Classics · Newnham College, Cambridge",
+      "question": "Whose voices survive from the Roman world?",
+      "image": "assets/mary.jpg",
+      "imageAlt": "Mary Beard filming in Rome",
+      "caption": "Mary Beard · filming in Rome",
+      "sourceLabel": "University of Cambridge · Mary Beard",
+      "sourceUrl": "https://www.cam.ac.uk/women-at-cambridge/profiles/mary-beard"
     }
   ],
   "careers": [
@@ -218,6 +492,123 @@ window.SEEDED_CONTENT = {
       ],
       "challenge": "What small rule might explain a complicated pattern?",
       "note": "A possible route; technical roles need additional technical skills."
+    },
+    {
+      "id": "diplomacy",
+      "title": "Diplomacy",
+      "lead": "Understand others.\nFind common ground.",
+      "body": "Studying societies with different values asks you to listen carefully and question assumptions. Those habits matter when people negotiate across cultures.",
+      "skills": [
+        "Listening",
+        "Languages",
+        "Judgement"
+      ],
+      "challenge": "Two groups want different things. Where could an agreement begin?",
+      "note": "A possible route; relevant qualifications, experience or specialist training may be needed."
+    },
+    {
+      "id": "civil-service",
+      "title": "Public policy",
+      "lead": "Test the evidence.\nConsider the effects.",
+      "body": "Ancient history asks how decisions affect communities. Policy work also involves weighing evidence, understanding institutions and explaining choices.",
+      "skills": [
+        "Evidence",
+        "Analysis",
+        "Clear advice"
+      ],
+      "challenge": "How would you judge whether a new rule had worked?",
+      "note": "A possible route; relevant qualifications, experience or specialist training may be needed."
+    },
+    {
+      "id": "finance",
+      "title": "Finance",
+      "lead": "Read the detail.\nAssess the risk.",
+      "body": "A difficult passage demands accuracy and patience. In finance, combine these habits with the numerical knowledge and professional training the role requires.",
+      "skills": [
+        "Accuracy",
+        "Analysis",
+        "Judgement"
+      ],
+      "challenge": "What would you need to know before trusting a confident prediction?",
+      "note": "A possible route; relevant qualifications, experience or specialist training may be needed."
+    },
+    {
+      "id": "consulting",
+      "title": "Business & consulting",
+      "lead": "Ask better questions.\nMake a clear case.",
+      "body": "Comparing interpretations helps you identify a problem, test an explanation and present a reasoned recommendation. Businesses need these habits too.",
+      "skills": [
+        "Problem-solving",
+        "Research",
+        "Presentation"
+      ],
+      "challenge": "A plan sounds convincing. What evidence would make you question it?",
+      "note": "A possible route; relevant qualifications, experience or specialist training may be needed."
+    },
+    {
+      "id": "teaching",
+      "title": "Teaching",
+      "lead": "Make it clear.\nHelp others think.",
+      "body": "Explaining a translation or a historical argument means noticing where understanding breaks down. Teachers use that attention to help pupils make progress.",
+      "skills": [
+        "Explanation",
+        "Listening",
+        "Adaptability"
+      ],
+      "challenge": "How would you explain an unfamiliar idea to a younger pupil?",
+      "note": "A possible route; relevant qualifications, experience or specialist training may be needed."
+    },
+    {
+      "id": "film-theatre",
+      "title": "Film & theatre",
+      "lead": "Read the character.\nImagine the scene.",
+      "body": "Greek and Roman drama asks how words, motives and performance work together. These questions can lead into acting, directing, writing and production.",
+      "skills": [
+        "Interpretation",
+        "Storytelling",
+        "Collaboration"
+      ],
+      "challenge": "How could two actors make the same line mean different things?",
+      "note": "A possible route; relevant qualifications, experience or specialist training may be needed."
+    },
+    {
+      "id": "marketing",
+      "title": "Marketing",
+      "lead": "Know the audience.\nChoose the message.",
+      "body": "Ancient speeches show how speakers try to persuade. Examining their methods helps you think critically about communication, audience and trust.",
+      "skills": [
+        "Audience",
+        "Writing",
+        "Critical thinking"
+      ],
+      "challenge": "What makes a persuasive message fair as well as effective?",
+      "note": "A possible route; relevant qualifications, experience or specialist training may be needed."
+    },
+    {
+      "id": "archaeology",
+      "title": "Archaeology",
+      "lead": "Find the trace.\nTest the explanation.",
+      "body": "Objects, inscriptions and buildings offer different kinds of evidence. Archaeologists combine them to investigate the past and explain what remains uncertain.",
+      "skills": [
+        "Observation",
+        "Research",
+        "Interpretation"
+      ],
+      "challenge": "What could a broken object tell you that a written account cannot?",
+      "note": "A possible route; relevant qualifications, experience or specialist training may be needed."
+    },
+    {
+      "id": "translation",
+      "title": "Translation",
+      "lead": "Hear the voice.\nCarry the meaning.",
+      "body": "Every translation involves choices about tone, context and audience. Professional language work combines these habits with advanced knowledge of relevant languages.",
+      "skills": [
+        "Language",
+        "Precision",
+        "Cultural awareness"
+      ],
+      "challenge": "When is a word-for-word translation less accurate?",
+      "note": "A possible route; relevant qualifications, experience or specialist training may be needed."
     }
   ],
   "news": [
@@ -248,43 +639,61 @@ window.SEEDED_CONTENT = {
       "caption": "Location photograph: Pompeii's forum; not the wall painting",
       "sourceLabel": "Archaeology magazine · Archaeological Institute of America",
       "sourceUrl": "https://archaeology.org/issues/september-october-2023/digs-discoveries/digs-discoveries-italy-pompeii-pizza/"
+    },
+    {
+      "id": "pompeii-cupboard-2026",
+      "mode": "news",
+      "title": "Inside a Roman\nhousehold cupboard",
+      "published": "2026-10-29",
+      "publishedLabel": "29 October 2026",
+      "body": "A cupboard excavated in Pompeii contained personal-care objects, vessels and small amulets. The finds offer a detailed glimpse of domestic life before the eruption of AD 79.",
+      "why": "Small household objects can reveal routines and beliefs that grand monuments leave out.",
+      "image": "assets/pompeii.jpg",
+      "imageAlt": "Location photograph of Pompeii, not the reported finds",
+      "caption": "Location photograph: Pompeii’s forum; not the discovery",
+      "sourceLabel": "Archaeological Park of Pompeii · excavation journal",
+      "sourceUrl": "https://pompeiisites.org/e-journal-degli-scavi-di-pompei/lo-scavo-di-una-domus-nellinsula-ix-11-il-rinvenimento-di-un-armarium-con-crepundia/"
+    },
+    {
+      "id": "villa-survey-2026",
+      "mode": "news",
+      "title": "Looking beneath\na buried villa",
+      "published": "2026-10-16",
+      "publishedLabel": "16 October 2026",
+      "body": "A geophysical survey at Pompeii’s so-called Villa of Cicero detected traces consistent with buried structures and earlier excavations. The results are preliminary.",
+      "why": "Archaeologists can investigate a buried site without immediately digging it up.",
+      "image": "assets/pompeii.jpg",
+      "imageAlt": "Location photograph of Pompeii, not the reported finds",
+      "caption": "Location photograph: Pompeii’s forum; not the discovery",
+      "sourceLabel": "Archaeological Park of Pompeii · excavation journal",
+      "sourceUrl": "https://pompeiisites.org/e-journal-degli-scavi-di-pompei/preliminary-results-of-an-integrated-geophysical-survey-at-the-villa-of-cicero/"
     }
   ],
   "schedule": [
     {
       "date": "2026-11-02",
       "site": "athens",
-      "person": "mary-beard",
-      "career": "law",
-      "news": "blue-room"
+      "career": "law"
     },
     {
       "date": "2026-11-03",
       "site": "pompeii",
-      "person": "natalie-haynes",
-      "career": "journalism",
-      "news": "flatbread"
+      "career": "journalism"
     },
     {
       "date": "2026-11-04",
       "site": "delphi",
-      "person": "mary-beard",
-      "career": "heritage",
-      "news": "blue-room"
+      "career": "heritage"
     },
     {
       "date": "2026-11-05",
       "site": "rome",
-      "person": "natalie-haynes",
-      "career": "publishing",
-      "news": "flatbread"
+      "career": "publishing"
     },
     {
       "date": "2026-11-06",
       "site": "ephesus",
-      "person": "mary-beard",
-      "career": "technology",
-      "news": "blue-room"
+      "career": "technology"
     }
   ]
 };

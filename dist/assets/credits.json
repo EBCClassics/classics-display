@@ -61,5 +61,185 @@
     "artist": "Tristan Ferne",
     "licence": "CC BY 2.0",
     "licenceUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  {
+    "title": "File:The Parthenon in Athens.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/da/The_Parthenon_in_Athens.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "page": "https://commons.wikimedia.org/wiki/File:The_Parthenon_in_Athens.jpg",
+    "artist": "Steve Swayne",
+    "licence": "CC BY 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+    "file": "assets/athens-wide.jpg",
+    "adaptation": "Displayed at reduced size; portraits and welcome photographs may be cropped by the layout. Landmark photographs are shown in full."
+  },
+  {
+    "title": "File:Roman Baths in Bath Spa, England - July 2006.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Roman_Baths_in_Bath_Spa%2C_England_-_July_2006.jpg/1920px-Roman_Baths_in_Bath_Spa%2C_England_-_July_2006.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Roman_Baths_in_Bath_Spa,_England_-_July_2006.jpg",
+    "artist": "Diliff",
+    "licence": "CC BY 2.5",
+    "licenceUrl": "https://creativecommons.org/licenses/by/2.5",
+    "file": "assets/bath.jpg",
+    "adaptation": "Displayed at reduced size; portraits and welcome photographs may be cropped by the layout. Landmark photographs are shown in full."
+  },
+  {
+    "title": "File:Hadrian's Wall on Housesteads Crags - 06.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Hadrian%27s_Wall_on_Housesteads_Crags_-_06.jpg/1280px-Hadrian%27s_Wall_on_Housesteads_Crags_-_06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Hadrian%27s_Wall_on_Housesteads_Crags_-_06.jpg",
+    "artist": "Benjamin Smith",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "assets/hadrians-wall.jpg",
+    "adaptation": "Displayed at reduced size; portraits and welcome photographs may be cropped by the layout. Landmark photographs are shown in full."
+  },
+  {
+    "title": "File:Pont du Gard BLS.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Pont_du_Gard_BLS.jpg/1920px-Pont_du_Gard_BLS.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Pont_du_Gard_BLS.jpg",
+    "artist": "Benh LIEU SONG (Flickr)",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "file": "assets/pont-du-gard.jpg",
+    "adaptation": "Displayed at reduced size; portraits and welcome photographs may be cropped by the layout. Landmark photographs are shown in full."
+  },
+  {
+    "title": "File:Veduta di Paestum 2010.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Veduta_di_Paestum_2010.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "page": "https://commons.wikimedia.org/wiki/File:Veduta_di_Paestum_2010.jpg",
+    "artist": "Oliver-Bonjoch",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "file": "assets/paestum.jpg",
+    "adaptation": "Displayed at reduced size; portraits and welcome photographs may be cropped by the layout. Landmark photographs are shown in full."
+  },
+  {
+    "title": "File:Greece-0507 (2215927244).jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Greece-0507_%282215927244%29.jpg/1280px-Greece-0507_%282215927244%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Greece-0507_(2215927244).jpg",
+    "artist": "Dennis G. Jarvis",
+    "licence": "CC BY-SA 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "file": "assets/olympia.jpg",
+    "adaptation": "Displayed at reduced size; portraits and welcome photographs may be cropped by the layout. Landmark photographs are shown in full."
+  },
+  {
+    "title": "File:Jerash Oval Plaza 003.JPG",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Jerash_Oval_Plaza_003.JPG/1280px-Jerash_Oval_Plaza_003.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Jerash_Oval_Plaza_003.JPG",
+    "artist": "لا روسا",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "file": "assets/jerash.jpg",
+    "adaptation": "Displayed at reduced size; portraits and welcome photographs may be cropped by the layout. Landmark photographs are shown in full."
+  },
+  {
+    "title": "File:Aqueduct of Segovia 08.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Aqueduct_of_Segovia_08.jpg/1280px-Aqueduct_of_Segovia_08.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Aqueduct_of_Segovia_08.jpg",
+    "artist": "Bernard Gagnon",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "file": "assets/segovia.jpg",
+    "adaptation": "Displayed at reduced size; portraits and welcome photographs may be cropped by the layout. Landmark photographs are shown in full."
+  },
+  {
+    "title": "File:Roman Theatre in Orange 2008.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Roman_Theatre_in_Orange_2008.jpg/1280px-Roman_Theatre_in_Orange_2008.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Roman_Theatre_in_Orange_2008.jpg",
+    "artist": "Benh LIEU SONG (Flickr)",
+    "licence": "CC BY-SA 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "file": "assets/orange.jpg",
+    "adaptation": "Displayed at reduced size; portraits and welcome photographs may be cropped by the layout. Landmark photographs are shown in full."
+  },
+  {
+    "title": "File:Theatre Leptis Magna.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/05/Theatre_Leptis_Magna.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "page": "https://commons.wikimedia.org/wiki/File:Theatre_Leptis_Magna.jpg",
+    "artist": "JOEY Libya",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "assets/leptis-magna.jpg",
+    "adaptation": "Displayed at reduced size; portraits and welcome photographs may be cropped by the layout. Landmark photographs are shown in full."
+  },
+  {
+    "title": "File:Tom Hiddleston at the 2024 Toronto International Film Festival (cropped).jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Tom_Hiddleston_at_the_2024_Toronto_International_Film_Festival_%28cropped%29.jpg/1280px-Tom_Hiddleston_at_the_2024_Toronto_International_Film_Festival_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Tom_Hiddleston_at_the_2024_Toronto_International_Film_Festival_(cropped).jpg",
+    "artist": "Kevin Payravi",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "assets/tom.jpg",
+    "adaptation": "Displayed at reduced size; portraits and welcome photographs may be cropped by the layout. Landmark photographs are shown in full."
+  },
+  {
+    "title": "File:ChrisMartinManch030623 (cropped).jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/ChrisMartinManch030623_%28cropped%29.jpg/960px-ChrisMartinManch030623_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:ChrisMartinManch030623_(cropped).jpg",
+    "artist": "Raph_PH",
+    "licence": "CC BY 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+    "file": "assets/chris.jpg",
+    "adaptation": "Displayed at reduced size; portraits and welcome photographs may be cropped by the layout. Landmark photographs are shown in full."
+  },
+  {
+    "title": "File:Oscar Wilde by Napoleon Sarony. Three-quarter-length photograph, seated.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Oscar_Wilde_by_Napoleon_Sarony._Three-quarter-length_photograph%2C_seated.jpg/1280px-Oscar_Wilde_by_Napoleon_Sarony._Three-quarter-length_photograph%2C_seated.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Oscar_Wilde_by_Napoleon_Sarony._Three-quarter-length_photograph,_seated.jpg",
+    "artist": "Napoleon Sarony / Adam Cuerden",
+    "licence": "Public domain",
+    "licenceUrl": "",
+    "file": "assets/oscar.jpg",
+    "adaptation": "Displayed at reduced size; portraits and welcome photographs may be cropped by the layout. Landmark photographs are shown in full."
+  },
+  {
+    "title": "File:CS Lewis photo on dust jacket.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/27/CS_Lewis_photo_on_dust_jacket.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "page": "https://commons.wikimedia.org/wiki/File:CS_Lewis_photo_on_dust_jacket.jpg",
+    "artist": "John S. Murray",
+    "licence": "Public domain",
+    "licenceUrl": "",
+    "file": "assets/lewis.jpg",
+    "adaptation": "Displayed at reduced size; portraits and welcome photographs may be cropped by the layout. Landmark photographs are shown in full."
+  },
+  {
+    "title": "File:Nobel Laureate Sir Anthony James Leggett in 2007 (cropped).jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Nobel_Laureate_Sir_Anthony_James_Leggett_in_2007_%28cropped%29.jpg/960px-Nobel_Laureate_Sir_Anthony_James_Leggett_in_2007_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Nobel_Laureate_Sir_Anthony_James_Leggett_in_2007_(cropped).jpg",
+    "artist": "Kenneth C. Zirkel",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "file": "assets/leggett.jpg",
+    "adaptation": "Displayed at reduced size; portraits and welcome photographs may be cropped by the layout. Landmark photographs are shown in full."
+  },
+  {
+    "title": "File:Madeline Miller Festival del Classico 2021.png",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/44/Madeline_Miller_Festival_del_Classico_2021.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "page": "https://commons.wikimedia.org/wiki/File:Madeline_Miller_Festival_del_Classico_2021.png",
+    "artist": "Fondazione Circolo dei lettori",
+    "licence": "CC BY 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/3.0",
+    "file": "assets/miller.jpg",
+    "adaptation": "Displayed at reduced size; portraits and welcome photographs may be cropped by the layout. Landmark photographs are shown in full."
+  },
+  {
+    "title": "File:Edith Hall.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Edith_Hall.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "page": "https://commons.wikimedia.org/wiki/File:Edith_Hall.jpg",
+    "artist": "Whispyhistory",
+    "licence": "CC0",
+    "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "file": "assets/edith.jpg",
+    "adaptation": "Displayed at reduced size; portraits and welcome photographs may be cropped by the layout. Landmark photographs are shown in full."
+  },
+  {
+    "title": "File:Columns in Knossos, Crete.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Columns_in_Knossos%2C_Crete.jpg/1920px-Columns_in_Knossos%2C_Crete.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Columns_in_Knossos,_Crete.jpg",
+    "artist": "Jebulon",
+    "licence": "CC0",
+    "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "file": "assets/knossos.jpg",
+    "adaptation": "Displayed at reduced size; landmark photograph shown in full."
   }
 ]

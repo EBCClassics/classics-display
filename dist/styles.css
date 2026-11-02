@@ -15,3 +15,23 @@
 footer{height:130px;margin:0 80px;flex-shrink:0;border-top:1px solid var(--edge);display:flex;align-items:center;justify-content:space-between;gap:20px;padding-bottom:8px}.rotation{display:flex;gap:27px;align-items:center}.rotation-item{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:24px;white-space:nowrap}.rotation-item b{font-weight:400;font-size:19px;color:#8A91A1}.rotation-item.active{color:white}.rotation-item.active b{color:var(--pink)}.rotation-item.active:after{content:'';width:6px;height:6px;border-radius:50%;background:var(--pink);margin-left:1px}.footer-status{display:flex;align-items:center;gap:14px;font-size:20px;color:var(--muted)}.footer-status .dot{width:4px;height:4px;border-radius:50%;background:var(--muted)}#counter{font-variant-numeric:tabular-nums;color:white}.draft{padding:7px 11px;border:1px solid var(--edge);font-size:18px;margin-left:5px}.progress-track{height:6px;position:absolute;bottom:0;left:0;right:0;background:#FFFFFF10}#progress{height:100%;background:var(--pink);width:0;transition:width .12s linear}
 #controls{position:fixed;z-index:10;right:20px;bottom:20px;width:400px;max-width:calc(100vw - 30px);max-height:calc(100vh - 30px);overflow:auto;background:var(--ink);color:white;border:1px solid var(--pink);box-shadow:0 15px 80px #0009;border-radius:12px;padding:20px;font:16px/1.4 Arial,sans-serif}#controls .control-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:15px;font-size:19px}#controls button,#controls select,#controls input{background:#242B3A;color:white;border:1px solid #677081;padding:9px 12px;min-height:40px}#controls button:hover{border-color:var(--pink)}#controls #pause{background:var(--pink);color:var(--ink);font-weight:bold}#controls #close-controls{font-size:22px;line-height:1;padding:3px 10px}#controls label{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:13px 0}#controls input,#controls select{max-width:220px}#controls .control-row{display:flex;gap:8px;flex-wrap:wrap}#controls #diagnostics{font-size:13px;color:var(--yellow);margin:15px 0 10px}#controls .key-help{font-size:13px;color:var(--muted);margin-bottom:15px}#controls a{font-size:14px}.noscript{position:fixed;bottom:0;left:0;right:0;padding:25px;background:var(--yellow);color:var(--ink);text-align:center;font:20px Arial}
 @media(prefers-reduced-motion:reduce){.screen.enter{animation:none}#progress{transition:none}}
+
+/* Keep the welcome label above its decorative frame. */
+.welcome-sticker{z-index:3}.welcome-art .frame-line{z-index:1}
+/* Show the complete landmark; Gulliver speaks beneath the photograph. */
+.tour-grid{height:650px;grid-template-columns:1.2fr 1fr}
+.tour-visual{padding-bottom:0;display:flex;flex-direction:column}
+.tour-visual .image-wrap{height:440px;flex-shrink:0;border-radius:5px 80px 5px 5px;background:#090D16}
+.tour-visual .photo{object-fit:contain;object-position:center}
+.gull-card{position:relative;left:auto;bottom:auto;max-width:100%;height:150px;filter:none;margin-top:8px}
+.gull-card img{width:170px;height:145px}.gull-bubble{font-size:27px;padding:18px 22px 18px 28px;margin-left:-12px;border-radius:22px 22px 22px 0}
+.tour-visual .caption{margin-top:4px;font-size:19px}.tour h1{font-size:98px}.tour-country{font-size:24px}.tour .body{font-size:35px}.tour .question{font-size:29px}
+/* Two complete graduate stories on each visit. */
+.graduates-grid{display:grid;grid-template-columns:1fr 1fr;gap:42px;height:625px}
+.graduate-card{display:grid;grid-template-columns:260px 1fr;gap:27px;border:1px solid var(--edge);border-radius:60px 6px 6px 6px;padding:24px;background:#FFFFFF03}
+.graduate-card .image-wrap{height:342px;border-radius:40px 4px 4px 4px}.graduate-card .photo{object-position:center 22%}
+.graduate-card .caption{font-size:18px;line-height:1.25}.graduate-copy{display:flex;flex-direction:column;align-items:flex-start}
+.people .person-role{font-size:24px;line-height:1.2;margin:0 0 18px}.people h1{font-size:65px;line-height:1.02;letter-spacing:-1px;margin:0 0 20px}
+.people .connection{font-family:'Nimbus Sans',Arial,sans-serif;font-size:25px;line-height:1.25;color:var(--pink);margin:0 0 22px}
+.people .body{font-size:30px;line-height:1.25}.people .source{font-size:18px;margin-top:auto;padding-top:18px}.people-footnote{font-size:24px;color:var(--muted);margin-top:23px}
+.news h1{font-size:84px;line-height:1.02}.news .body{font-size:36px}.news-check,.extract-note{font-size:20px;line-height:1.3;color:var(--muted);margin-top:18px}

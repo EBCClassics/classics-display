@@ -4,7 +4,7 @@ fs.writeFileSync(path.join(base,'seed.js'),'/* Generated fallback from content.j
 const walk=dir=>fs.readdirSync(dir,{withFileTypes:true}).flatMap(e=>e.isDirectory()?walk(path.join(dir,e.name)):[path.relative(base,path.join(dir,e.name)).split(path.sep).join('/')]);
 const assets=walk(base).filter(f=>!['sw.js','_headers','.nojekyll'].includes(f));
 // Bump cache version when changing bundled assets. Install completes only after all assets are cached.
-const sw=`const CACHE='classics-display-v1', ASSETS=${JSON.stringify(assets)};
+const sw=`const CACHE='classics-display-v2', ASSETS=${JSON.stringify(assets)};
 self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting()));});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('classics-display-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});
 self.addEventListener('fetch',e=>{

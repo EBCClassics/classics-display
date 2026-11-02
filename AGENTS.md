@@ -11,7 +11,7 @@
 - Preserve the silent, full-screen, 1920 × 1080-first five-screen rotation and Planet eStream compatibility. No visitor interaction should be required.
 - Use Philip's personal neon branding: pink `#FF2DAA`, ink `#101522`, yellow accents and Nimbus typography. Do not add the personal P or C symbols or substitute College house style unless Philip requests it.
 - Use British English and `pupil`. Apply Philip's writing-voice skill proportionately when drafting substantive prose on his behalf; do not invent institutional facts, quotations or opinions.
-- Keep new news claims sourced and dated. The supplied news is explicitly labelled archive material. No daily news-gathering service or unattended content-writing automation is currently configured.
+- Keep new news claims sourced and dated. Philip authorised a daily source check on 2 November 2026. Preserve the dated, bounded AIA feed notices, 30-day freshness rule, explicit archive fallback and failure handling. Do not present source extracts as original reporting or add unattended generated writing.
 - Gulliver's observations are fictional; keep historical explanations separate. Retain image, font and source credits. Do not put credentials, pupil records or private account data in this public repository.
 
 ## Changes and verification
