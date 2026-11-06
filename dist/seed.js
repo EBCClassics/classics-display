@@ -669,6 +669,21 @@ window.SEEDED_CONTENT = {
       "sourceUrl": "https://pompeiisites.org/e-journal-degli-scavi-di-pompei/preliminary-results-of-an-integrated-geophysical-survey-at-the-villa-of-cicero/"
     },
     {
+      "id": "feed-0ab01c085b8ac48e",
+      "mode": "news",
+      "title": "Southern Italian Burial May Have Belonged to a Priestess",
+      "published": "2026-11-05",
+      "publishedLabel": "5 November 2026",
+      "body": "MANDURIA, ITALY—According to the Greek Reporter, a rock-cut tomb uncovered in southern Italy’s Archaeological Park…",
+      "why": "What evidence supports the discovery, and what remains uncertain?",
+      "image": "assets/discoveries.svg",
+      "imageAlt": "Illustration of an ancient pot and magnifying glass",
+      "caption": "Discovery illustration · not a photograph of the find",
+      "sourceLabel": "Archaeology magazine · AIA",
+      "sourceUrl": "https://archaeology.org/news/2026/11/05/southern-italian-burial-may-have-belonged-to-a-priestess/",
+      "feedExtract": true
+    },
+    {
       "id": "feed-ed2df785d80af6e9",
       "mode": "news",
       "title": "Roman Coins Recovered in Hungary",
@@ -742,11 +757,11 @@ window.SEEDED_CONTENT = {
     }
   ],
   "newsStatus": {
-    "lastSuccess": "2026-11-02T22:50:57Z",
+    "lastSuccess": "2026-11-06T12:56:00Z",
     "sources": [
       "Archaeology magazine · AIA"
     ],
     "failedSources": [],
-    "latestPublication": "2026-10-30"
+    "latestPublication": "2026-11-05"
   }
 };
