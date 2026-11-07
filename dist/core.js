@@ -9,6 +9,53 @@ function modulo(n,m){return ((n%m)+m)%m;}
 function weekdayIndex(key){const day=ordinal(key),dow=new Date(key+'T12:00:00Z').getUTCDay();const monday=day-(dow+6)%7;return Math.floor((monday-4)/7)*5+Math.min((dow+6)%7,4);}
 function dailyIndex(key,settings){return settings.schoolDaysOnly?weekdayIndex(key)-weekdayIndex(settings.anchorDate):ordinal(key)-ordinal(settings.anchorDate);}
 function active(e,key){return (!e.from||e.from<=key)&&(!e.until||e.until>=key);}
+// Gregorian Easter, following the US Naval Observatory's calendar algorithm.
+function easterDate(year) {
+ const century = Math.floor(year / 100);
+ const goldenYear = year % 19;
+ const correction = Math.floor((century - 17) / 25);
+ let epact = modulo(century - Math.floor(century / 4) - Math.floor((century - correction) / 3) + 19 * goldenYear + 15, 30);
+ epact -= Math.floor(epact / 28) * (1 - Math.floor(epact / 28) * Math.floor(29 / (epact + 1)) * Math.floor((21 - goldenYear) / 11));
+ const weekday = modulo(year + Math.floor(year / 4) + epact + 2 - century + Math.floor(century / 4), 7);
+ const offset = epact - weekday;
+ const month = 3 + Math.floor((offset + 40) / 44);
+ const day = offset + 28 - 31 * Math.floor(month / 4);
+ return `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+}
+function shiftDate(key, days) {
+ return new Date(Date.parse(key + 'T12:00:00Z') + days * DAY).toISOString().slice(0, 10);
+}
+function eventWindow(event, year) {
+ const window = event.window;
+ if (window.rule === 'dated') return window.dates.find(range => range.from.startsWith(year + '-')) || null;
+ if (window.rule === 'month') {
+  const month = String(window.month).padStart(2, '0');
+  return {from: `${year}-${month}-01`, until: new Date(Date.UTC(year, window.month, 0, 12)).toISOString().slice(0, 10)};
+ }
+ if (window.rule === 'easter') {
+  const easter = easterDate(year);
+  return {from: shiftDate(easter, window.before), until: shiftDate(easter, window.after)};
+ }
+ if (window.rule === 'remembrance') {
+  const armistice = `${year}-11-11`;
+  const weekday = new Date(armistice + 'T12:00:00Z').getUTCDay();
+  return {from: `${year}-11-06`, until: shiftDate(armistice, (7 - weekday) % 7)};
+ }
+ const from = `${year}-${window.start}`;
+ const until = `${year + (window.end < window.start ? 1 : 0)}-${window.end}`;
+ return {from, until};
+}
+function selectEvent(events, key, turn = 0) {
+ const year = Number(key.slice(0, 4));
+ const available = events.filter(event => [year - 1, year].some(y => {
+  const range = eventWindow(event, y);
+  return range && active(range, key);
+ }));
+ if (!available.length) return null;
+ const priority = Math.max(...available.map(event => event.priority));
+ const pool = available.filter(event => event.priority === priority);
+ return pool[modulo(Number.isSafeInteger(turn) ? turn : 0, pool.length)] || null;
+}
 function validate(d){
  const fail=m=>{throw new Error(m);};
  const text=(v,max,name)=>{if(typeof v!=='string'||!v.trim()||v.length>max)fail('Invalid '+name);};
@@ -38,6 +85,47 @@ function validate(d){
   for(const k of ['sources','failedSources'])if(!Array.isArray(n[k])||n[k].length>10||n[k].some(v=>typeof v!=='string'||v.length>100))fail('Invalid source status');
   if(n.latestPublication!==null&&!validDate(n.latestPublication))fail('Invalid latest publication');
  }
+ // Optional so content cached by earlier releases remains valid.
+ if (d.events !== undefined) {
+  if (!Array.isArray(d.events) || d.events.length > 60) fail('Invalid event calendar');
+  const eventIds = new Set();
+  for (const event of d.events) {
+   text(event.id, 60, 'event id');
+   if (!/^[a-z0-9-]+$/.test(event.id) || eventIds.has(event.id)) fail('Invalid or duplicate event id');
+   eventIds.add(event.id);
+   const fields = {title: 60, body: 140, kind: 30, observance: 100, displayWindow: 150, sourceLabel: 100, imageAlt: 150};
+   for (const [field, limit] of Object.entries(fields)) text(event[field], limit, 'event ' + field);
+   if (!Number.isInteger(event.priority) || event.priority < 0 || event.priority > 100) fail('Invalid event priority');
+   if (typeof event.image !== 'string' || !/^assets\/seasons\/[a-z0-9-]+\.svg$/.test(event.image)) fail('Invalid event image');
+   if (event.borderImage !== undefined && (typeof event.borderImage !== 'string' || !/^assets\/seasons\/[a-z0-9-]+\.(svg|png|webp)$/.test(event.borderImage))) fail('Invalid seasonal border');
+   if (event.designName !== undefined) text(event.designName, 32, 'event design name');
+   if (event.explanation !== undefined && (typeof event.explanation !== 'string' || event.explanation.length > 110)) fail('Invalid seasonal explanation');
+   if (event.accent !== undefined && (typeof event.accent !== 'string' || !/^#[0-9A-Fa-f]{6}$/.test(event.accent))) fail('Invalid seasonal colour');
+   try {
+    if (new URL(event.sourceUrl).protocol !== 'https:') fail('Invalid event source');
+   } catch {
+    fail('Invalid event source');
+   }
+   const window = event.window;
+   if (!window || !['fixed', 'easter', 'remembrance', 'month', 'dated'].includes(window.rule)) fail('Invalid event window');
+   if (window.rule === 'month' && (!Number.isInteger(window.month) || window.month < 1 || window.month > 12)) fail('Invalid event month');
+   if (window.rule === 'dated') {
+    if (!Array.isArray(window.dates) || !window.dates.length || window.dates.length > 50) fail('Invalid confirmed event dates');
+    const years = new Set();
+    for (const range of window.dates) {
+     if (!validDate(range.from) || !validDate(range.until) || range.from > range.until || years.has(range.from.slice(0, 4))) fail('Invalid confirmed event range');
+     years.add(range.from.slice(0, 4));
+    }
+   }
+   if (window.rule === 'fixed' && ![window.start, window.end].every(date =>
+    typeof date === 'string' && /^\d{2}-\d{2}$/.test(date) && validDate('2001-' + date)
+   )) fail('Invalid annual event date');
+   if (window.rule === 'easter' && (
+    ![window.before, window.after].every(days => Number.isInteger(days) && Math.abs(days) <= 30)
+    || window.before > window.after
+   )) fail('Invalid Easter window');
+  }
+ }
  if(!Array.isArray(d.schedule)||d.schedule.length>1000)fail('Invalid schedule');const seen=new Set();
  for(const row of d.schedule){if(!validDate(row.date)||seen.has(row.date))fail('Invalid or duplicate schedule date');seen.add(row.date);
   for(const [f,k] of Object.entries({welcome:'welcomes',site:'sites',person:'people',career:'careers',news:'news'}))if(row[f]&&!d[k].some(e=>e.id===row[f]))fail('Unknown scheduled '+f);
@@ -54,6 +142,6 @@ function selectDay(d,key,cycle=0){
  const people=pick('people',schedule.person,2), peoplePool=d.people.filter(e=>active(e,key)), next=peoplePool[(peoplePool.indexOf(people)+1)%peoplePool.length];
  return {welcome:pick('welcomes',schedule.welcome),tour:pick('sites',schedule.site),people,peoplePair:[people,...(next&&next!==people?[next]:[])],careers:pick('careers',schedule.career),news};
 }
-const api={DAY,order,validDate,dateKey,ordinal,dailyIndex,validate,selectDay};
+const api={DAY,order,validDate,dateKey,ordinal,dailyIndex,validate,selectDay,easterDate,eventWindow,selectEvent};
 if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.Classics=api;
 })(typeof globalThis!=='undefined'?globalThis:this);
