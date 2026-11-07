@@ -4,8 +4,8 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101522">
 <title>Classics Department | Eastbourne College</title>
 <meta name="description" content="A daily journey through the people, places and possibilities of the ancient world.">
-<link rel="icon" href="assets/gulliver.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css">
-<script defer src="core.js"></script><script defer src="seed.js"></script><script defer src="seasonal-drawing.js"></script><script defer src="seasonal-motion.js"></script><script defer src="app.js"></script>
+<link rel="icon" href="assets/gulliver.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css?v=4">
+<script defer src="core.js?v=4"></script><script defer src="seed.js?v=4"></script><script defer src="seasonal-drawing.js?v=4"></script><script defer src="seasonal-motion.js?v=4"></script><script defer src="app.js?v=4"></script>
 </head>
 <body>
 <div id="viewport"><div id="stage">
@@ -22,6 +22,7 @@
 <label>Screen <select id="screen-select"></select></label><label>Preview date <input id="test-date" type="date"></label>
 <div class="control-row"><button id="today">Use today</button><button id="reload-content">Reload content</button></div>
 <label>Test speed <select id="speed"><option value="1">Normal</option><option value="4">4× faster</option><option value="10">10× faster</option></select></label>
+<label>Artwork motion <select id="motion-mode"><option value="auto">Automatic</option><option value="on">On for this display</option><option value="off">Off</option></select></label>
 <p id="diagnostics" role="status"></p><p class="key-help">Space: pause · ← →: change screen · 1–5: select · C: controls · F: full screen · Esc: hide</p>
 <a href="credits.html" target="_blank" rel="noopener">Sources & image credits</a>
 <a href="calendar.html" target="_blank" rel="noopener">Annual events calendar</a>

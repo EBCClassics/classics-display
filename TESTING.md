@@ -2,6 +2,13 @@
 
 Updated on 7 November 2026. This records development checks, successful publication and Philip's reported Planet eStream test separately.
 
+## Per-display artwork motion, 7 November 2026
+
+- PASS locally: 31 Node checks and seven Python checks. Coverage verifies explicit On overrides a simulated reduced-motion preference, Automatic and Off stop it appropriately, pause/background suspension still apply, and versioned script URLs use their canonical cached fallback.
+- PASS in the browser: Off reported “Off for this display”; selecting On reported “Playing (On for this display)”. Reopening the base page retained On and an active canvas. Live captures of the previous release differed over time, confirming animation in the tested browser. The approved movement geometry and pace are retained.
+- Philip confirms movement on his laptop but not on the school desktop in Edge. No direct school-device test has been performed here; the cause remains unconfirmed.
+- PASS with the preview server stopped after cache installation: reopening the page retained On, reported Playing and loaded all five versioned scripts from the cached display. Cache version is consistently v4; deployment and live verification are pending for this update.
+
 ## Ancient festival names and release checks, 7 November 2026
 
 - PASS: 30 Node checks and seven Python feed checks. New coverage includes all eleven names and named fallbacks, unchanged canvas reuse when a name changes, publisher-specific news-section/category filtering and preservation of valid stories after partial source failures.

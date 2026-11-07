@@ -1,5 +1,13 @@
 # Changelog
 
+## 7 November 2026 per-display artwork motion
+
+- Philip confirmed the poppies animate on his laptop but appear static on the school desktop in Edge. Comparison of live captures confirmed the published animation runs in the tested browser; the school device’s precise cause is not yet confirmed.
+- Added Automatic, On for this display and Off options to the hidden controls. Automatic honours reduced-motion preferences. An explicit On choice enables decorative motion for this display without changing Windows settings. `?motion=on` selects and remembers that browser’s choice; the same parameter can remain in an eStream panel URL. Pause and background suspension continue to apply.
+- Added motion diagnostics distinguishing playing, reduced-motion preference, explicit Off, pause and static fallback. The approved artwork, pace and geometry are unchanged.
+- Updated application/cache version consistently to v4, versioned script/style URLs and requested fresh assets during cache installation. Query-versioned script requests retain their canonical offline fallback.
+- Verification: 31 Node checks and seven Python checks pass. Browser checks cover explicit Off/On, accurate diagnostics and persistence after reopening the base page. School Edge and eStream confirmation remains a user check. Publication verification is pending.
+
 ## 7 November 2026 ancient names and authorised seasonal release
 
 - Philip approved the screenshot review and authorised publication after adding ancient festival names within their graphics. Added colour-matched serif names to all eleven ancient treatments, with space left in the surrounding artwork. The brief explanations remain above the main content.

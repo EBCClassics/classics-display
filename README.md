@@ -20,7 +20,7 @@ Published and checked on 7 November 2026 after screenshot review. [Successful de
 
 The artwork runs uninterrupted along the bottom. Modern observances have no overlaid caption, footer counter or progress bar. Roman festivals retain a short unboxed explanation above the main content, including Saturnalia within December. During seasonal periods the main content keeps its 90 per cent inset. The five screens keep their existing durations, and the usual full-size content/footer return between events. Supporting dates and sources are in the [illustrated calendar](dist/calendar.html).
 
-Selection follows the Europe/London date automatically, including weekends and midnight changes. All eighteen treatments animate at up to 30fps. Decorative motion honours reduced-motion preferences; the new animations also stop while paused or hidden. `dist/seasonal-motion.js` owns playback and the selected speed; `dist/seasonal-drawing.js` contains the shared drawings; `dist/styles.css` reserves the matching 216px area; `scripts/seasonal-art.py` generates matching static SVG fallbacks and calendar previews through the credits helper. Motion has no sound or external dependency.
+Selection follows the Europe/London date automatically, including weekends and midnight changes. All eighteen treatments animate at up to 30fps. Automatic follows reduced-motion preferences; explicit On enables artwork for this display; the new animations also stop while paused or hidden. `dist/seasonal-motion.js` owns playback and the selected speed; `dist/seasonal-drawing.js` contains the shared drawings; `dist/styles.css` reserves the matching 216px area; `scripts/seasonal-art.py` generates matching static SVG fallbacks and calendar previews through the credits helper. Motion has no sound or external dependency.
 
 The following display windows are inclusive and include editorial choices to give single-day events several days on screen. Roman dates use conventional month-and-day anniversaries in the modern calendar, with ancient practice varying by period and place.
 
@@ -66,6 +66,14 @@ Edit `events` in `dist/content.json` to maintain the calendar. Each entry has a 
 A `fixed` window uses `MM-DD` start and end values. `month` uses a month number. `dated` contains confirmed `from` and `until` ranges, with one range per starting year. The `easter` rule uses signed day offsets before and after Easter Sunday. The `remembrance` rule calculates the specified November window. The human-readable `displayWindow` should agree with its rule.
 
 `python3 scripts/credits.py` regenerates the eighteen SVG treatments and new thumbnails using `scripts/seasonal-art.py` and `scripts/seasonal-art.cjs`, then rebuilds credits and `dist/calendar.html`. The earlier transparent `dist/assets/seasons/poppy-bold.png` is retained as a historical asset; the display selects the generated stylised poppy SVG and matching motion instead. The PNG was created with the built-in image generation tool and remains identified as AI-generated. The prompts are recorded in `scripts/seasonal-art-prompts.md`. Run preparation and both test suites afterwards. Use the hidden preview-date controls to check the result. Assets are bundled for offline use under the display’s existing cache limitations.
+
+## Artwork motion on a school display
+
+The default **Automatic** setting follows the device’s reduced-motion preference. If the poppies move on one computer but appear static on another, open [the display with motion on](https://ebcclassics.github.io/classics-display/?motion=on). This explicitly enables decorative motion for that browser and remembers the choice. It does not change Windows settings. `?motion=auto` restores Automatic; `?motion=off` disables decorative motion.
+
+The hidden controls (`?controls=1` or C) offer the same **Artwork motion** choice and show whether the artwork is playing, paused, following reduced-motion settings or using a static fallback. Pause also stops the artwork. The diagnostic text is hidden during normal display playback.
+
+For an eStream panel, the production URL may include `?motion=on` so the choice remains explicit on player restart even if browser storage is restricted. Other test parameters should be removed. Application/cache version v4 refreshes the scripts and cached assets; reload each existing panel once after publication.
 
 ## Local preview
 
@@ -204,6 +212,6 @@ A first-ever visit without connectivity cannot download the site. Some embedded 
 
 ## Files and privacy
 
-`dist/` is the deployable website; `scripts/` contains preparation helpers; `tests/` contains the scheduling/content checks. There are no analytics, cookies, remote fonts, live embeds or pupil records. Ordinary browser storage holds only the last valid public display content. External source links are optional and do not need to be opened by viewers.
+`dist/` is the deployable website; `scripts/` contains preparation helpers; `tests/` contains the scheduling/content checks. There are no analytics, cookies, remote fonts, live embeds or pupil records. Ordinary browser storage holds the last valid public display content and the per-display artwork-motion preference. External source links are optional and do not need to be opened by viewers.
 
 The seasonal display is live and has been checked in a desktop browser. Philip reported successful basic operation of the earlier release in Planet eStream; reload the panel once for v3 and repeat the player regression checks. Persistent offline restart, a measured viewing-distance check and extended unattended operation have not been separately recorded. Do not turn the general success report into a claim that those specific checks passed.

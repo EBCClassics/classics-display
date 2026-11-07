@@ -8,7 +8,7 @@ const {width,height}=drawing;
 window.SeasonalMotion = {
  create(container) {
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-  let canvas, ctx, style='', frame=0, phase=0, last=0, paused=false, designName='';
+  let canvas, ctx, style='', frame=0, phase=0, last=0, paused=false, designName='', preference='auto';
   function draw() {
    if (!ctx) return;
    ctx.clearRect(0,0,width,height);
@@ -17,14 +17,14 @@ window.SeasonalMotion = {
   function stop() { if(frame) cancelAnimationFrame(frame); frame=0; last=0; }
   function tick(now) {
    frame=0;
-   if (!style || paused || reduced.matches || document.hidden) return;
+   if (!style || paused || preference==='off' || (preference==='auto' && reduced.matches) || document.hidden) return;
    if (!last) last=now;
    const elapsed=now-last;
    // Limit decoration to 30fps and cap elapsed time after a stalled player frame.
    if (elapsed>=1000/30) { phase+=Math.min(elapsed/1000,.1)*pace*.5; last=now; draw(); }
    frame=requestAnimationFrame(tick);
   }
-  function run() { stop(); draw(); if(style && !paused && !reduced.matches && !document.hidden) frame=requestAnimationFrame(tick); }
+  function run() { stop(); container.dataset.motionState=!style?'inactive':paused?'paused':preference==='off'?'off':preference==='auto'&&reduced.matches?'reduced-motion':document.hidden?'hidden':'running'; draw(); if(style && !paused && preference!=='off' && (preference==='on' || !reduced.matches) && !document.hidden) frame=requestAnimationFrame(tick); }
   reduced.addEventListener('change',run);
   document.addEventListener('visibilitychange',run);
   document.fonts?.ready.then(run);
@@ -32,18 +32,19 @@ window.SeasonalMotion = {
    set(source, label='') {
     const candidate=source?.split('/').pop().replace(/\.svg$/,'');
     const next=Object.prototype.hasOwnProperty.call(drawing.treatments,candidate)?candidate:'';
-    if(next===style && label===designName) return !!ctx && !!next;
+    if(next===style && label===designName){if(!next)container.dataset.motionState=source?'static':'inactive';return !!ctx && !!next;}
     if(next && next===style){designName=label;run();return !!ctx;}
     designName=label;
     stop(); style=next;
-    if (!next) {canvas=null;ctx=null;return false;}
+    if (!next) {canvas=null;ctx=null;container.dataset.motionState=source?'static':'inactive';return false;}
     canvas=document.createElement('canvas'); canvas.width=width; canvas.height=height;
     canvas.className='seasonal-motion'; canvas.setAttribute('aria-hidden','true');
     ctx=canvas.getContext('2d');
-    if(!ctx) {style='';return false;}
+    if(!ctx) {style='';container.dataset.motionState='static';return false;}
     container.replaceChildren(canvas); run(); return true;
    },
-   pause(value) {if(paused!==value){paused=value;run();}}
+   pause(value) {if(paused!==value){paused=value;run();}},
+   mode(value) {if(['auto','on','off'].includes(value)&&preference!==value){preference=value;run();}}
   };
  }
 };
