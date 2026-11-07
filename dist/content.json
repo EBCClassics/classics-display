@@ -668,6 +668,21 @@
       "sourceUrl": "https://pompeiisites.org/e-journal-degli-scavi-di-pompei/preliminary-results-of-an-integrated-geophysical-survey-at-the-villa-of-cicero/"
     },
     {
+      "id": "feed-9c09907d0817eda1",
+      "mode": "news",
+      "title": "Marble From Greece’s Temple of Apollo May Have Originated in Mani",
+      "published": "2026-11-07",
+      "publishedLabel": "7 November 2026",
+      "body": "A marble relief from Greece’s Temple of Apollo Epicurius at Bassai may have…",
+      "why": "What evidence supports the discovery, and what remains uncertain?",
+      "image": "assets/discoveries.svg",
+      "imageAlt": "Illustration of an ancient pot and magnifying glass",
+      "caption": "Discovery illustration · not a photograph of the find",
+      "sourceLabel": "Greek Reporter · archaeology",
+      "sourceUrl": "https://greekreporter.com/2026/11/07/marble-greece-temple-apollo-originated-mani/",
+      "feedExtract": true
+    },
+    {
       "id": "feed-0ab01c085b8ac48e",
       "mode": "news",
       "title": "Southern Italian Burial May Have Belonged to a Priestess",
@@ -756,11 +771,673 @@
     }
   ],
   "newsStatus": {
-    "lastSuccess": "2026-11-06T12:56:00Z",
+    "lastSuccess": "2026-11-07T12:15:36Z",
     "sources": [
-      "Archaeology magazine · AIA"
+      "Archaeology magazine · AIA",
+      "TheCollector · News & Discoveries",
+      "Greek Reporter · archaeology"
     ],
     "failedSources": [],
-    "latestPublication": "2026-11-05"
-  }
+    "latestPublication": "2026-11-07"
+  },
+  "events": [
+    {
+      "id": "kalends",
+      "title": "The Kalends of January",
+      "kind": "Roman calendar",
+      "window": {
+        "rule": "fixed",
+        "start": "01-01",
+        "end": "01-07"
+      },
+      "priority": 10,
+      "observance": "1 January",
+      "displayWindow": "1–7 January",
+      "body": "A new year begins. The Kalends marked the first day of each Roman month.",
+      "image": "assets/seasons/laurel.svg",
+      "imageAlt": "A neon laurel wreath",
+      "sourceUrl": "https://penelope.uchicago.edu/~grout/encyclopaedia_romana/calendar/juliancalendar.html",
+      "sourceLabel": "University of Chicago · Roman calendar",
+      "borderImage": "assets/seasons/roman-border.svg",
+      "explanation": "The Kalends marked the first day of each Roman month.",
+      "accent": "#E8CC8A",
+      "designName": "Kalends of January"
+    },
+    {
+      "id": "lgbt-history",
+      "title": "LGBT+ History Month",
+      "kind": "Modern observance",
+      "window": {
+        "rule": "month",
+        "month": 2
+      },
+      "priority": 10,
+      "observance": "February in the UK",
+      "displayWindow": "Throughout February",
+      "body": "The UK’s annual February celebration of LGBT+ history.",
+      "image": "assets/seasons/pride.svg",
+      "imageAlt": "An original seasonal illustration",
+      "sourceUrl": "https://lgbtplushistorymonth.co.uk/lgbt-history-month-2026/",
+      "sourceLabel": "Schools OUT · UK LGBT+ History Month",
+      "borderImage": "assets/seasons/pride-border.svg",
+      "explanation": "",
+      "accent": "#C6B0EB"
+    },
+    {
+      "id": "childrens-mental-health",
+      "title": "Children’s Mental Health Week",
+      "kind": "Modern observance",
+      "window": {
+        "rule": "dated",
+        "dates": [
+          {
+            "from": "2027-02-01",
+            "until": "2027-02-07"
+          }
+        ]
+      },
+      "priority": 10,
+      "observance": "1–7 February 2027",
+      "displayWindow": "1–7 February 2027 · later dates await confirmation",
+      "body": "Place2Be’s annual week highlighting children’s and young people’s mental health.",
+      "image": "assets/seasons/wellbeing.svg",
+      "imageAlt": "A green mental health ribbon with leaves",
+      "sourceUrl": "https://www.childrensmentalhealthweek.org.uk/about",
+      "sourceLabel": "Place2Be · Children’s Mental Health Week",
+      "borderImage": "assets/seasons/wellbeing-border.svg",
+      "explanation": "",
+      "accent": "#82D29B"
+    },
+    {
+      "id": "lupercalia",
+      "title": "Lupercalia",
+      "kind": "Roman festival",
+      "window": {
+        "rule": "fixed",
+        "start": "02-12",
+        "end": "02-16"
+      },
+      "priority": 10,
+      "observance": "15 February",
+      "displayWindow": "12–16 February",
+      "body": "A Roman February festival with rites of purification. What can festivals tell us about a city’s concerns?",
+      "image": "assets/seasons/laurel.svg",
+      "imageAlt": "A neon laurel wreath",
+      "sourceUrl": "https://penelope.uchicago.edu/~grout/encyclopaedia_romana/calendar/juliancalendar.html",
+      "sourceLabel": "University of Chicago · Roman calendar",
+      "borderImage": "assets/seasons/roman-border.svg",
+      "explanation": "A Roman February festival associated with purification.",
+      "accent": "#E8CC8A",
+      "designName": "Lupercalia"
+    },
+    {
+      "id": "matronalia",
+      "title": "Matronalia",
+      "kind": "Roman festival",
+      "window": {
+        "rule": "fixed",
+        "start": "03-01",
+        "end": "03-05"
+      },
+      "priority": 10,
+      "observance": "1 March",
+      "displayWindow": "1–5 March",
+      "body": "A festival associated with Juno and married women. Whose experiences survive in our accounts of ancient Rome?",
+      "image": "assets/seasons/women.svg",
+      "imageAlt": "A symbol for women framed by laurel leaves",
+      "sourceUrl": "https://penelope.uchicago.edu/~grout/encyclopaedia_romana/calendar/juliancalendar.html",
+      "sourceLabel": "University of Chicago · Roman calendar",
+      "borderImage": "assets/seasons/women-border.svg",
+      "explanation": "A Roman festival associated with Juno and married women.",
+      "accent": "#D9B5ED",
+      "designName": "Matronalia"
+    },
+    {
+      "id": "world-book-day",
+      "title": "World Book Day",
+      "kind": "Modern observance",
+      "window": {
+        "rule": "dated",
+        "dates": [
+          {
+            "from": "2027-03-01",
+            "until": "2027-03-07"
+          }
+        ]
+      },
+      "priority": 10,
+      "observance": "4 March 2027 in the UK",
+      "displayWindow": "1–7 March 2027 · later dates await confirmation",
+      "body": "A celebration of reading for pleasure, using the UK campaign’s confirmed date.",
+      "image": "assets/seasons/book.svg",
+      "imageAlt": "An original seasonal illustration",
+      "sourceUrl": "https://www.worldbookday.com/news/world-book-day-2027-announcements/",
+      "sourceLabel": "World Book Day · 2027 dates",
+      "borderImage": "assets/seasons/book-border.svg",
+      "explanation": "",
+      "accent": "#E8CC8A"
+    },
+    {
+      "id": "womens-day",
+      "title": "International Women’s Day",
+      "kind": "Modern observance",
+      "window": {
+        "rule": "fixed",
+        "start": "03-06",
+        "end": "03-12"
+      },
+      "priority": 10,
+      "observance": "8 March",
+      "displayWindow": "6–12 March",
+      "body": "Whose voices do we hear? Explore women’s writing, scholarship and lives across the ancient world and its reception.",
+      "image": "assets/seasons/women.svg",
+      "imageAlt": "A symbol for women framed by laurel leaves",
+      "sourceUrl": "https://www.un.org/en/observances/womens-day",
+      "sourceLabel": "United Nations · International Women’s Day",
+      "borderImage": "assets/seasons/women-border.svg",
+      "explanation": "",
+      "accent": "#D9B5ED"
+    },
+    {
+      "id": "happiness",
+      "title": "International Day of Happiness",
+      "kind": "Modern observance",
+      "window": {
+        "rule": "fixed",
+        "start": "03-18",
+        "end": "03-24"
+      },
+      "priority": 10,
+      "observance": "20 March",
+      "displayWindow": "18–24 March",
+      "body": "The UN’s annual observance recognising happiness and wellbeing.",
+      "image": "assets/seasons/kindness.svg",
+      "imageAlt": "Linked hearts",
+      "sourceUrl": "https://www.un.org/en/events/happinessday/",
+      "sourceLabel": "United Nations · International Day of Happiness",
+      "borderImage": "assets/seasons/kindness-border.svg",
+      "explanation": "",
+      "accent": "#E8B3C6"
+    },
+    {
+      "id": "poetry",
+      "title": "World Poetry Day",
+      "kind": "Modern observance",
+      "window": {
+        "rule": "fixed",
+        "start": "03-19",
+        "end": "03-25"
+      },
+      "priority": 10,
+      "observance": "21 March",
+      "displayWindow": "19–25 March",
+      "body": "UNESCO’s annual celebration of poetry and linguistic expression.",
+      "image": "assets/seasons/book.svg",
+      "imageAlt": "An original seasonal illustration",
+      "sourceUrl": "https://www.unesco.org/en/days/poetry",
+      "sourceLabel": "UNESCO · World Poetry Day",
+      "borderImage": "assets/seasons/book-border.svg",
+      "explanation": "",
+      "accent": "#E8CC8A"
+    },
+    {
+      "id": "easter",
+      "title": "Easter",
+      "kind": "Christian festival",
+      "window": {
+        "rule": "easter",
+        "before": -7,
+        "after": 7
+      },
+      "priority": 10,
+      "observance": "Western Easter Sunday · date varies",
+      "displayWindow": "Palm Sunday to the Sunday after Easter",
+      "body": "A season of hope and renewal. The date of Western Easter moves each year within the Gregorian calendar.",
+      "image": "assets/seasons/easter.svg",
+      "imageAlt": "A decorated egg framed by spring leaves",
+      "sourceUrl": "https://aa.usno.navy.mil/faq/easter",
+      "sourceLabel": "US Naval Observatory · date of Easter",
+      "borderImage": "assets/seasons/easter-border.svg",
+      "explanation": "",
+      "accent": "#E2B7D2"
+    },
+    {
+      "id": "autism",
+      "title": "World Autism Awareness Day",
+      "kind": "Modern observance",
+      "window": {
+        "rule": "fixed",
+        "start": "04-01",
+        "end": "04-07"
+      },
+      "priority": 10,
+      "observance": "2 April",
+      "displayWindow": "1–7 April",
+      "body": "An annual observance supporting autistic people’s participation and inclusion.",
+      "image": "assets/seasons/inclusion.svg",
+      "imageAlt": "A flowing turquoise infinity symbol",
+      "sourceUrl": "https://www.un.org/en/observances/autism-day/background",
+      "sourceLabel": "United Nations · World Autism Awareness Day",
+      "borderImage": "assets/seasons/inclusion-border.svg",
+      "explanation": "",
+      "accent": "#80D9D1"
+    },
+    {
+      "id": "parilia",
+      "title": "Parilia · Rome’s birthday",
+      "kind": "Roman festival",
+      "window": {
+        "rule": "fixed",
+        "start": "04-18",
+        "end": "04-24"
+      },
+      "priority": 10,
+      "observance": "21 April",
+      "displayWindow": "18–24 April",
+      "body": "A shepherds’ festival also marked Rome’s traditional birthday. How does a city tell the story of its beginnings?",
+      "image": "assets/seasons/temple.svg",
+      "imageAlt": "A Roman temple outlined in yellow",
+      "sourceUrl": "https://penelope.uchicago.edu/~grout/encyclopaedia_romana/calendar/juliancalendar.html",
+      "sourceLabel": "University of Chicago · Roman calendar",
+      "borderImage": "assets/seasons/roman-border.svg",
+      "explanation": "A shepherds’ festival that also marked Rome’s traditional birthday.",
+      "accent": "#E8CC8A",
+      "designName": "Parilia"
+    },
+    {
+      "id": "earth-day",
+      "title": "Earth Day",
+      "kind": "Modern observance",
+      "window": {
+        "rule": "fixed",
+        "start": "04-20",
+        "end": "04-26"
+      },
+      "priority": 10,
+      "observance": "22 April",
+      "displayWindow": "20–26 April",
+      "body": "The annual day focused on the environment and care for the planet.",
+      "image": "assets/seasons/earth.svg",
+      "imageAlt": "A globe framed by green leaves",
+      "sourceUrl": "https://www.earthday.org/earth-day-2013-the-face-of-climate-change/",
+      "sourceLabel": "EARTHDAY.ORG · annual observance",
+      "borderImage": "assets/seasons/earth-border.svg",
+      "explanation": "",
+      "accent": "#86B788"
+    },
+    {
+      "id": "floralia",
+      "title": "Floralia",
+      "kind": "Roman festival",
+      "window": {
+        "rule": "fixed",
+        "start": "04-28",
+        "end": "05-03"
+      },
+      "priority": 10,
+      "observance": "28 April–3 May",
+      "displayWindow": "28 April–3 May",
+      "body": "Flowers and performance marked the festival of Flora. Roman religious life made room for colour and spectacle.",
+      "image": "assets/seasons/flowers.svg",
+      "imageAlt": "Bright spring flowers",
+      "sourceUrl": "https://penelope.uchicago.edu/encyclopaedia_romana/calendar/floralia.html",
+      "sourceLabel": "University of Chicago · Floralia",
+      "borderImage": "assets/seasons/spring-border.svg",
+      "explanation": "Rome’s festival for Flora, goddess of flowers and blossoming plants.",
+      "accent": "#E2B7D2",
+      "designName": "Floralia"
+    },
+    {
+      "id": "lemuria",
+      "title": "Lemuria",
+      "kind": "Roman festival",
+      "window": {
+        "rule": "fixed",
+        "start": "05-09",
+        "end": "05-13"
+      },
+      "priority": 10,
+      "observance": "9, 11 and 13 May",
+      "displayWindow": "9–13 May",
+      "body": "Household rituals addressed restless spirits. How did Romans understand their responsibilities towards the dead?",
+      "image": "assets/seasons/lamp.svg",
+      "imageAlt": "A Roman-style lamp beneath stars",
+      "sourceUrl": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/secondary/SMIGRA%2A/Lemuralia.html",
+      "sourceLabel": "LacusCurtius · Lemuria",
+      "borderImage": "assets/seasons/roman-border.svg",
+      "explanation": "Household rituals to appease restless spirits, held on 9, 11 and 13 May.",
+      "accent": "#E8CC8A",
+      "designName": "Lemuria"
+    },
+    {
+      "id": "mental-health-week",
+      "title": "Mental Health Awareness Week",
+      "kind": "Modern observance",
+      "window": {
+        "rule": "dated",
+        "dates": [
+          {
+            "from": "2026-05-11",
+            "until": "2026-05-17"
+          },
+          {
+            "from": "2027-05-10",
+            "until": "2027-05-16"
+          }
+        ]
+      },
+      "priority": 10,
+      "observance": "Organiser-set week each May",
+      "displayWindow": "11–17 May 2026 · 10–16 May 2027 · later dates await confirmation",
+      "body": "The UK awareness week led by the Mental Health Foundation, using confirmed campaign dates.",
+      "image": "assets/seasons/wellbeing.svg",
+      "imageAlt": "A green mental health ribbon with leaves",
+      "sourceUrl": "https://www.mentalhealth.org.uk/our-work/public-engagement/mental-health-awareness-week",
+      "sourceLabel": "Mental Health Foundation · confirmed campaign dates",
+      "borderImage": "assets/seasons/wellbeing-border.svg",
+      "explanation": "",
+      "accent": "#82D29B"
+    },
+    {
+      "id": "pride",
+      "title": "Pride Month",
+      "kind": "Modern observance",
+      "window": {
+        "rule": "fixed",
+        "start": "06-01",
+        "end": "06-30"
+      },
+      "priority": 10,
+      "observance": "June",
+      "displayWindow": "1–30 June",
+      "body": "Belonging and the freedom to be yourself. Explore love and identity in ancient texts, with care for their different contexts.",
+      "image": "assets/seasons/pride.svg",
+      "imageAlt": "Rainbow ribbons beside a classical column",
+      "sourceUrl": "https://www.loc.gov/lgbt-pride-month/about/",
+      "sourceLabel": "Library of Congress · Pride Month",
+      "borderImage": "assets/seasons/pride-border.svg",
+      "explanation": "",
+      "accent": "#C6B0EB"
+    },
+    {
+      "id": "vestalia",
+      "title": "Vestalia",
+      "kind": "Roman festival",
+      "window": {
+        "rule": "fixed",
+        "start": "06-07",
+        "end": "06-15"
+      },
+      "priority": 10,
+      "observance": "7–15 June",
+      "displayWindow": "7–15 June",
+      "body": "Vesta’s festival focused on the sacred hearth. What makes a place feel like home?",
+      "image": "assets/seasons/flame.svg",
+      "imageAlt": "A stylised flame above a classical bowl",
+      "sourceUrl": "https://penelope.uchicago.edu/thayer/e/roman/texts/secondary/smigra%2A/v.html",
+      "sourceLabel": "LacusCurtius · Vestalia",
+      "borderImage": "assets/seasons/fire-border.svg",
+      "explanation": "Vesta’s festival honoured the sacred hearth.",
+      "accent": "#E8CC8A",
+      "designName": "Vestalia"
+    },
+    {
+      "id": "neptunalia",
+      "title": "Neptunalia",
+      "kind": "Roman festival",
+      "window": {
+        "rule": "fixed",
+        "start": "07-20",
+        "end": "07-26"
+      },
+      "priority": 10,
+      "observance": "Traditionally 23 July",
+      "displayWindow": "20–26 July",
+      "body": "A midsummer festival for Neptune. Branch shelters offered shade as Romans gathered in the summer heat.",
+      "image": "assets/seasons/waves.svg",
+      "imageAlt": "Waves beneath Neptune’s trident",
+      "sourceUrl": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/secondary/SMIGRA%2A/Neptunalia.html",
+      "sourceLabel": "LacusCurtius · Neptunalia",
+      "borderImage": "assets/seasons/water-border.svg",
+      "explanation": "A midsummer festival for Neptune, traditionally held on 23 July.",
+      "accent": "#93D3D2",
+      "designName": "Neptunalia"
+    },
+    {
+      "id": "vulcanalia",
+      "title": "Vulcanalia",
+      "kind": "Roman festival",
+      "window": {
+        "rule": "fixed",
+        "start": "08-20",
+        "end": "08-26"
+      },
+      "priority": 10,
+      "observance": "23 August",
+      "displayWindow": "20–26 August",
+      "body": "A festival for Vulcan, god of fire. A reminder of both the power and the dangers of fire in an ancient city.",
+      "image": "assets/seasons/flame.svg",
+      "imageAlt": "A stylised flame above a classical bowl",
+      "sourceUrl": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/secondary/SMIGRA%2A/Vulcanalia.html",
+      "sourceLabel": "LacusCurtius · Vulcanalia",
+      "borderImage": "assets/seasons/fire-border.svg",
+      "explanation": "A Roman festival honouring Vulcan, god of fire, on 23 August.",
+      "accent": "#E8CC8A",
+      "designName": "Vulcanalia"
+    },
+    {
+      "id": "ludi-romani",
+      "title": "Ludi Romani",
+      "kind": "Roman games",
+      "window": {
+        "rule": "fixed",
+        "start": "09-04",
+        "end": "09-19"
+      },
+      "priority": 10,
+      "observance": "4–19 September in the late Republic",
+      "displayWindow": "4–19 September",
+      "body": "Public games honoured Jupiter. Performance and spectacle brought Roman crowds together.",
+      "image": "assets/seasons/theatre.svg",
+      "imageAlt": "A theatrical mask outlined in pink and yellow",
+      "sourceUrl": "https://penelope.uchicago.edu/thayer/e/roman/texts/historia_augusta/severus_alexander/2%2A.html",
+      "sourceLabel": "LacusCurtius · Roman games calendar note 41",
+      "borderImage": "assets/seasons/theatre-border.svg",
+      "explanation": "Public games and performances held in honour of Jupiter.",
+      "accent": "#E6A6CA",
+      "designName": "Ludi Romani"
+    },
+    {
+      "id": "peace",
+      "title": "International Day of Peace",
+      "kind": "Modern observance",
+      "window": {
+        "rule": "fixed",
+        "start": "09-18",
+        "end": "09-24"
+      },
+      "priority": 10,
+      "observance": "21 September",
+      "displayWindow": "18–24 September",
+      "body": "The annual UN observance dedicated to peace.",
+      "image": "assets/seasons/peace.svg",
+      "imageAlt": "An olive branch",
+      "sourceUrl": "https://peacekeeping.un.org/en/news/international-day-peace-21-september",
+      "sourceLabel": "United Nations · International Day of Peace",
+      "borderImage": "assets/seasons/peace-border.svg",
+      "explanation": "",
+      "accent": "#D7E2CC"
+    },
+    {
+      "id": "black-history",
+      "title": "Black History Month",
+      "kind": "Modern observance",
+      "window": {
+        "rule": "fixed",
+        "start": "10-01",
+        "end": "10-31"
+      },
+      "priority": 10,
+      "observance": "October in the UK",
+      "displayWindow": "1–31 October",
+      "body": "Explore Black history and the people shaping Classics today. Ask whose work is recognised and whose stories need closer attention.",
+      "image": "assets/seasons/book.svg",
+      "imageAlt": "An open book with golden stars",
+      "sourceUrl": "https://www.blackhistorymonth.org.uk/article/section/real-stories/the-radical-and-transnational-roots-of-black-history-month-in-britain/",
+      "sourceLabel": "Black History Month · British origins",
+      "borderImage": "assets/seasons/heritage-border.svg",
+      "explanation": "",
+      "accent": "#E8CC8A"
+    },
+    {
+      "id": "world-mental-health",
+      "title": "World Mental Health Day",
+      "kind": "Modern observance",
+      "window": {
+        "rule": "fixed",
+        "start": "10-07",
+        "end": "10-13"
+      },
+      "priority": 10,
+      "observance": "10 October",
+      "displayWindow": "7–13 October",
+      "body": "The annual global day raising awareness of mental health.",
+      "image": "assets/seasons/wellbeing.svg",
+      "imageAlt": "A green mental health ribbon with leaves",
+      "sourceUrl": "https://www.who.int/campaigns/world-mental-health-day",
+      "sourceLabel": "World Health Organization · World Mental Health Day",
+      "borderImage": "assets/seasons/wellbeing-border.svg",
+      "explanation": "",
+      "accent": "#82D29B"
+    },
+    {
+      "id": "bonfire",
+      "title": "Bonfire Night",
+      "kind": "Modern observance",
+      "window": {
+        "rule": "fixed",
+        "start": "11-01",
+        "end": "11-05"
+      },
+      "priority": 10,
+      "observance": "5 November",
+      "displayWindow": "1–5 November",
+      "body": "Fireworks light the November sky. Bonfire Night recalls the Gunpowder Plot of 1605.",
+      "image": "assets/seasons/fireworks.svg",
+      "imageAlt": "Pink and yellow fireworks against ink",
+      "sourceUrl": "https://www.english-heritage.org.uk/members-area/kids/kids-the-stuarts/bonfire-night/",
+      "sourceLabel": "English Heritage · Bonfire Night",
+      "borderImage": "assets/seasons/firework-border.svg",
+      "explanation": "",
+      "accent": "#FF75C7"
+    },
+    {
+      "id": "remembrance",
+      "title": "Remembrance",
+      "kind": "Modern commemoration",
+      "window": {
+        "rule": "remembrance"
+      },
+      "priority": 100,
+      "observance": "Armistice Day 11 November · Remembrance Sunday varies",
+      "displayWindow": "6 November to the Sunday ending the week containing 11 November",
+      "body": "Remembering those who served and those whose lives were changed by war. A time for reflection, gratitude and peace.",
+      "image": "assets/seasons/remembrance.svg",
+      "imageAlt": "Red poppies with black centres and green stems",
+      "sourceUrl": "https://www.britishlegion.org.uk/get-involved/remembrance/two-minute-silence",
+      "sourceLabel": "Royal British Legion · Remembrance",
+      "borderImage": "assets/seasons/poppy-flowing.svg",
+      "explanation": "",
+      "accent": "#F1747D"
+    },
+    {
+      "id": "kindness",
+      "title": "World Kindness Day",
+      "kind": "Modern observance",
+      "window": {
+        "rule": "fixed",
+        "start": "11-12",
+        "end": "11-18"
+      },
+      "priority": 10,
+      "observance": "13 November",
+      "displayWindow": "12–18 November · Remembrance takes precedence",
+      "body": "An annual occasion to recognise kindness.",
+      "image": "assets/seasons/kindness.svg",
+      "imageAlt": "Linked hearts",
+      "sourceUrl": "https://www.randomactsofkindness.org/world-kindness-day",
+      "sourceLabel": "Random Acts of Kindness Foundation · World Kindness Day",
+      "borderImage": "assets/seasons/kindness-border.svg",
+      "explanation": "",
+      "accent": "#E8B3C6"
+    },
+    {
+      "id": "anti-bullying",
+      "title": "Anti-Bullying Week",
+      "kind": "Modern observance",
+      "window": {
+        "rule": "dated",
+        "dates": [
+          {
+            "from": "2026-11-16",
+            "until": "2026-11-22"
+          }
+        ]
+      },
+      "priority": 10,
+      "observance": "16–20 November 2026",
+      "displayWindow": "16–22 November 2026 · later dates await confirmation",
+      "body": "The UK campaign week, with its graphic retained through the following weekend.",
+      "image": "assets/seasons/kindness.svg",
+      "imageAlt": "Linked hearts",
+      "sourceUrl": "https://anti-bullyingalliance.org.uk/anti-bullying-week-2026",
+      "sourceLabel": "Anti-Bullying Alliance · confirmed 2026 dates",
+      "borderImage": "assets/seasons/kindness-border.svg",
+      "explanation": "",
+      "accent": "#E8B3C6"
+    },
+    {
+      "id": "christmas",
+      "title": "Christmas and Saturnalia",
+      "kind": "Seasonal connection",
+      "window": {
+        "rule": "fixed",
+        "start": "12-01",
+        "end": "12-31"
+      },
+      "priority": 10,
+      "observance": "Christmas 25 December · Saturnalia from 17 December",
+      "displayWindow": "1–31 December",
+      "body": "Gifts, light and gatherings. Rome’s Saturnalia began on 17 December and later extended to 23 December.",
+      "image": "assets/seasons/saturnalia.svg",
+      "imageAlt": "Candles and a wrapped gift outlined in pink and yellow",
+      "sourceUrl": "https://www.english-heritage.org.uk/members-area/members-magazine/2021/the-lord-of-misrule/",
+      "sourceLabel": "English Heritage · Saturnalia",
+      "borderImage": "assets/seasons/festive-border.svg",
+      "explanation": "Saturnalia began on 17 December and later extended to 23 December.",
+      "accent": "#E8CC8A",
+      "designName": "Saturnalia"
+    },
+    {
+      "id": "disability-day",
+      "title": "International Day of Persons with Disabilities",
+      "kind": "Modern observance",
+      "window": {
+        "rule": "fixed",
+        "start": "12-01",
+        "end": "12-07"
+      },
+      "priority": 10,
+      "observance": "3 December",
+      "displayWindow": "1–7 December",
+      "body": "The annual UN observance supporting disabled people’s full participation.",
+      "image": "assets/seasons/inclusion.svg",
+      "imageAlt": "A flowing turquoise infinity symbol",
+      "sourceUrl": "https://www.un.org/en/observances/day-of-persons-with-disabilities",
+      "sourceLabel": "United Nations · International Day of Persons with Disabilities",
+      "borderImage": "assets/seasons/inclusion-border.svg",
+      "explanation": "",
+      "accent": "#80D9D1"
+    }
+  ]
 }

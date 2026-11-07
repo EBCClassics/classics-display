@@ -44,6 +44,28 @@ class NewsTests(unittest.TestCase):
         third = news.refresh(second, lambda url: b'<rss><channel/></rss>', NOW)
         self.assertEqual(third['news'], second['news'])
 
+    def test_new_sources_require_the_correct_news_section(self):
+        url = 'https://www.thecollector.com/roman-coins-found/'
+        raw = feed(link=url)
+        self.assertEqual(news.parse_feed(raw, 'Collector', 'www.thecollector.com', TODAY), [])
+        self.assertEqual(len(news.parse_feed(raw, 'Collector', 'www.thecollector.com', TODAY, {url})), 1)
+        self.assertEqual(news.parse_feed(raw, 'Collector', 'www.thecollector.com', TODAY, set()), [])
+        greek = feed(link='https://greekreporter.com/2026/10/30/roman-coins/').replace(b'</item>', b'<category>Archaeology</category></item>')
+        self.assertEqual(len(news.parse_feed(greek, 'Greek Reporter', 'greekreporter.com', TODAY)), 1)
+        self.assertEqual(news.parse_feed(greek.replace(b'Archaeology', b'Politics'), 'Greek Reporter', 'greekreporter.com', TODAY), [])
+        self.assertEqual(news.parse_feed(greek.replace(b'</item>', b'<category>evergreen</category></item>'), 'Greek Reporter', 'greekreporter.com', TODAY), [])
+        self.assertIn(url, news.news_links(b'<a href="/roman-coins-found/">Roman discovery</a>'))
+
+    def test_one_failed_publisher_preserves_notices_from_other_sources(self):
+        def fetch(url):
+            if 'archaeology.org' in url:
+                return feed()
+            raise TimeoutError()
+        result = news.refresh({'news': []}, fetch, NOW)
+        self.assertEqual(len(result['news']), 1)
+        self.assertEqual(len(result['newsStatus']['failedSources']), 2)
+        self.assertEqual(result['newsStatus']['sources'], ['Archaeology magazine · AIA'])
+
     def test_total_failure_preserves_original(self):
         data = {'news': [{'id': 'original'}]}
         def fail(url):

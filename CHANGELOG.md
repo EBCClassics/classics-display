@@ -1,9 +1,67 @@
 # Changelog
 
+## 7 November 2026 ancient names and authorised seasonal release
+
+- Philip approved the screenshot review and authorised publication after adding ancient festival names within their graphics. Added colour-matched serif names to all eleven ancient treatments, with space left in the surrounding artwork. The brief explanations remain above the main content.
+- Generated matching named SVG fallbacks/calendar previews and added optional validated `designName` content. Names update without recreating the canvas when two events share a treatment. Modern designs keep their caption-free artwork.
+- Included the queued TheCollector and Greek Reporter sources in the existing daily check. TheCollector URLs must belong to its News & Discoveries listing; Greek Reporter items require archaeology categorisation and exclude evergreen stories. Existing dates, bounded extracts, archive fallback, retention and failure protections remain. Preserved the newer AIA story already added by the daily workflow.
+- Verification passed locally with 30 Node checks and seven Python checks. A source check read all three publishers and retained five dated notices. All eleven named designs were captured and checked at 1920 × 1080. Deployment/live verification is pending for this authorised release.
+
+## 7 November 2026 complete seasonal review draft
+
+- Adapted the remaining seasonal graphics to flat, stylised moving features, retaining the selected speed 1.6 and 20 per cent artwork area. The eighteen treatments include awareness ribbons, books/pages, laurel and olive branches, stars, fireworks, festive ornaments, hearts, infinity loops, globes, waves, flames and theatre masks. Easter now has its own eggs-and-blossoms treatment, separate from Floralia.
+- Shared the drawing definitions between the motion player and generated static SVG fallbacks, so calendar previews and unavailable-canvas fallbacks match the artwork. All treatments honour pause, hidden-page and reduced-motion settings, capped at 30fps. Pause also removes the entrance transition for reliable still review.
+- Captured 30 labelled 1920 × 1080 screenshots, one per event, and prepared a 30-page PDF, an overview of the eighteen designs and a ZIP of the individual screenshots with a local gallery. These are review snapshots; the project checkout remains the master.
+- Verification: 29 Node checks and five feed checks pass. Browser checks verified all 30 event selections, rendered canvases, text clearance and loaded images. All 30 calendar previews loaded. Smaller-screen scaling and host-unavailable loading of Earth Day and the calendar passed. The PDF was reopened and rendered for visual inspection. Publication remains on hold for Philip’s screenshot review.
+
+## 7 November 2026 selected flowing motion
+
+- Philip selected the flowing-strands study at movement speed 1.6 and artwork height 18–20 per cent. Implemented the starting height at 20 per cent (216px on the 1080px stage).
+- Pride/LGBT+ History now use six separate flowing colour strands. Remembrance uses flat stylised poppies with swaying stems. Matching generated SVGs provide static fallbacks and calendar previews. The previous painted PNG is retained but no longer selected.
+- Removed the modern event captions, footer counters and progress bar from the artwork area. Roman festivals and Saturnalia retain an unboxed note above the main content. Other fifteen treatments remain provisional for adaptation/review against the chosen direction.
+- Added motion capped at 30fps, preserving the canvas across screen changes and stopping it when paused, hidden or reduced motion is requested. Calendar dates, five-screen rotation and durations remain unchanged.
+- Verification: 28 Node checks and five feed checks pass. Browser checks at 1920 × 1080 cover Pride on all five screens, Remembrance/news, the Roman/December notes and the no-event footer. Smaller-screen scaling passed at 1280 × 720 and 768 × 1024. With the preview server stopped after cache installation, both new animated treatments and the 30-entry calendar loaded without broken images. Held locally; no publication.
+
+## 7 November 2026 larger seasonal artwork
+
+- Increased the seasonal artwork area after Philip found the refined treatments too subtle. Remembrance uses the larger painted poppy composition across the lower edge and corners. Pride has a deeper, saturated spectrum fold. Wellbeing foliage and the other SVG treatments use richer colour and stronger detail.
+- Inset the main screen content to 90 per cent during active seasonal periods, reserving roughly the lower fifth of the stage for artwork. Centred the event caption and added a dark backing for captions/counters where they cross the artwork. The usual full-size layout returns between events.
+- Selected `poppy-bold.png` from the initial image generation, updated the prompt record and removed the superseded reduced-size PNG from this local draft. The generated credits/calendar and offline list have been refreshed.
+- Verification passed with 26 Node checks and five feed checks. All 30 event layouts passed browser checks at 1920 × 1080, including content/caption bounds and loaded artwork. Smaller-screen scaling and cached loading of the larger poppies with the preview server stopped also passed. Saved locally for the next release.
+
+## 7 November 2026 refined seasonal artwork
+
+- Revised all seventeen treatments after Philip found the repeated graphic motifs dated. Remembrance now uses a transparent painted botanical meadow created with the built-in image tool. Pride uses a single shaded spectrum fold. Wellbeing uses translucent leaves gathered to one side. The other SVG compositions use sparse line work, muted washes and cropped botanical forms.
+- Reduced the seasonal labels to small spaced capitals, removed the full-width footer rule and softened the classical explanation text. Added PNG/WebP support for the decorative image field while retaining local-path validation.
+- Retained the generated poppy PNG in the project, recorded both generation prompts and updated the source credits. The existing helper regenerates sixteen SVG treatments and preserves the PNG. Removed the superseded repeated poppy SVG from the local draft.
+- Verification passed with 26 Node checks and five feed checks. All 30 event treatments passed browser layout and explanation checks at 1920 × 1080. Smaller-screen scaling and cached loading of the painted PNG and full calendar with the preview server stopped also passed. Saved locally for the next release.
+
+## 7 November 2026 integrated seasonal borders and wider modern calendar
+
+- Replaced the small seasonal icon and explanatory strip with 17 continuous decorative borders. Remembrance has a poppy meadow along the full bottom edge, Pride flowing rainbow ribbons, and wellbeing events green ribbons and leaves. Other designs cover books, flowers, fireworks, festive greenery and classical ornament.
+- Modern observances now show their name and artwork. Roman festivals retain a short explanation. Borders occupy the reserved footer and outside margins. Gentle decorative motion honours reduced-motion preferences, Remembrance is static, and the same artwork persists across screen changes.
+- Expanded to 30 calendar entries with Children’s Mental Health Week, Mental Health Awareness Week, World Mental Health Day, LGBT+ History Month, World Book Day, World Poetry Day, happiness, autism awareness, Earth Day, peace, kindness, Anti-Bullying Week and disability inclusion.
+- Added calendar-month scheduling for leap years and confirmed year-specific campaign ranges. The stored 2027 weeks and World Book Day use organiser-confirmed dates. Anti-Bullying Week uses the confirmed 2026 dates, extended through that weekend. Later dates require checking when announced.
+- Added deterministic artwork generation through the existing credits helper and refreshed the calendar, source credits and offline list. Local cache version remains v3 within this unpublished iteration.
+- Verification passed with 26 Node checks and five feed checks. All 30 event treatments passed browser layout and explanation checks at an explicitly set 1920 × 1080. Smaller-screen scaling, the no-event footer and cached loading of the poppy/wellbeing borders and full calendar with the preview server stopped also passed. Saved locally for the next release.
+
+## 7 November 2026 seasonal calendar for the next version
+
+- Added 17 annually recurring seasonal entries, including all seven requested modern observances and selected Roman festivals throughout the year, with sourced explanations, separate observance dates and extended display windows.
+- Added 14 original SVG illustrations and automatic seasonal selection in the existing footer. UK calendar dates control the changeover. Western Easter is calculated each year. Remembrance uses 6 November through the Sunday of the week containing 11 November, with priority over other entries. Equal-priority overlaps alternate across screens and loops.
+- Generated an annual calendar page and updated source credits, offline assets and continuity/operation records. Local application/cache version is consistently v3. Older saved content can use the bundled event calendar.
+- Corrected cached navigation so the calendar and credits use their own pages when the host is unavailable.
+- Verification passed locally, with 25 Node checks, five Python checks and browser checks for all 17 seasonal entries plus an inactive date at 1920 × 1080. Representative graphics were visually inspected on all five screen types. Smaller-screen scaling, automatic overlapping-event advancement, date controls and warm-cache navigation with the preview server stopped also passed. This next-version work is held locally under Philip’s earlier release instruction.
+
 ## 6 November 2026: daily discovery source check
 
 - Refreshed the source-attributed discovery bank (4 retained feed notices; latest report 2026-11-05). No generated reporting or remote photographs.
 - Content/scheduling checks and feed-safety checks passed before this save. Deployment outcome: [publishing workflow](https://github.com/EBCClassics/classics-display/actions/runs/42221421540); a saved commit alone does not establish successful deployment.
+
+
+## 6 November 2026: news sources for the next iteration
+
+- Recorded TheCollector and Greek Reporter as additional sources for the weekly Classics news scan in the next iteration. Checked both source listings and saved the plan in the local context and handover. This entry records planning only.
 
 ## 2 November 2026: daily discovery source check
 

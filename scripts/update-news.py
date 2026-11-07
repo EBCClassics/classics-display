@@ -4,6 +4,7 @@ import datetime as dt
 import email.utils
 import hashlib
 import html
+from html.parser import HTMLParser
 import json
 import pathlib
 import re
@@ -14,6 +15,8 @@ import xml.etree.ElementTree as ET
 BASE = pathlib.Path(__file__).resolve().parent.parent
 FEEDS = [
     ('https://archaeology.org/feed/', 'Archaeology magazine · AIA', 'archaeology.org'),
+    ('https://www.thecollector.com/rss/', 'TheCollector · News & Discoveries', 'www.thecollector.com'),
+    ('https://greekreporter.com/feed/', 'Greek Reporter · archaeology', 'greekreporter.com'),
 ]
 CLASSICAL = re.compile(r'\b(roman|romans|greek|greeks|greece|pompeii|herculaneum|athens|athenian|byzantine|etruscan|hellenistic|latin|hadrian|colosseum|ephesus)\b', re.I)
 DISCOVERY = re.compile(r'\b(discover\w*|excavat\w*|unearthed|found|finds?|recover\w*|reveal\w*|research\w*|study|survey|inscription\w*|coin\w*|mosaic\w*|temple\w*|tomb\w*|sarcophagus|shipwreck\w*|papyr\w*)\b', re.I)
@@ -25,7 +28,26 @@ def plain(value):
     return re.sub(r'\s+', ' ', html.unescape(re.sub(r'<[^>]*>', ' ', value))).strip()
 
 
-def parse_feed(raw, source_label, host, today):
+def news_links(raw):
+    if len(raw) > 2_000_000:
+        raise ValueError('Excessive listing')
+    class Links(HTMLParser):
+        urls = set()
+        def handle_starttag(self, tag, attrs):
+            if tag != 'a':
+                return
+            url = urllib.parse.urljoin('https://www.thecollector.com/news/', dict(attrs).get('href', ''))
+            parts = urllib.parse.urlsplit(url)
+            if parts.scheme == 'https' and parts.hostname == 'www.thecollector.com' and not parts.username and not parts.password:
+                self.urls.add(urllib.parse.urlunsplit((parts.scheme, parts.netloc, parts.path, '', '')))
+    parser = Links()
+    parser.feed(raw.decode('utf-8', 'replace'))
+    if not parser.urls:
+        raise ValueError('News listing contained no publisher links')
+    return parser.urls
+
+
+def parse_feed(raw, source_label, host, today, allowed_urls=None):
     if len(raw) > 2_000_000 or b'<!DOCTYPE' in raw.upper() or b'<!ENTITY' in raw.upper():
         raise ValueError('Unsafe or excessive feed')
     root = ET.fromstring(raw)
@@ -42,7 +64,9 @@ def parse_feed(raw, source_label, host, today):
         except (TypeError, ValueError, AttributeError):
             continue
         text = title + ' ' + description
-        if (parts.scheme != 'https' or parts.hostname != host or not parts.path.startswith('/news/')
+        categories = {plain(c.text or '').lower() for c in item.findall('category')}
+        route_ok = (host == 'archaeology.org' and parts.path.startswith('/news/')) or (host == 'greekreporter.com' and bool(re.match(r'^/\d{4}/\d{2}/\d{2}/', parts.path)) and 'archaeology' in categories and 'evergreen' not in categories) or (host == 'www.thecollector.com' and allowed_urls is not None and url in allowed_urls)
+        if (parts.scheme != 'https' or parts.hostname != host or not route_ok
                 or parts.username or parts.password or not title or len(title) > 65
                 or not 0 <= (today - date).days <= 30
                 or not CLASSICAL.search(text) or not DISCOVERY.search(text)):
@@ -66,18 +90,20 @@ def parse_feed(raw, source_label, host, today):
     return notices
 
 
-def refresh(data, fetch, now):
+def refresh(data, fetch, now, annotate=False):
     today = now.date()
     result = json.loads(json.dumps(data))
     previous = data.get('newsStatus', {})
     found, succeeded, failed = [], [], []
     for url, label, host in FEEDS:
         try:
-            found.extend(parse_feed(fetch(url), label, host, today))
+            allowed = news_links(fetch('https://www.thecollector.com/news/')) if host == 'www.thecollector.com' else None
+            found.extend(parse_feed(fetch(url), label, host, today, allowed))
             succeeded.append(label)
         except Exception as error:
             failed.append(label)
-            print(f'Source unavailable: {label} ({type(error).__name__}); keeping valid stories.')
+            prefix = '::warning::' if annotate else ''
+            print(f'{prefix}Source unavailable: {label} ({type(error).__name__}); keeping valid stories.')
     if not succeeded:
         raise RuntimeError('All news sources failed; no files changed')
     manual = [row for row in data['news'] if not row.get('feedExtract')]
@@ -110,6 +136,6 @@ if __name__ == '__main__':
     path = BASE / 'dist/content.json'
     data = json.loads(path.read_text())
     fetch = (lambda url: args.fixture.read_bytes()) if args.fixture else download
-    updated = refresh(data, fetch, dt.datetime.now(dt.timezone.utc))
+    updated = refresh(data, fetch, dt.datetime.now(dt.timezone.utc), annotate=True)
     path.write_text(json.dumps(updated, ensure_ascii=False, indent=2) + '\n')
     print(f'Checked sources; {sum(bool(row.get("feedExtract")) for row in updated["news"])} current discovery notices retained.')

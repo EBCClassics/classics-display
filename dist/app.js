@@ -6,6 +6,7 @@ let data=C.validate(window.SEEDED_CONTENT), contentSource='Bundled seed', dateOv
 let index=Math.max(0,C.order.indexOf(params.get('screen'))), paused=params.get('pause')==='1', speed=[1,4,10].includes(Number(params.get('speed')))?Number(params.get('speed')):1;
 let lastKey='', day, elapsed=0, lastTick=performance.now(), loading=false, notice='', imageFailures=0, offlineReady=false;
 const cacheKey='classics-display-content-v2';
+const seasonalMotion=window.SeasonalMotion?.create($('seasonal-art'));
 let cycle=/^\d+$/.test(params.get('cycle')||'')?Number(params.get('cycle')):Math.floor(Date.now()/(Object.values(data.settings.durations).reduce((a,b)=>a+b,0)*1000));
 function scale(){const factor=Math.min(innerWidth/1920,innerHeight/1080);$('stage').style.transform=`scale(${factor})`; $('viewport').style.width=innerWidth+'px';$('viewport').style.height=innerHeight+'px';}
 function key(){return dateOverride||C.dateKey(new Date(),data.settings.timezone);}
@@ -14,6 +15,42 @@ function caption(e){return `<figcaption class="caption">${esc(e.caption)}</figca
 function source(e){return `<p class="source">Source: <a href="${esc(e.sourceUrl)}" target="_blank" rel="noopener">${esc(e.sourceLabel)}</a></p>`;}
 function question(q,label='Something to think about'){return `<div class="question-block"><span class="question-label">${esc(label)}</span><p class="question">${esc(q)}</p></div>`;}
 function heading(label,extra=''){return `<div class="section-heading"><p class="eyebrow">${esc(label)}</p>${extra}</div>`;}
+function renderSeason(key) {
+ const events = data.events ?? window.SEEDED_CONTENT.events ?? [];
+ const event = C.selectEvent(events, key, cycle * C.order.length + index);
+ const artwork = window.SEEDED_CONTENT.events?.find(row => row.id === event?.id);
+ const requestedBorder = event?.borderImage ?? artwork?.borderImage;
+ // Saved drafts may still name the superseded photographic-style poppies.
+ const borderImage = requestedBorder === 'assets/seasons/poppy-bold.png' ? 'assets/seasons/poppy-flowing.svg' : requestedBorder;
+ $('stage').classList.toggle('has-season', !!event);
+ $('stage').dataset.season = event?.id || '';
+ $('stage').dataset.seasonArt = borderImage?.split('/').pop().replace(/\.(svg|png|webp)$/, '') || '';
+ $('stage').style.setProperty('--season-accent', event?.accent ?? artwork?.accent ?? '#FF2DAA');
+ $('seasonal-art').hidden = !event;
+ $('seasonal').hidden = true;
+ $('rotation').hidden = !!event;
+ $('current-screen').hidden = true;
+ $('current-screen').textContent = names[index];
+ if (!event) {
+  seasonalMotion?.set(null);
+  $('seasonal').replaceChildren();
+  $('seasonal-art').replaceChildren();
+  $('seasonal-art').dataset.image = '';
+  return;
+ }
+ const explanation = event.explanation ?? artwork?.explanation ?? (event.kind.startsWith('Roman') ? event.body : '');
+ $('seasonal').hidden = !explanation;
+ $('seasonal').innerHTML = explanation ? `<p class="seasonal-explanation">${esc(explanation)}</p>` : '';
+ const designName = event.designName ?? artwork?.designName ?? '';
+ const artSource = designName ? `assets/seasons/${event.id}-named.svg` : borderImage || event.image;
+ const animated = seasonalMotion?.set(borderImage || event.image, designName);
+ if ($('seasonal-art').dataset.image !== artSource) {
+  if (!animated) $('seasonal-art').innerHTML = borderImage
+   ? `<img class="seasonal-border" src="${esc(artSource)}" alt="">`
+   : `<img class="seasonal-legacy" src="${esc(event.image)}" alt="">`;
+  $('seasonal-art').dataset.image = artSource;
+ }
+}
 const careerArt=`<svg viewBox="0 0 350 280" role="img" aria-label="An open book leading to new possibilities" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M175 235V95M175 105q-50-42-122-16v135q72-26 122 16 50-42 122-16V89q-72-26-122 16Z" stroke="#FF2DAA" stroke-width="6"/><path d="M78 121q42-8 70 11m-70 24q42-8 70 11m-70 24q42-8 70 11m55-70q28-19 70-11m-70 46q28-19 70-11m-70 46q28-19 70-11M175 62V22m-45 47-24-24m113 24 24-24" stroke="#F4FF47" stroke-width="5"/></svg>`;
 function render(){
  const k=key();day=C.selectDay(data,k,cycle);lastKey=k;const type=C.order[index],e=day[type];let html='';
@@ -24,13 +61,14 @@ function render(){
  if(type==='news'&&e){const archive=e.mode==='archive';html=`<section class="screen news enter">${heading('Classics in the news',`<span class="archive-tag">${archive?'From the archive':'Recent discoveries'}</span>`)}<div class="news-grid"><div><h1>${lines(e.title)}</h1><p class="news-date">Reported: ${esc(e.publishedLabel)}</p><p class="body">${esc(e.body)}</p><div class="why"><span class="question-label">Why it matters</span><p class="question">${esc(e.why)}</p></div>${source(e)}${e.feedExtract?'<p class="extract-note">Short source extract · follow the source for the full report.</p>':''}</div><figure class="news-image">${photo(e)}${caption(e)}${archive?'<p class="archive-note">An older discovery, with its original report date.</p>':''}<p class="news-check">${data.newsStatus?.lastSuccess?'Sources checked: '+esc(data.newsStatus.lastSuccess.slice(0,10)):''}</p></figure></div></section>`;}
  if(type==='news'&&!e)html=`<section class="screen empty-news">${heading('Classics in the news')}<h1>A story worth checking.</h1><p>No sourced story is available for this preview date.</p><p class="archive-note">The display will continue to the welcome screen.</p></section>`;
  $('screen').innerHTML=html;
+ renderSeason(k);
  document.querySelector('.college').textContent=data.settings.school;document.querySelector('.identity span:last-child').textContent=data.settings.department;
  $('screen').querySelectorAll('img').forEach(img=>img.addEventListener('error',()=>{if(!img.dataset.fallback){img.dataset.fallback='1';img.src=img.src.includes('gulliver.svg')?'assets/fallback.svg':'assets/fallback.svg';img.alt='Illustrated fallback: an ancient temple';const caption=img.closest('figure')?.querySelector('.caption');if(caption)caption.textContent='Image unavailable · illustrated fallback';imageFailures++;diagnostics();}},{once:true}));
  $('rotation').innerHTML=names.map((n,i)=>`<span class="rotation-item ${i===index?'active':''}" ${i===index?'aria-current="step"':''}><b>${String(i+1).padStart(2,'0')}</b>${n}</span>`).join('');
  $('counter').textContent=String(index+1).padStart(2,'0')+' / 05';$('screen-select').value=type;elapsed=0;updateClock();updatePlay();diagnostics();
 }
 function updateClock(){const now=new Date(), preview=new Date(key()+'T12:00:00Z');$('date').textContent=new Intl.DateTimeFormat('en-GB',{day:'numeric',month:'long',weekday:'short',timeZone:'UTC'}).format(preview);$('clock').textContent=new Intl.DateTimeFormat('en-GB',{hour:'2-digit',minute:'2-digit',hourCycle:'h23',timeZone:data.settings.timezone}).format(now);}
-function updatePlay(){$('pause').textContent=paused?'Play':'Pause';$('pause').setAttribute('aria-pressed',String(paused));$('play-state').textContent=paused?'Paused':dateOverride?'Preview date':speed!==1?`${speed}× test speed`:'Auto-advancing';}
+function updatePlay(){$('stage').classList.toggle('is-paused',paused);seasonalMotion?.pause(paused);$('pause').textContent=paused?'Play':'Pause';$('pause').setAttribute('aria-pressed',String(paused));$('play-state').textContent=paused?'Paused':dateOverride?'Preview date':speed!==1?`${speed}× test speed`:'Auto-advancing';}
 function diagnostics(){$('diagnostics').textContent=`${contentSource} · loop ${cycle} · ${key()}${dateOverride?' (preview)':''} · ${navigator.onLine?'Online':'Offline'} · ${offlineReady?'Offline cache ready':'Offline cache not confirmed'}${imageFailures?' · '+imageFailures+' image fallback(s)':''}${notice?' · '+notice:''}`;}
 function go(delta){if(index===4&&delta>0)cycle++;if(index===0&&delta<0)cycle=Math.max(0,cycle-1);index=(index+delta+5)%5;render();}
 function pause(){paused=!paused;lastTick=performance.now();updatePlay();}
@@ -51,5 +89,5 @@ document.addEventListener('visibilitychange',()=>{lastTick=performance.now();if(
 scale();render();if(params.get('controls')==='1')controls(true);loadContent();
 setInterval(()=>{const now=performance.now(),delta=now-lastTick;lastTick=now;if(lastKey!==key())render();updateClock();if(!paused&&!document.hidden){elapsed+=Math.min(delta,1000)*speed;const duration=data.settings.durations[C.order[index]]*1000;if(elapsed>=duration)go(1);}const duration=data.settings.durations[C.order[index]]*1000;$('progress').style.width=Math.min(100,elapsed/duration*100)+'%';},100);
 setInterval(loadContent,15*60*1000);
-if('serviceWorker' in navigator&&location.protocol!=='file:'&&params.get('nosw')!=='1')navigator.serviceWorker.register('sw.js').then(async()=>{await navigator.serviceWorker.ready;const c=await caches.open('classics-display-v2');offlineReady=!!(await c.match(new URL('index.html',location.href).href));diagnostics();}).catch(()=>{notice='Player does not support offline caching; page still rotates while loaded.';diagnostics();});
+if('serviceWorker' in navigator&&location.protocol!=='file:'&&params.get('nosw')!=='1')navigator.serviceWorker.register('sw.js').then(async()=>{await navigator.serviceWorker.ready;const c=await caches.open('classics-display-v3');offlineReady=!!(await c.match(new URL('index.html',location.href).href));diagnostics();}).catch(()=>{notice='Player does not support offline caching; page still rotates while loaded.';diagnostics();});
 })();

@@ -1,6 +1,60 @@
 # Display testing record
 
-Updated on 2 November 2026. This records development checks, successful publication and Philip's reported Planet eStream test separately.
+Updated on 7 November 2026. This records development checks, successful publication and Philip's reported Planet eStream test separately.
+
+## Ancient festival names and release checks, 7 November 2026
+
+- PASS: 30 Node checks and seven Python feed checks. New coverage includes all eleven names and named fallbacks, unchanged canvas reuse when a name changes, publisher-specific news-section/category filtering and preservation of valid stories after partial source failures.
+- PASS: the local source check read all three publishers, retained five feed notices and preserved the newer AIA report already published by the daily workflow.
+- PASS: all eleven ancient designs selected their expected events and rendered their named treatments with no broken content images at 1920 × 1080. The text is integrated in the lower artwork area; surrounding central motifs are removed or lowered where needed. Saved current screenshots in the `festival-names-release` folder beside the earlier review pack.
+- Philip authorised release after screenshot review. Deployment and live checks remain pending at release preparation.
+
+## Full seasonal screenshot review, 7 November 2026
+
+- PASS locally: 29 Node checks and five feed checks. The new coverage draws every scheduled treatment at two phases, checks finite coordinates and confirms that each static SVG matches the shared drawing at phase zero. Existing content, date, motion lifecycle and news safety checks remain passing.
+- PASS in the browser at 1920 × 1080: all 30 event fixtures selected the expected event and rendered a canvas treatment, without broken or pending content images. Main text ended at or above 824.4px on the common welcome fixture, clear of the artwork’s 864px top edge. All classical notes ended at about 164.6px, above the main content. Screenshots use paused motion, which now also suppresses the entrance fade.
+- PASS: all 30 generated calendar border previews loaded, with no broken images. Normal running of the fireworks/news fixture produced no console warnings or errors. The new canvas treatments scale without overflow at 1280 × 720 and 768 × 1024. With the preview server stopped after cache installation, Earth Day reloaded with its canvas and no broken content images; all 30 calendar previews also loaded from cache.
+- Prepared and checked 30 full-size 1920 × 1080 JPEG screenshots, a labelled 30-page PDF and a ZIP containing the screenshots and gallery. An overview of all eighteen distinct treatments was visually inspected. The PDF was reopened, its page count checked and an exported page visually inspected.
+- This is a local review draft. Await Philip’s response to the screenshots before publishing. Earlier scaling, five-screen and player evidence below retain their original scope; still screenshots do not establish motion performance or readability on the actual TV.
+
+## Earlier selected flowing motion checks, 7 November 2026
+
+- PASS locally: 28 Node checks and five feed checks. The new motion lifecycle checks cover pause/resume, hidden-page suspension, reduced-motion changes, reuse across screen changes and unavailable canvas support. Existing date, source, content and offline routing coverage still passes.
+- PASS in the browser at 1920 × 1080: Pride on all five screen types, with text bounds above the artwork area’s 864px top edge and no broken loaded images. Remembrance/news, Parilia/tour and the December note were also inspected. Modern captions and footer counters no longer interrupt the graphics. Classical notes end at about 165px, above the main content.
+- PASS at 1280 × 720 and 768 × 1024: expected whole-stage scaling without document overflow. Artwork is 216px on the unscaled stage, with speed 1.6 matching the selected study. The main content retains the earlier 90 per cent inset.
+- PASS with the preview server stopped after offline-cache installation: Pride and Remembrance loaded with their new canvas treatments; the calendar retained 30 entries and the new SVG previews, with no broken loaded images.
+- The selected Pride/Remembrance direction is applied locally. The other fifteen treatments are provisional and require adaptation/review. Nothing was committed, pushed or published. Player readability, motion and performance remain checks for the eventual release.
+
+## Earlier larger seasonal artwork checks, 7 November 2026
+
+- PASS locally, 26 Node checks and five feed checks.
+- PASS in the browser at an explicitly set 1920 × 1080. All 30 event layouts displayed their expected artwork and explanation treatment, with no overflowing captions or broken loaded images. The inset main area ended at 867.6px, alongside the footer’s start, leaving the lower area for the larger compositions.
+- PASS at 1280 × 720 and 768 × 1024, with no document overflow after layout. The larger poppy artwork also loaded after the preview server was stopped following cache installation.
+- This version is held locally. The content inset makes profile body text 27px on the 1080p stage, compared with its 30px base size. Actual player readability needs checking after release.
+
+## Earlier refined seasonal artwork checks, 7 November 2026
+
+- PASS locally, 26 Node checks and five feed checks. Bundled-asset validation includes the retained transparent poppy PNG.
+- PASS in the browser at an explicitly set 1920 × 1080. All 30 events displayed the expected artwork and explanation treatment, with no overflowing labels or broken loaded images. Painted Remembrance, the spectrum fold for Pride and the translucent wellbeing leaves were visually inspected in the page.
+- PASS at 1280 × 720 and 768 × 1024 after layout settled. The painted Remembrance/news layout fitted its stage without document overflow. After cache installation and stopping the preview server, the painted PNG and the 30-entry calendar loaded with no broken loaded images.
+- This revision is saved locally for the next release. The latest published and player evidence is recorded below.
+
+## Earlier seasonal border checks, 7 November 2026
+
+- PASS locally, 26 Node checks and five Python feed checks. Seasonal coverage includes all 30 entries and border paths, older cached content, inclusive annual windows, Gregorian Easter, Remembrance, overlaps and priority, leap-day month rules, confirmed campaign years, malformed input and the offline HTML routing regression.
+- PASS in the in-app browser at an explicitly set 1920 × 1080. All 30 events displayed the expected artwork and modern/classical explanation treatment, with no overflowing labels or broken loaded images. Representative poppy, Pride, wellbeing and fireworks layouts were visually inspected. Modern observances have no explanatory paragraph on the display.
+- PASS at 1280 × 720 and 768 × 1024. The poppy/news layout scaled without document overflow. A date outside all windows restored the usual rotation footer and hid the artwork.
+- PASS after stopping the preview server following installation of the 79-file offline cache. Remembrance, the new wellbeing border and the 30-entry calendar with all 30 border previews loaded from cache, with no broken loaded images in the calendar.
+- The revised design is saved locally for the next release. Actual Planet eStream regression testing follows publication. Earlier player evidence below retains its original scope.
+
+## Initial seasonal draft checks, 7 November 2026
+
+- PASS locally, 25 Node checks. The nine new seasonal checks cover all 17 event records and bundled assets, older content, inclusive annual windows, weekend handling, Remembrance through the correct Sunday for 2000–2100, Gregorian Easter including exceptional and century years, overlaps, priority, cross-year ranges and malformed input.
+- PASS locally, five Python feed checks. Their simulated feed failure preserves valid stories as before.
+- PASS in the in-app desktop browser at 1920 × 1080. All 17 seasonal entries and a no-event date produced the expected footer. Measured seasonal children fitted within the footer, with no broken loaded images. Remembrance, Christmas, Pride and fireworks screenshots were inspected alongside welcome, tour, people, careers and news content.
+- PASS at 1280 × 720 and 768 × 1024. The stage scaled to 1280 × 720 and a centred 768 × 432 respectively, with no document overflow. An accelerated loop advanced unaided from Welcome/Pride to Tour/Vestalia. The preview-date control changed the cached display to Easter on 28 March 2027.
+- PASS with the preview server stopped after cache installation. The Christmas display, its illustration and the Easter date-controlled illustration loaded from cache. The annual calendar retained all 17 entries and its graphics, and the credits page also opened correctly. This check exposed and corrected the existing worker’s use of the main page as the fallback for every navigation. Known bundled HTML pages now use their own cached responses. The new routing regression check covers calendar, credits, main navigation and a seasonal SVG.
+- The local seasonal version is held for the next release. The published v2 evidence below remains the latest verified deployment and player evidence.
 
 ## Expanded release checks: 2 November 2026
 

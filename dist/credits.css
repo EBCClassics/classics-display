@@ -1,1 +1,4 @@
 body{margin:0;background:#101522;color:#F1F3F5;font:19px/1.6 Arial,sans-serif}main{max-width:950px;margin:60px auto;padding:0 30px}h1,h2,h3{font-family:Georgia,serif;font-weight:400;line-height:1.2}h1{font-size:56px;color:#FF2DAA}h2{font-size:34px;margin-top:40px;color:#F4FF47}h3{font-size:24px}a{color:#FF78CB}article{border-top:1px solid #39404E;padding:10px 0}li{margin:10px 0}a:focus-visible{outline:3px solid #F4FF47}
+ .calendar-event{display:flex;gap:28px;align-items:flex-start}.calendar-event img{flex-shrink:0}.calendar-event h2{margin-top:0}@media(max-width:600px){.calendar-event{display:block}.calendar-event img{margin-bottom:12px}}
+ .calendar-border{display:block;width:100%;height:auto;margin-bottom:28px;background:#151B29;border-radius:8px}
+ .calendar-border[src$=".png"]{height:119px;object-fit:cover;object-position:bottom}

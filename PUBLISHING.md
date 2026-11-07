@@ -8,7 +8,9 @@ The first GitHub Pages deployment succeeded on 2 November 2026. Use this base ad
 
 ## Changes through Codex
 
-Ask for the required content or design changes in the Codex project. Its prepared local checkout is `/Users/philipcanning/Documents/Codex/Projects/ClassicsDisplay`. Codex updates this repository and the affected context, handover, changelog and operating/test records, validates the content, runs the 16 application checks and five feed-safety checks and saves the changes to `main`. The included GitHub Actions workflow then prepares and publishes `dist/` automatically. Wait for that workflow to succeed before calling an update published.
+Philip approved the 7 November seasonal artwork and 30-entry calendar for publication. All eighteen treatments now use the selected flowing/stylised direction at speed 1.6 and 20 per cent height. The screenshot review is approved, and eleven ancient festival names have been integrated into the artwork in matching colours. The release uses cache version v3. The existing daily news check also includes the two queued publishers, TheCollector and Greek Reporter. Deployment must succeed and the live page be checked before this release is called published.
+
+Ask for the required content or design changes in the Codex project. Its prepared local checkout is `/Users/philipcanning/Documents/Codex/Projects/ClassicsDisplay`. Codex updates this repository and the affected context, handover, changelog and operating/test records, validates the content, runs all current application checks and seven feed-safety checks and saves the changes to `main`. The included GitHub Actions workflow then prepares and publishes `dist/` automatically. Wait for that workflow to succeed before calling an update published.
 
 The webpage checks for content changes every 15 minutes. Design and script changes require the panel to reload. A changed offline-worker version can update its cached files; support still depends on the actual player.
 
@@ -16,6 +18,7 @@ The webpage checks for content changes every 15 minutes. Design and script chang
 
 - `dist/`: the complete public website, photographs and fonts.
 - `dist/content.json`: the editable source of content and schedules.
+- `dist/assets/seasons/` and `dist/calendar.html`: original seasonal borders/illustrations and the generated annual calendar in the local next version. The credits helper regenerates eighteen SVG treatments with `scripts/seasonal-art.py` and `scripts/seasonal-art.cjs`. They share `dist/seasonal-drawing.js` with the motion player, `dist/seasonal-motion.js`. The old painted poppy PNG is retained but no longer selected.
 - `scripts/prepare.cjs`: validation plus generation of the bundled fallback and offline asset list.
 - `tests/`: scheduling, content and fallback checks.
 - `.github/workflows/pages.yml`: automatic publication when `main` changes.
@@ -33,7 +36,7 @@ The connected GitHub account could read the repository but its write requests re
 
 ## Daily discovery publication
 
-The same workflow runs at 05:17 UTC daily and can be run manually. It checks the Archaeology magazine RSS feed for recent Greek/Roman discoveries, retains dated source extracts for up to 30 days, rebuilds credits/fallbacks, and runs both test suites. If the discovery bank changed, it saves content and the corresponding changelog/handover record to `main`, then deploys in the same run. Its short-lived repository token has `contents: write` for that save; there are no stored personal tokens. Unchanged notices require no repository commit, but the deployed check date is refreshed.
+The same workflow runs at 05:17 UTC daily and can be run manually. It checks AIA, TheCollector’s News & Discoveries and Greek Reporter’s archaeology feed for recent Greek/Roman discoveries, retains dated source extracts for up to 30 days, rebuilds credits/fallbacks, and runs both test suites. If the discovery bank changed, it saves content and the corresponding changelog/handover record to `main`, then deploys in the same run. Its short-lived repository token has `contents: write` for that save; there are no stored personal tokens. Unchanged notices require no repository commit, but the deployed check date is refreshed.
 
 Source-fetch failure preserves the last valid content and raises a warning. A later build or deployment failure leaves the last successful public deployment in place. GitHub scheduling can run late; it is a daily check, not a promise of a new story every morning. The Mac and Codex need not be open. The player checks published content every 15 minutes when online. Application changes still need one panel reload.
 
