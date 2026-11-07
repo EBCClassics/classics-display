@@ -148,10 +148,10 @@ test('offline navigation retains the calendar and credits pages', async () => {
   URL, AbortController, setTimeout, clearTimeout,
   Response:{error:() => {throw new Error('No cached response');}}
  });
- for (const [page, expected] of [['?date=2026-11-07','index.html'], ['calendar.html','calendar.html'], ['credits.html','credits.html'], ['assets/seasons/pride.svg','assets/seasons/pride.svg']]) {
+ for (const [page, expected] of [['?date=2026-11-07','index.html'], ['calendar.html','calendar.html'], ['credits.html','credits.html'], ['assets/seasons/pride.svg','assets/seasons/pride.svg'], ['app.js?v=4','app.js']]) {
   let response;
-  handlers.fetch({request:{method:'GET', mode:page.endsWith('.svg')?'cors':'navigate', url:'https://example.org/classics-display/' + page}, respondWith:value => response = value});
+  handlers.fetch({request:{method:'GET', mode:page.endsWith('.html')||page.startsWith('?')?'navigate':'cors', url:'https://example.org/classics-display/' + page}, respondWith:value => response = value});
   assert.equal((await response).cachedUrl, 'https://example.org/classics-display/' + expected);
  }
- assert.equal(matches.length, 4);
+ assert.equal(matches.length, 5);
 });

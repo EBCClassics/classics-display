@@ -13,8 +13,9 @@ function player(reduce=false, available=true) {
  vm.runInNewContext(fs.readFileSync(require.resolve('../dist/seasonal-motion.js'),'utf8'),{
   window,document,requestAnimationFrame:fn=>{frames.set(++id,fn);return id;},cancelAnimationFrame:id=>frames.delete(id)
  });
- const art=window.SeasonalMotion.create({replaceChildren(){replacements++;}});
- return {art,frames,document,reduced,listeners,get replacements(){return replacements;},get clears(){return clears;},
+ const container={dataset:{},replaceChildren(){replacements++;}};
+ const art=window.SeasonalMotion.create(container);
+ return {art,frames,document,reduced,listeners,container,get replacements(){return replacements;},get clears(){return clears;},
   tick(now){const [id,fn]=frames.entries().next().value;frames.delete(id);fn(now);}};
 }
 
@@ -24,10 +25,13 @@ test('decorative motion stops for pause, background and reduced-motion preferenc
  p.tick(10); p.tick(50);
  assert.ok(p.clears>1);
  p.art.pause(true); assert.equal(p.frames.size,0);
+ assert.equal(p.container.dataset.motionState,'paused');
  p.art.pause(false); assert.equal(p.frames.size,1);
+ assert.equal(p.container.dataset.motionState,'running');
  p.document.hidden=true; p.listeners.visibilitychange(); assert.equal(p.frames.size,0);
  p.document.hidden=false; p.listeners.visibilitychange(); assert.equal(p.frames.size,1);
  p.reduced.matches=true; p.listeners.motion(); assert.equal(p.frames.size,0);
+ assert.equal(p.container.dataset.motionState,'reduced-motion');
  p.reduced.matches=false; p.listeners.motion(); assert.equal(p.frames.size,1);
  p.art.set(null); assert.equal(p.frames.size,0);
 });
@@ -73,4 +77,19 @@ test('ancient names appear in matching generated artwork without resetting the c
  assert.ok(events.filter(e=>e.kind.startsWith('Modern')).every(e=>!e.designName));
  const p=player(true);p.art.set('assets/seasons/roman-border.svg','Kalends of January');
  p.art.set('assets/seasons/roman-border.svg','Lupercalia');assert.equal(p.replacements,1);
+});
+
+
+test('an explicit display setting can enable motion despite reduced-motion preferences',()=>{
+ const p=player(true);p.art.set('assets/seasons/poppy-flowing.svg');
+ assert.equal(p.frames.size,0);assert.equal(p.container.dataset.motionState,'reduced-motion');
+ p.art.mode('on');assert.equal(p.frames.size,1);assert.equal(p.container.dataset.motionState,'running');
+ p.tick(10);p.tick(50);assert.ok(p.clears>1);
+ p.art.pause(true);assert.equal(p.frames.size,0);
+ p.art.pause(false);assert.equal(p.frames.size,1);
+ p.document.hidden=true;p.listeners.visibilitychange();assert.equal(p.frames.size,0);
+ p.document.hidden=false;p.listeners.visibilitychange();assert.equal(p.frames.size,1);
+ p.art.mode('off');assert.equal(p.frames.size,0);assert.equal(p.container.dataset.motionState,'off');
+ p.art.mode('auto');assert.equal(p.frames.size,0);assert.equal(p.container.dataset.motionState,'reduced-motion');
+ p.art.mode('invalid');assert.equal(p.frames.size,0);
 });
