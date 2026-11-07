@@ -7,7 +7,8 @@ Updated on 7 November 2026. This records development checks, successful publicat
 - PASS: 30 Node checks and seven Python feed checks. New coverage includes all eleven names and named fallbacks, unchanged canvas reuse when a name changes, publisher-specific news-section/category filtering and preservation of valid stories after partial source failures.
 - PASS: the local source check read all three publishers, retained five feed notices and preserved the newer AIA report already published by the daily workflow.
 - PASS: all eleven ancient designs selected their expected events and rendered their named treatments with no broken content images at 1920 × 1080. The text is integrated in the lower artwork area; surrounding central motifs are removed or lowered where needed. Saved current screenshots in the `festival-names-release` folder beside the earlier review pack.
-- Philip authorised release after screenshot review. Deployment and live checks remain pending at release preparation.
+- PASS: [GitHub workflow 42373132244](https://github.com/EBCClassics/classics-display/actions/runs/42373132244) from release commit `b2187cfad7dbf47e0283de48270394e94f500f11`, including artwork generation, preparation, both test suites and Pages deployment.
+- PASS on the live site: the base URL rendered the new Remembrance canvas, Floralia and Saturnalia rendered their names within the artwork, and the Greek Reporter news fixture retained its attribution and loaded image. The accelerated live rotation advanced unaided from Welcome to Careers while retaining a seasonal canvas, with no console errors/warnings. The live calendar loaded all 30 previews, including eleven named ancient designs, without broken images. This is desktop evidence; the new version’s eStream panel reload and regression check remain to be reported.
 
 ## Full seasonal screenshot review, 7 November 2026
 

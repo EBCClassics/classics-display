@@ -10,7 +10,7 @@ The live display is https://ebcclassics.github.io/classics-display/. The user wa
 
 ## Current state and latest user request
 
-**Seasonal release authorised on 7 November 2026; deployment verification pending.** Philip selected the “Flowing strands” study on 7 November, at speed 1.6 and artwork height 18–20 per cent. The actual display starts at 20 per cent: a 216px artwork area along the bottom. Pride/LGBT+ History use six separate moving colour strands. Remembrance uses flat stylised poppies with swaying curved stems. `dist/seasonal-drawing.js` defines all artwork; `dist/seasonal-motion.js` renders it at up to 30fps; matching generated SVGs provide static fallbacks and calendar previews. The remaining treatments are now adapted to the selected style. Eighteen designs cover the 30 events, including a separate Easter treatment. Philip approved the reviewed designs, requested ancient names integrated into the artwork and authorised publication. Eleven ancient treatments now include their names in matching colours; the motifs leave room for the text.
+**Seasonal release published and verified on 7 November 2026.** Philip selected the “Flowing strands” study on 7 November, at speed 1.6 and artwork height 18–20 per cent. The actual display starts at 20 per cent: a 216px artwork area along the bottom. Pride/LGBT+ History use six separate moving colour strands. Remembrance uses flat stylised poppies with swaying curved stems. `dist/seasonal-drawing.js` defines all artwork; `dist/seasonal-motion.js` renders it at up to 30fps; matching generated SVGs provide static fallbacks and calendar previews. The remaining treatments are now adapted to the selected style. Eighteen designs cover the 30 events, including a separate Easter treatment. Philip approved the reviewed designs, requested ancient names integrated into the artwork and authorised publication. Eleven ancient treatments now include their names in matching colours; the motifs leave room for the text.
 
 Modern observances have no visible caption over the artwork. The footer counter and progress bar are hidden during seasonal periods. Ancient festival names appear within their graphics, with an unboxed explanation above the main content. The main content keeps its 90 per cent inset; the five-screen timings are unchanged. `dist/calendar.html` holds the reference text and sources.
 
@@ -26,7 +26,11 @@ Offline navigation preserves each bundled HTML page’s own cached response. Cur
 
 Prepared on 7 November: `/Users/philipcanning/.codex/visualizations/2026/11/06/01a1b1b0-8a7b-7af0-ac0a-dfa4d31fefeb/seasonal-review`. The 30-page PDF is in `output/pdf/classics-seasonal-review.pdf`; the ZIP contains all 30 full-size JPEG screenshots and a labelled local gallery. `artwork-overview.jpg` compares the eighteen distinct treatments. Event names and windows are outside the screenshots. The pack uses the same welcome screen for comparison. Motion is paused in the stills; all designs run at speed 1.6 and 20 per cent height in normal playback. This is a review snapshot, not another editable master.
 
-### Latest verified published release
+### Latest verified seasonal publication
+
+Release commit `b2187cfad7dbf47e0283de48270394e94f500f11` (PR #2) deployed successfully through [workflow 42373132244](https://github.com/EBCClassics/classics-display/actions/runs/42373132244). Both test suites, preparation, artwork generation and the Pages deployment step succeeded. The live base URL rendered Remembrance with the new motion player; Floralia and Saturnalia showed their names within matching artwork. The live news fixture displayed the attributed Greek Reporter report, with no broken image. The accelerated live rotation advanced unaided and the calendar loaded all 30 previews, including eleven named designs. These are desktop checks, not new eStream acceptance evidence.
+
+### Previous published release: 2 November 2026
 
 The expanded release contains 15 landmarks, 10 university Classics graduates shown two at a time, and 14 career routes. Selections change on successive 90-second loops, with a time-seeded starting counter and UK school-date offsets. The welcome sticker covers its decorative frame; the public “working draft” badge is gone. The Parthenon uses a wide photograph, landmark images are shown in full, and Gulliver’s speech is below them.
 
@@ -83,7 +87,7 @@ The browser uploader accepted individual files, not a whole folder. Upload files
 ## Known limits and next work
 
 - The queued TheCollector/Greek Reporter source request is implemented in the existing daily check. Publisher hosts, source sections/categories, Greek/Roman relevance, dates and bounded extracts are checked. The local 7 November check read all three publishers and retained five feed notices. Individual failures warn and preserve valid notices.
-- Current release work: publish the authorised combined seasonal/news version, wait for deployment and verify the live page. The screenshot review is approved; complete the authorised release and record workflow/live verification. A push to `main`, including documentation, would trigger publication.
+- Current release is complete: the approved seasonal/news version is published and verified. The next action is one eStream panel reload and a player regression check of the new graphics and inset text. A push to `main`, including documentation, would trigger publication.
 - Next player check: reload the eStream website panel once to load v2, then check readability and two complete 90-second loops on the actual player.
 - The news feed is a selected source, not an exhaustive archaeology service. No new relevant report is guaranteed every day. The verified first refresh contains three AIA feed notices reported on 30 October 2026, alongside two manually checked official Pompeii excavation reports.
 - `?cycle=0&date=2026-11-02&pause=1&screen=people` gives Tom Hiddleston and Chris Martin; cycles 1–4 show the remaining four pairs. `cycle=0…14` covers all landmarks on the anchor date.
@@ -91,5 +95,5 @@ The browser uploader accepted individual files, not a whole folder. Upload files
 - Actual eStream viewing-distance, long unattended running and offline restart remain separate player checks. Desktop results do not establish them.
 
 <!-- NEWS_STATUS_START -->
-Daily source check: 2026-11-07T12:15:36Z. 5 feed notices retained; latest report 2026-11-07. Local source retrieval and both test suites passed. Publication of the approved seasonal release is pending.
+Daily source check: 2026-11-07T12:15:36Z. 5 feed notices retained; latest report 2026-11-07. Local source retrieval and both test suites passed. Deployment of the approved seasonal release succeeded: https://github.com/EBCClassics/classics-display/actions/runs/42373132244.
 <!-- NEWS_STATUS_END -->
