@@ -7,7 +7,8 @@ Updated on 7 November 2026. This records development checks, successful publicat
 - PASS locally: 31 Node checks and seven Python checks. Coverage verifies explicit On overrides a simulated reduced-motion preference, Automatic and Off stop it appropriately, pause/background suspension still apply, and versioned script URLs use their canonical cached fallback.
 - PASS in the browser: Off reported “Off for this display”; selecting On reported “Playing (On for this display)”. Reopening the base page retained On and an active canvas. Live captures of the previous release differed over time, confirming animation in the tested browser. The approved movement geometry and pace are retained.
 - Philip confirms movement on his laptop but not on the school desktop in Edge. No direct school-device test has been performed here; the cause remains unconfirmed.
-- PASS with the preview server stopped after cache installation: reopening the page retained On, reported Playing and loaded all five versioned scripts from the cached display. Cache version is consistently v4; deployment and live verification are pending for this update.
+- PASS with the preview server stopped after cache installation: reopening the page retained On, reported Playing and loaded all five versioned scripts from the cached display. Cache version is consistently v4.
+- PASS: [workflow 42375679647](https://github.com/EBCClassics/classics-display/actions/runs/42375679647) from `2695e8219b62ed4c2964a72102ba10d8559b827c`, including both test suites and Pages deployment. The live motion-on URL selected On, reported Playing and loaded all five v4 scripts; reopening the base URL retained On and an active canvas. The actual school Edge/eStream device remains a user check.
 
 ## Ancient festival names and release checks, 7 November 2026
 

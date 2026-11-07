@@ -73,7 +73,7 @@ The default **Automatic** setting follows the device’s reduced-motion preferen
 
 The hidden controls (`?controls=1` or C) offer the same **Artwork motion** choice and show whether the artwork is playing, paused, following reduced-motion settings or using a static fallback. Pause also stops the artwork. The diagnostic text is hidden during normal display playback.
 
-For an eStream panel, the production URL may include `?motion=on` so the choice remains explicit on player restart even if browser storage is restricted. Other test parameters should be removed. Application/cache version v4 refreshes the scripts and cached assets; reload each existing panel once after publication.
+For an eStream panel, the production URL may include `?motion=on` so the choice remains explicit on player restart even if browser storage is restricted. Other test parameters should be removed. Application/cache version v4 refreshes the scripts and cached assets. This update is [published and checked](https://github.com/EBCClassics/classics-display/actions/runs/42375679647); reload each existing panel once. The live test confirms the setting and persistence, while the actual school desktop/player still needs checking.
 
 ## Local preview
 

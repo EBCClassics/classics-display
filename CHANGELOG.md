@@ -6,7 +6,7 @@
 - Added Automatic, On for this display and Off options to the hidden controls. Automatic honours reduced-motion preferences. An explicit On choice enables decorative motion for this display without changing Windows settings. `?motion=on` selects and remembers that browser’s choice; the same parameter can remain in an eStream panel URL. Pause and background suspension continue to apply.
 - Added motion diagnostics distinguishing playing, reduced-motion preference, explicit Off, pause and static fallback. The approved artwork, pace and geometry are unchanged.
 - Updated application/cache version consistently to v4, versioned script/style URLs and requested fresh assets during cache installation. Query-versioned script requests retain their canonical offline fallback.
-- Verification: 31 Node checks and seven Python checks pass. Browser checks cover explicit Off/On, accurate diagnostics and persistence after reopening the base page. School Edge and eStream confirmation remains a user check. Publication verification is pending.
+- Verification: 31 Node checks and seven Python checks pass. Browser checks cover explicit Off/On, accurate diagnostics and persistence after reopening the base page. School Edge and eStream confirmation remains a user check. Published successfully from `2695e8219b62ed4c2964a72102ba10d8559b827c` in [workflow 42375679647](https://github.com/EBCClassics/classics-display/actions/runs/42375679647). The live motion-on link reported Playing, loaded the versioned v4 scripts and retained On when the base page was reopened.
 
 ## 7 November 2026 ancient names and authorised seasonal release
 
