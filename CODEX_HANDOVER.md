@@ -1,6 +1,6 @@
 # Classics Display: Codex handover
 
-Last implementation review: 2 November 2026. The dated news status below is maintained by the daily workflow.
+Last implementation review: 7 November 2026. The dated news status below is maintained by the daily workflow.
 
 ## Read first
 
@@ -10,9 +10,27 @@ The live display is https://ebcclassics.github.io/classics-display/. The user wa
 
 ## Current state and latest user request
 
+**Seasonal release authorised on 7 November 2026; deployment verification pending.** Philip selected the “Flowing strands” study on 7 November, at speed 1.6 and artwork height 18–20 per cent. The actual display starts at 20 per cent: a 216px artwork area along the bottom. Pride/LGBT+ History use six separate moving colour strands. Remembrance uses flat stylised poppies with swaying curved stems. `dist/seasonal-drawing.js` defines all artwork; `dist/seasonal-motion.js` renders it at up to 30fps; matching generated SVGs provide static fallbacks and calendar previews. The remaining treatments are now adapted to the selected style. Eighteen designs cover the 30 events, including a separate Easter treatment. Philip approved the reviewed designs, requested ancient names integrated into the artwork and authorised publication. Eleven ancient treatments now include their names in matching colours; the motifs leave room for the text.
+
+Modern observances have no visible caption over the artwork. The footer counter and progress bar are hidden during seasonal periods. Ancient festival names appear within their graphics, with an unboxed explanation above the main content. The main content keeps its 90 per cent inset; the five-screen timings are unchanged. `dist/calendar.html` holds the reference text and sources.
+
+The next version selects artwork using the real UK date, including weekends and midnight changes. Remembrance is 6 November through the Sunday of the week containing 11 November, inclusive, and takes priority. Other overlaps alternate by screen and loop. Bonfire Night uses 1–5 November. Christmas/Saturnalia runs through December. Reduced-motion preferences disable decorative animation. All decorative motion also stops when paused or hidden. Its canvas persists across screen changes for the same treatment. The five screens retain their timings. During seasonal periods the main content is inset by ten per cent to reserve more room for the artwork. With no active event the main content returns to its full size.
+
+New modern entries include mental health, kindness, anti-bullying, autism awareness, disability inclusion, LGBT+ history, happiness, reading, poetry, peace and Earth Day. Fixed and month rules recur annually. Easter uses the Gregorian calculation. `dated` ranges are only active for confirmed years. Check the organisers and extend Children’s Mental Health Week, Mental Health Awareness Week and UK World Book Day beyond their confirmed 2027 dates, and Anti-Bullying Week beyond its confirmed 2026 dates. The calendar reference page makes this limit explicit.
+
+`events` remains optional for older saved content. With no calendar, the application uses the bundled one. Older event records use matching bundled artwork and explanation settings. An explicit empty array disables seasonal artwork. `scripts/seasonal-art.py` regenerates eighteen SVG treatments and five additional thumbnails through `scripts/credits.py`, using `scripts/seasonal-art.cjs` and the shared drawing definitions. Preserve the earlier `dist/assets/seasons/poppy-bold.png` and its prompt record as historical assets; the display now selects `poppy-flowing.svg` and its matching animation instead. Older saved drafts naming the PNG are redirected to the new treatment. Preparation bundles them into the v3 offline asset list. The news check now includes AIA, TheCollector and Greek Reporter. Local checks currently pass with 30 Node checks and seven feed checks. See `TESTING.md` for browser evidence and release limits.
+
+Offline navigation preserves each bundled HTML page’s own cached response. Current browser checks include all 30 events on the welcome screen, each rendered with a canvas treatment and no broken loaded images; the screenshots use paused motion. Earlier checks cover the five content screen types, the no-event footer and smaller-screen scaling. The new artwork has no text overlay; the main text stays above its 864px top edge. With the preview server stopped after cache installation, the new shared-drawing player loaded Earth Day and the 30-entry calendar without broken images. The earlier Pride/Remembrance host-unavailable checks also passed. See `TESTING.md` for the current check evidence. Actual-player acceptance follows publication.
+
+### Screenshot review pack
+
+Prepared on 7 November: `/Users/philipcanning/.codex/visualizations/2026/11/06/01a1b1b0-8a7b-7af0-ac0a-dfa4d31fefeb/seasonal-review`. The 30-page PDF is in `output/pdf/classics-seasonal-review.pdf`; the ZIP contains all 30 full-size JPEG screenshots and a labelled local gallery. `artwork-overview.jpg` compares the eighteen distinct treatments. Event names and windows are outside the screenshots. The pack uses the same welcome screen for comparison. Motion is paused in the stills; all designs run at speed 1.6 and 20 per cent height in normal playback. This is a review snapshot, not another editable master.
+
+### Latest verified published release
+
 The expanded release contains 15 landmarks, 10 university Classics graduates shown two at a time, and 14 career routes. Selections change on successive 90-second loops, with a time-seeded starting counter and UK school-date offsets. The welcome sticker covers its decorative frame; the public “working draft” badge is gone. The Parthenon uses a wide photograph, landmark images are shown in full, and Gulliver’s speech is below them.
 
-Philip requested recent discoveries and selected an automatic daily source check. The publishing workflow checks Archaeology magazine’s AIA feed at 05:17 UTC, validates and imports short dated source extracts, rebuilds credits/content, runs 16 Node and five Python checks and deploys. Changed notices are saved to `main` with generated files and brief changelog/handover records. No-change checks deploy the refreshed timestamp without a commit. Reports expire from the current pool after 30 days; an explicit archive fallback remains. The Mac can be off. GitHub scheduling may be delayed.
+Philip requested recent discoveries and selected an automatic daily source check. The publishing workflow checks Archaeology magazine’s AIA feed at 05:17 UTC, validates and imports short dated source extracts, rebuilds credits/content, runs the application and feed checks and deploys. Changed notices are saved to `main` with generated files and brief changelog/handover records. No-change checks deploy the refreshed timestamp without a commit. Reports expire from the current pool after 30 days; an explicit archive fallback remains. The Mac can be off. GitHub scheduling may be delayed.
 
 Philip’s 2 November 2026 report that Planet eStream seemed to work fine applies to the previous release. This expanded release needs its own player regression check after publication. Do not erase the earlier successful general test or claim unreported offline/full-day checks.
 
@@ -25,6 +43,9 @@ Local checks: all 16 application checks and five news-feed checks pass. The expa
 | `dist/index.html`, `styles.css`, `app.js` | Page shell, TV layouts, rotation, controls, data loading and fallback handling |
 | `dist/core.js` | Content validation, UK date handling and daily/scheduled selection |
 | `dist/content.json` | Editable content, display dates, explicit schedules and timings |
+| `dist/core.js`, `tests/seasonal.test.cjs` | Annual event validation, Easter, inclusive windows, overlap priority and regression checks |
+| `dist/assets/seasons/`, `dist/calendar.html` | Original seasonal thumbnails/borders and generated sourced calendar |
+| `scripts/seasonal-art.py`, `scripts/seasonal-art.cjs`, `dist/seasonal-drawing.js`, `dist/seasonal-motion.js` | Shared seasonal drawing definitions, static SVG generation and motion playback |
 | `dist/seed.js`, `sw.js` | Generated content fallback and offline-worker asset list |
 | `dist/assets/` | Local photographs, original SVG character/fallback, fonts and licence metadata |
 | `dist/credits.html`, `credits.css` | Editorial sources and image/font credits |
@@ -61,12 +82,14 @@ The browser uploader accepted individual files, not a whole folder. Upload files
 
 ## Known limits and next work
 
-- Next user action: reload the eStream website panel once to load v2, then check readability and two complete 90-second loops on the actual player. No publishing or news-configuration task remains from this request.
+- The queued TheCollector/Greek Reporter source request is implemented in the existing daily check. Publisher hosts, source sections/categories, Greek/Roman relevance, dates and bounded extracts are checked. The local 7 November check read all three publishers and retained five feed notices. Individual failures warn and preserve valid notices.
+- Current release work: publish the authorised combined seasonal/news version, wait for deployment and verify the live page. The screenshot review is approved; complete the authorised release and record workflow/live verification. A push to `main`, including documentation, would trigger publication.
+- Next player check: reload the eStream website panel once to load v2, then check readability and two complete 90-second loops on the actual player.
 - The news feed is a selected source, not an exhaustive archaeology service. No new relevant report is guaranteed every day. The verified first refresh contains three AIA feed notices reported on 30 October 2026, alongside two manually checked official Pompeii excavation reports.
 - `?cycle=0&date=2026-11-02&pause=1&screen=people` gives Tom Hiddleston and Chris Martin; cycles 1–4 show the remaining four pairs. `cycle=0…14` covers all landmarks on the anchor date.
-- Application/asset cache is `classics-display-v2` consistently in preparation and application code. Reload the eStream panel once for this code release; subsequent valid content updates refresh within 15 minutes.
+- Published application/asset cache is v2. The local seasonal work uses `classics-display-v3` consistently in preparation and application code. A release will require one panel reload. Subsequent valid content updates refresh within 15 minutes.
 - Actual eStream viewing-distance, long unattended running and offline restart remain separate player checks. Desktop results do not establish them.
 
 <!-- NEWS_STATUS_START -->
-Daily source check: 2026-11-06T12:56:00Z. 4 feed notices retained; latest report 2026-11-05. Both test suites passed before this save. Deployment is recorded in https://github.com/EBCClassics/classics-display/actions/runs/42221421540.
+Daily source check: 2026-11-07T12:15:36Z. 5 feed notices retained; latest report 2026-11-07. Local source retrieval and both test suites passed. Publication of the approved seasonal release is pending.
 <!-- NEWS_STATUS_END -->

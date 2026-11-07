@@ -7,12 +7,65 @@ A self-contained, silent display for a 16:9 television. The design uses Philip's
 - **Live display:** https://ebcclassics.github.io/classics-display/
 - **Master repository:** https://github.com/EBCClassics/classics-display
 - **Permanent local checkout:** `/Users/philipcanning/Documents/Codex/Projects/ClassicsDisplay`
-- **Automatic publishing:** saves to `main` run preparation, 16 application checks and five feed checks and GitHub Pages deployment. The expanded release and its manual daily-source run both deployed successfully on 2 November 2026; see TESTING.md for the workflow evidence.
+- **Automatic publishing:** saves to `main` run preparation, all application and feed checks and GitHub Pages deployment. The expanded release and its manual daily-source run both deployed successfully on 2 November 2026; see TESTING.md for the workflow evidence.
 - **Planet eStream:** Philip reported on 2 November 2026 that he had tested it and everything seemed to work fine. Basic eStream operation is therefore recorded as a user-reported pass; unreported individual, full-day and offline-restart tests are not assumed.
 
 Ask Codex for changes rather than editing or re-uploading the site yourself. Codex should update the source and the affected records, run the relevant checks, save the change to GitHub and confirm successful publication. The display address remains the same.
 
 For continuity, read [CONTEXT.md](CONTEXT.md), [CODEX_HANDOVER.md](CODEX_HANDOVER.md) and [CHANGELOG.md](CHANGELOG.md). [AGENTS.md](AGENTS.md) requires future material changes to keep these and the affected operation/test documents current. [CODEX_SETUP.md](CODEX_SETUP.md) explains how to attach the prepared folder to a local Codex project.
+
+## Seasonal calendar
+
+Approved for publication on 7 November 2026 after screenshot review. Thirty calendar entries select eighteen seasonal treatments. Philip chose the “Flowing strands” direction, speed 1.6 and height 18–20 per cent. The implemented starting height is 20 per cent (216px on the 1080px stage). Pride and LGBT+ History Month use six separate moving colour strands; Remembrance has flat stylised poppies with swaying curved stems. The remaining treatments are now adapted to the same flat, stylised language: awareness ribbons, page shapes, olive branches, infinity loops, hearts, waves, flames and theatre masks. Easter has its own eggs and blossoms, separate from Floralia’s flowers. Philip approved the 30-event screenshot review and requested ancient festival names within the artwork. All eleven ancient treatments now have colour-matched serif names, with the motifs arranged around the lettering.
+
+The artwork runs uninterrupted along the bottom. Modern observances have no overlaid caption, footer counter or progress bar. Roman festivals retain a short unboxed explanation above the main content, including Saturnalia within December. During seasonal periods the main content keeps its 90 per cent inset. The five screens keep their existing durations, and the usual full-size content/footer return between events. Supporting dates and sources are in the [illustrated calendar](dist/calendar.html).
+
+Selection follows the Europe/London date automatically, including weekends and midnight changes. All eighteen treatments animate at up to 30fps. Decorative motion honours reduced-motion preferences; the new animations also stop while paused or hidden. `dist/seasonal-motion.js` owns playback and the selected speed; `dist/seasonal-drawing.js` contains the shared drawings; `dist/styles.css` reserves the matching 216px area; `scripts/seasonal-art.py` generates matching static SVG fallbacks and calendar previews through the credits helper. Motion has no sound or external dependency.
+
+The following display windows are inclusive and include editorial choices to give single-day events several days on screen. Roman dates use conventional month-and-day anniversaries in the modern calendar, with ancient practice varying by period and place.
+
+| Event | Display window |
+| --- | --- |
+| The Kalends of January | 1–7 January |
+| LGBT+ History Month | Throughout February |
+| Children’s Mental Health Week | 1–7 February 2027 · later dates await confirmation |
+| Lupercalia | 12–16 February |
+| Matronalia | 1–5 March |
+| World Book Day | 1–7 March 2027 · later dates await confirmation |
+| International Women’s Day | 6–12 March |
+| International Day of Happiness | 18–24 March |
+| World Poetry Day | 19–25 March |
+| Easter | Palm Sunday to the Sunday after Easter |
+| World Autism Awareness Day | 1–7 April |
+| Parilia · Rome’s birthday | 18–24 April |
+| Earth Day | 20–26 April |
+| Floralia | 28 April–3 May |
+| Lemuria | 9–13 May |
+| Mental Health Awareness Week | 11–17 May 2026 · 10–16 May 2027 · later dates await confirmation |
+| Pride Month | 1–30 June |
+| Vestalia | 7–15 June |
+| Neptunalia | 20–26 July |
+| Vulcanalia | 20–26 August |
+| Ludi Romani | 4–19 September |
+| International Day of Peace | 18–24 September |
+| Black History Month | 1–31 October |
+| World Mental Health Day | 7–13 October |
+| Bonfire Night | 1–5 November |
+| Remembrance | 6 November to the Sunday ending the week containing 11 November |
+| World Kindness Day | 12–18 November · Remembrance takes precedence |
+| Anti-Bullying Week | 16–22 November 2026 · later dates await confirmation |
+| Christmas and Saturnalia | 1–31 December |
+| International Day of Persons with Disabilities | 1–7 December |
+
+Equal-priority overlaps alternate between screens and successive loops. Remembrance takes precedence and runs through 15 November in 2026. World Kindness Day’s window overlaps Remembrance and can appear afterwards. Easter is calculated annually using the Western Gregorian method. February month rules include leap day.
+
+Organiser-set campaign weeks and UK World Book Day use confirmed dates for the years listed. The stored schedule includes Children’s Mental Health Week on 1–7 February 2027, Mental Health Awareness Week on 10–16 May 2027, UK World Book Day on 4 March 2027 with a 1–7 March display window, and Anti-Bullying Week on 16–20 November 2026 with artwork through 22 November. Check the linked organisers when later dates are announced and add the confirmed ranges. These entries appear only in their listed years. Fixed annual dates, calendar months, Remembrance and Easter continue automatically.
+
+Edit `events` in `dist/content.json` to maintain the calendar. Each entry has a title, reference-page body, observance and display-window descriptions, local thumbnail, image alternative text, source details, numeric priority and a window rule. Optional `borderImage`, `accent`, `designName` and `explanation` control the display treatment. An empty explanation leaves the artwork free of captions for modern observances. An explanation may contain up to 110 characters. `designName` is an optional name of up to 32 characters, used for ancient festivals within the graphic. The player can display older saved content using the corresponding bundled artwork, and older content with no event calendar uses the bundled calendar. `events: []` disables seasonal artwork.
+
+A `fixed` window uses `MM-DD` start and end values. `month` uses a month number. `dated` contains confirmed `from` and `until` ranges, with one range per starting year. The `easter` rule uses signed day offsets before and after Easter Sunday. The `remembrance` rule calculates the specified November window. The human-readable `displayWindow` should agree with its rule.
+
+`python3 scripts/credits.py` regenerates the eighteen SVG treatments and new thumbnails using `scripts/seasonal-art.py` and `scripts/seasonal-art.cjs`, then rebuilds credits and `dist/calendar.html`. The earlier transparent `dist/assets/seasons/poppy-bold.png` is retained as a historical asset; the display selects the generated stylised poppy SVG and matching motion instead. The PNG was created with the built-in image generation tool and remains identified as AI-generated. The prompts are recorded in `scripts/seasonal-art-prompts.md`. Run preparation and both test suites afterwards. Use the hidden preview-date controls to check the result. Assets are bundled for offline use under the display’s existing cache limitations.
 
 ## Local preview
 
@@ -44,13 +97,13 @@ The graduates are Tom Hiddleston, Chris Martin, Anthony Leggett, Madeline Miller
 
 Career routes include law, journalism, heritage, publishing, technology, diplomacy, public policy, finance, consulting, teaching, film and theatre, marketing, archaeology and translation. These are possible routes; relevant experience, qualifications and professional training still apply.
 
-The 1920 × 1080 stage scales as a whole, with letterboxing on other aspect ratios. Main explanations use approximately 30–38px type; paired profiles use 30px so both stories remain readable. No visitor interaction is needed.
+The 1920 × 1080 stage scales as a whole, with letterboxing on other aspect ratios. Main explanations use approximately 30–38px type; paired profiles use a 30px base size. During seasonal periods the 90 per cent content inset makes that 27px on the 1080p stage, which needs checking from the intended viewing distance. No visitor interaction is needed.
 
 ## Daily discovery news
 
 Philip requested an automatic daily source check on 2 November 2026. The existing GitHub publishing workflow now runs at **05:17 UTC daily** (05:17 GMT in winter, 06:17 BST in summer), as well as on changes to `main` and manual runs. GitHub may delay scheduled jobs. The Mac and Codex do not need to be running. The eStream player needs connectivity to receive published changes.
 
-`scripts/update-news.py` checks the public Archaeology magazine RSS feed, published by the Archaeological Institute of America. It selects Greek/Roman-related discoveries and research, validates the source host and publication date, and imports a short, attributed headline/extract. It does not invent reporting or generate prose. The headline and extract together contain at most 24 source words per report. Automated notices use a labelled original illustration, without downloading unlicensed discovery photographs.
+`scripts/update-news.py` checks the public RSS feeds from Archaeology magazine (AIA), TheCollector and Greek Reporter. TheCollector stories must also be linked from its News & Discoveries listing; Greek Reporter items must be categorised as archaeology and not evergreen essays. It selects Greek/Roman-related discoveries and research, validates the source host and publication date, and imports a short, attributed headline/extract. It does not invent reporting or generate prose. The headline and extract together contain at most 24 source words per report. Automated notices use a labelled original illustration, without downloading unlicensed discovery photographs.
 
 Current news is limited to reports from the last **30 days**. New notices join the rotation on the next successful publication; the number of discoveries depends on the source. Existing feed notices remain for up to 30 days even when they fall out of the RSS window. Manually checked reports from the official Pompeii excavation journal are also included. An unavailable source preserves valid stories, raises a workflow warning and leaves the previous successful check date visible. Older news is never presented as recent: the display falls back to explicitly labelled archive material when no eligible report remains.
 
@@ -153,4 +206,4 @@ A first-ever visit without connectivity cannot download the site. Some embedded 
 
 `dist/` is the deployable website; `scripts/` contains preparation helpers; `tests/` contains the scheduling/content checks. There are no analytics, cookies, remote fonts, live embeds or pupil records. Ordinary browser storage holds only the last valid public display content. External source links are optional and do not need to be opened by viewers.
 
-The expanded display is live and has been checked in a desktop browser. Philip reported successful basic operation of the earlier release in Planet eStream; reload the panel once for v2 and repeat the player regression checks. Persistent offline restart, a measured viewing-distance check and extended unattended operation have not been separately recorded. Do not turn the general success report into a claim that those specific checks passed.
+The expanded display is live and has been checked in a desktop browser. Philip reported successful basic operation of the earlier release in Planet eStream; reload the panel once for v3 and repeat the player regression checks. Persistent offline restart, a measured viewing-distance check and extended unattended operation have not been separately recorded. Do not turn the general success report into a claim that those specific checks passed.
