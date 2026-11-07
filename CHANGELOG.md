@@ -53,6 +53,12 @@
 - Corrected cached navigation so the calendar and credits use their own pages when the host is unavailable.
 - Verification passed locally, with 25 Node checks, five Python checks and browser checks for all 17 seasonal entries plus an inactive date at 1920 × 1080. Representative graphics were visually inspected on all five screen types. Smaller-screen scaling, automatic overlapping-event advancement, date controls and warm-cache navigation with the preview server stopped also passed. This next-version work is held locally under Philip’s earlier release instruction.
 
+## 6 November 2026: daily discovery source check
+
+- Refreshed the source-attributed discovery bank (4 retained feed notices; latest report 2026-11-05). No generated reporting or remote photographs.
+- Content/scheduling checks and feed-safety checks passed before this save. Deployment outcome: [publishing workflow](https://github.com/EBCClassics/classics-display/actions/runs/42221421540); a saved commit alone does not establish successful deployment.
+
+
 ## 6 November 2026: news sources for the next iteration
 
 - Recorded TheCollector and Greek Reporter as additional sources for the weekly Classics news scan in the next iteration. Checked both source listings and saved the plan in the local context and handover. This entry records planning only.
