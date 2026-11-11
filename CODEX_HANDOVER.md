@@ -97,5 +97,5 @@ The browser uploader accepted individual files, not a whole folder. Upload files
 - Actual eStream viewing-distance, long unattended running and offline restart remain separate player checks. Desktop results do not establish them.
 
 <!-- NEWS_STATUS_START -->
-Daily source check: 2026-11-07T12:15:36Z. 5 feed notices retained; latest report 2026-11-07. Local source retrieval and both test suites passed. Deployment of the approved seasonal release succeeded: https://github.com/EBCClassics/classics-display/actions/runs/42373132244.
+Daily source check: 2026-11-11T12:42:28Z. 6 feed notices retained; latest report 2026-11-10. Both test suites passed before this save. Deployment is recorded in https://github.com/EBCClassics/classics-display/actions/runs/43022629400.
 <!-- NEWS_STATUS_END -->

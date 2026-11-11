@@ -1,5 +1,10 @@
 # Changelog
 
+## 11 November 2026: daily discovery source check
+
+- Refreshed the source-attributed discovery bank (6 retained feed notices; latest report 2026-11-10). No generated reporting or remote photographs.
+- Content/scheduling checks and feed-safety checks passed before this save. Deployment outcome: [publishing workflow](https://github.com/EBCClassics/classics-display/actions/runs/43022629400); a saved commit alone does not establish successful deployment.
+
 ## 7 November 2026 per-display artwork motion
 
 - Philip confirmed the poppies animate on his laptop but appear static on the school desktop in Edge. Comparison of live captures confirmed the published animation runs in the tested browser; the school device’s precise cause is not yet confirmed.
