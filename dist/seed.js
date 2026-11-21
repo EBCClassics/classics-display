@@ -669,6 +669,36 @@ window.SEEDED_CONTENT = {
       "sourceUrl": "https://pompeiisites.org/e-journal-degli-scavi-di-pompei/preliminary-results-of-an-integrated-geophysical-survey-at-the-villa-of-cicero/"
     },
     {
+      "id": "feed-19f0037a69232d59",
+      "mode": "news",
+      "title": "Well-Preserved Murals Uncovered at Roman Residence in Spain",
+      "published": "2026-11-20",
+      "publishedLabel": "20 November 2026",
+      "body": "MÉRIDA, SPAIN—According to the Greek Reporter, well-preserved wall paintings have been discovered in a courtyard […]…",
+      "why": "What evidence supports the discovery, and what remains uncertain?",
+      "image": "assets/discoveries.svg",
+      "imageAlt": "Illustration of an ancient pot and magnifying glass",
+      "caption": "Discovery illustration · not a photograph of the find",
+      "sourceLabel": "Archaeology magazine · AIA",
+      "sourceUrl": "https://archaeology.org/news/2026/11/20/well-preserved-murals-uncovered-at-roman-residence-in-spain/",
+      "feedExtract": true
+    },
+    {
+      "id": "feed-0ee579cef28f1cf5",
+      "mode": "news",
+      "title": "Students Recover Roman Military Artifacts in Northern England",
+      "published": "2026-11-20",
+      "publishedLabel": "20 November 2026",
+      "body": "REDESDALE, ENGLAND—A student excavation at a site on the Roman frontier in northeastern England uncovered […]…",
+      "why": "What evidence supports the discovery, and what remains uncertain?",
+      "image": "assets/discoveries.svg",
+      "imageAlt": "Illustration of an ancient pot and magnifying glass",
+      "caption": "Discovery illustration · not a photograph of the find",
+      "sourceLabel": "Archaeology magazine · AIA",
+      "sourceUrl": "https://archaeology.org/news/2026/11/20/students-recover-roman-military-artifacts-in-northern-england/",
+      "feedExtract": true
+    },
+    {
       "id": "feed-d86e9ced18b781b9",
       "mode": "news",
       "title": "Prehistoric Miners Extracted Red Ochre in Greece 28,000 Years Ago",
@@ -787,14 +817,14 @@ window.SEEDED_CONTENT = {
     }
   ],
   "newsStatus": {
-    "lastSuccess": "2026-11-11T12:42:28Z",
+    "lastSuccess": "2026-11-21T13:27:05Z",
     "sources": [
       "Archaeology magazine · AIA",
       "TheCollector · News & Discoveries",
       "Greek Reporter · archaeology"
     ],
     "failedSources": [],
-    "latestPublication": "2026-11-10"
+    "latestPublication": "2026-11-20"
   },
   "events": [
     {
