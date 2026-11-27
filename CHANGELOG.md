@@ -1,5 +1,10 @@
 # Changelog
 
+## 27 November 2026: daily discovery source check
+
+- Refreshed the source-attributed discovery bank (12 retained feed notices; latest report 2026-11-27). No generated reporting or remote photographs.
+- Content/scheduling checks and feed-safety checks passed before this save. Deployment outcome: [publishing workflow](https://github.com/EBCClassics/classics-display/actions/runs/46021324262); a saved commit alone does not establish successful deployment.
+
 ## 25 November 2026: daily discovery source check
 
 - Refreshed the source-attributed discovery bank (9 retained feed notices; latest report 2026-11-24). No generated reporting or remote photographs.

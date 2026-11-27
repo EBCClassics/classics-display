@@ -669,6 +669,51 @@ window.SEEDED_CONTENT = {
       "sourceUrl": "https://pompeiisites.org/e-journal-degli-scavi-di-pompei/preliminary-results-of-an-integrated-geophysical-survey-at-the-villa-of-cicero/"
     },
     {
+      "id": "feed-a6821ba0704040e4",
+      "mode": "news",
+      "title": "How Ancient Athens Tackled Counterfeit Money 2,400 Years Ago",
+      "published": "2026-11-27",
+      "publishedLabel": "27 November 2026",
+      "body": "In ancient Athens, when a buyer offered a silver coin and a merchant had doubts…",
+      "why": "What evidence supports the discovery, and what remains uncertain?",
+      "image": "assets/discoveries.svg",
+      "imageAlt": "Illustration of an ancient pot and magnifying glass",
+      "caption": "Discovery illustration · not a photograph of the find",
+      "sourceLabel": "Greek Reporter · archaeology",
+      "sourceUrl": "https://greekreporter.com/2026/11/27/ancient-athens-tackle-counterfeit-money/",
+      "feedExtract": true
+    },
+    {
+      "id": "feed-67208bbe21583d16",
+      "mode": "news",
+      "title": "Why Ancient Ionian Greeks Were Slow to Embrace Athenian Pottery",
+      "published": "2026-11-27",
+      "publishedLabel": "27 November 2026",
+      "body": "Ancient Ionian Greeks were slow to embrace Athenian pottery, likely because of their thriving…",
+      "why": "What evidence supports the discovery, and what remains uncertain?",
+      "image": "assets/discoveries.svg",
+      "imageAlt": "Illustration of an ancient pot and magnifying glass",
+      "caption": "Discovery illustration · not a photograph of the find",
+      "sourceLabel": "Greek Reporter · archaeology",
+      "sourceUrl": "https://greekreporter.com/2026/11/27/ancient-ionian-greeks-slow-embrace-athenian-pottery/",
+      "feedExtract": true
+    },
+    {
+      "id": "feed-513b8bdc25b3ce16",
+      "mode": "news",
+      "title": "2,900-Year-Old Sanctuary Discovered on Greek Mountaintop",
+      "published": "2026-11-26",
+      "publishedLabel": "26 November 2026",
+      "body": "Archaeologists have discovered a 2,900-year-old sanctuary on a Greek mountaintop on the island of Euboea (Evia), revealing new…",
+      "why": "What evidence supports the discovery, and what remains uncertain?",
+      "image": "assets/discoveries.svg",
+      "imageAlt": "Illustration of an ancient pot and magnifying glass",
+      "caption": "Discovery illustration · not a photograph of the find",
+      "sourceLabel": "Greek Reporter · archaeology",
+      "sourceUrl": "https://greekreporter.com/2026/11/27/sanctuary-greek-mountaintop/",
+      "feedExtract": true
+    },
+    {
       "id": "feed-1dd3b9af2e8ede48",
       "mode": "news",
       "title": "What Did Children in a Greek Colony Eat 2,500 Years Ago?",
@@ -832,14 +877,14 @@ window.SEEDED_CONTENT = {
     }
   ],
   "newsStatus": {
-    "lastSuccess": "2026-11-25T15:35:12Z",
+    "lastSuccess": "2026-11-27T15:02:49Z",
     "sources": [
       "Archaeology magazine · AIA",
       "TheCollector · News & Discoveries",
       "Greek Reporter · archaeology"
     ],
     "failedSources": [],
-    "latestPublication": "2026-11-24"
+    "latestPublication": "2026-11-27"
   },
   "events": [
     {
